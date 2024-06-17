@@ -1,0 +1,92 @@
+/* বেসিক রিসেট */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* ফন্ট ডিফাইনেশন */
+body {
+font-family: 'Arial', sans-serif;
+line-height: 1.6;
+color: #333;
+background-color: #f4f4f4;
+}
+
+/* হেডার স্টাইলিং */
+header {
+background: #005f73;
+color: #fff;
+padding: 1rem 0;
+text-align: center;
+}
+
+/* নেভিগেশন বার স্টাইলিং */
+nav {
+display: flex;
+justify-content: center;
+gap: 1rem;
+background: #0a9396;
+padding: 0.5rem 0;
+}
+
+nav a {
+color: #fff;
+text-decoration: none;
+padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+background: #94d2bd;
+}
+
+/* মেইন কন্টেন্ট এরিয়া */
+main {
+padding: 2rem;
+}
+
+/* ফুটার স্টাইলিং */
+footer {
+background: #005f73;
+color: #fff;
+text-align: center;
+padding: 1rem 0;
+}
+
+/* রেসপন্সিভ ডিজাইন */
+@media (max-width: 768px) {
+nav {
+flex-direction: column;
+}
+}
+
+/* বিশেষ সেকশন স্টাইলিং */
+.section {
+padding: 2rem;
+margin: 1rem 0;
+background: #e9d8a6;
+border-radius: 8px;
+}
+
+/* বুকিং ফর্ম স্টাইলিং */
+.booking-form {
+padding: 2rem;
+background: #94d2bd;
+border-radius: 8px;
+margin-top: 1rem;
+}
+
+/* বুকিং বাটন স্টাইলিং */
+.btn-book {
+display: inline-block;
+background: #ee9b00;
+color: #fff;
+padding: 0.5rem 1.5rem;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.btn-book:hover {
+background: #ca6702;
+}
