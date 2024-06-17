@@ -45,9 +45,16 @@ header {
 background: #005f73;
 color: #fff;
 padding: 1rem 0;
+}
+.left-align {
+text-align: left;
+}
+.right-align {
+text-align: right;
+}
+.center-align {
 text-align: center;
 }
-
 /* নেভিগেশন বার স্টাইলিং */
 nav {
 display: flex;
