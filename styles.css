@@ -5,9 +5,36 @@ padding: 0;
 box-sizing: border-box;
 }
 
-/* ফন্ট ডিফাইনেশন */
-body {
+.font-one {
 font-family: 'Arial', sans-serif;
+line-height: 1.6;
+color: #333;
+background-color: #f4f4f4;
+}
+
+.font-tow {
+font-family: 'Anton', monospace;
+line-height: 1.6;
+color: #333;
+background-color: #f4f4f4;
+}
+
+.font-three {
+font-family: 'Alfa Slab One', monospace;
+line-height: 1.6;
+color: #333;
+background-color: #f4f4f4;
+}
+
+.font-fure {
+font-family: 'Merienda', monospace;
+line-height: 1.6;
+color: #333;
+background-color: #f4f4f4;
+}
+
+.font-five {
+font-family: 'Kaushan Script', monospace;
 line-height: 1.6;
 color: #333;
 background-color: #f4f4f4;
@@ -53,6 +80,19 @@ text-align: center;
 padding: 1rem 0;
 }
 
+footer1 {
+background: #005f73;
+color: #fff;
+text-align: right;
+padding: 1rem 0;
+}
+
+footer2 {
+background: #005f73;
+color: #fff;
+text-align: left;
+padding: 1rem 0;
+}
 /* রেসপন্সিভ ডিজাইন */
 @media (max-width: 768px) {
 nav {
