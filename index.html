@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<style>
+.header {
+background-color: #f1f1f1;
+padding: 20px;
+text-align: center;
+}
+
+/* নেভিগেশন বার স্টাইলিং */
+.navbar {
+overflow: hidden;
+background-color: #333;
+}
+
+/* নেভিগেশন লিংকগুলোর স্টাইলিং */
+.navbar a {
+float: left;
+display: block;
+color: white;
+text-align: center;
+padding: 14px 20px;
+text-decoration: none;
+}
+
+/* মেনু বাটন স্টাইলিং */
+.menu-btn {
+float: right;
+display: block;
+color: white;
+text-align: center;
+padding: 14px 20px;
+text-decoration: none;
+background-color: #04AA6D; /* বাটনের জন্য ব্যাকগ্রাউন্ড কালার */
+}
+
+/* লিংকগুলোর উপর মাউস নিয়ে গেলে রঙ পরিবর্তন */
+.navbar a:hover, .menu-btn:hover {
+background-color: #ddd;
+color: black;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>COX'S AURA</h1>
+<p>Your Gateway to the Grandeur of Cox'sBazar</p>
+</div>
+
+<div class="navbar">
+<a href="discover.html">Discover Cox'sBazar</a>
+<a href="Islands .html">Islands</a>
+</div>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COXS AURA</title>
+<style>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</style>
+  <script src="script.js"></script>
+</head>
+<html>
+<head>
+<style>
+* {box-sizing:border-box}
+
+/* স্লাইডার কন্টেইনার */
+.slideshow-container {
+max-width: 1000px;
+position: relative;
+margin: auto;
+}
+
+/* স্লাইডগুলি লুকানো */
+.mySlides {
+display: none;
+}
+
+/* প্রতিটি স্লাইডের জন্য ক্যাপশন */
+.text {
+color: #f2f2f2;
+font-size: 15px;
+padding: 8px 12px;
+position: absolute;
+bottom: 8px;
+width: 100%;
+text-align: center;
+}
+/* প্রতিটি স্লাইডের জন্য নাম্বার টেক্সট (1/3 ইত্যাদি) */
+.numbertext {
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
+}
+
+/* প্রতিটি স্লাইডের জন্য অ্যানিমেশন */
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+/* পরবর্তী এবং পূর্ববর্তী বাটন */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+margin-top: -22px;
+padding: 16px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+/* ডান দিকের বাটনের জন্য অবস্থান */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* বাটনের উপর মাউস নিয়ে গেলে রঙ পরিবর্তন */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+/* ডটস/ইন্ডিকেটর */
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background-color: #717171;
+}
+
+/* ফেড অ্যানিমেশনের জন্য */
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+</style>
+	
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+<div class="numbertext">1 / 3</div>
+<img src="beach1.jpg" style="width:100%">
+<div class="text">Your Beach, Your Adventure, Our Service- Cox's Aura</div>
+</div>
+
+<div class="mySlides fade">
+<div class="numbertext">2 / 3</div>
+<img src="beach2.jpg" style="width:100%">
+<div class="text">The Essence of Cox'sBazar</div>
+</div>
+
+<div class="mySlides fade">
+<div class="numbertext">3 / 3</div>
+<img src="beach3.jpg" style="width:100%">
+<div class="text">The longest sea beach in the world</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+<span class="dot" onclick="currentSlide(1)"></span> 
+<span class="dot" onclick="currentSlide(2)"></span> 
+<span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// পরবর্তী/পূর্ববর্তী নিয়ন্ত্রণ
+function plusSlides(n) {
+showSlides(slideIndex += n);
+}
+
+// ইমেজ ডটস নিয়ন্ত্রণ
+function currentSlide(n) {
+showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+var i;
+var slides = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}    
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";  
+}
+for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";  
+dots[slideIndex-1].className += " active";
+}
+</script>
+
+<body>
+<div class="header">
+<h1>WELCOME TO COX'S BAZAR</h1>
+<h3>The longest sea beach in the world</h3>
+</div>
+<header>
+<nav>
+<style>
+.navbar {
+overflow: hidden;
+background-color: #333;
+}
+.navbar a {
+float: left;
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+.navbar a:hover {
+background-color: #ddd;
+color: black;
+}
+</style>
+</head>
+<body>
+</div>
+
+<p class="center">Are you ready to experience the magic of Cox's Bazar, the
+longest sea beach in the world? If so, you have come to the right place. Cox's
+Aura is your ultimate guide to everything that Cox's Bazar has to offer.
+Whether you are looking for a relaxing getaway, a thrilling adventure, or a
+cultural exploration, we have something for everyone. Cox's Aura is more than
+just a website, it's a lifestyle. Join us and discover the best of Cox's Bazar
+with Cox's Aura<a href="discover.html">Read More</a></p>
+<img src="discover.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h1>Discover Cox's Bazar</h1>
+<p>Cox's Bazar is a destination for everyone. Whether you are looking for a relaxing getaway, a cultural immersion, or an adventurous thrill, you will find something to suit your taste and budget in this coastal paradise. Here are some of the types of travelers who can enjoy Cox's Bazar with Cox's Aura<a href=discover.html">Read More</a></p>
+<img src="dis206.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h2>Families</h2>
+<p>Cox's Bazar is a family-friendly destination, with plenty of activities and attractions for kids and adults alike. You can enjoy the sandy beaches, the water park, the amusement park, the aquarium, and the wildlife sanctuary. You can also take a boat ride to the nearby islands, where you can snorkel, fish, or picnic. Cox's Aura offers family rooms, babysitting services, and special packages for families.<a href="families.html">Read More</a></p>
+<img src="families.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h2>Foodies</h2>
+<p>Cox's Bazar is a food lover's dream, with a variety of cuisines and dishes to satisfy your cravings. You can sample the local delicacies, such as fried fish, crab curry, prawn malai, and biryani. You can also try the international options, such as Thai, Chinese, Indian, and Italian. Cox's Aura has a restaurant, a cafe, and a bar, where you can enjoy delicious meals, snacks, and drinks.<a href="food.html">Read More</a></p>
+<img src="foodies100.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h1>Culture & History Aficionados</h1>
+<p class=MsoNormal>Cox's Bazar has a rich and diverse history and culture, dating back to ancient times. You can explore the heritage sites, such as the Buddhist temples, the 100-year-old mosque, the colonial buildings, and the fishermen's village. You can also learn about the local customs, traditions, and festivals, such as the Rash Mela, the kite festival, and the fishing competition. Cox's Aura can arrange guided tours, cultural shows, and workshops for you.<a href="culture.html">Read More</a></p>
+<img src="natural100.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h1>Nature Lovers</h1>
+<p class=MsoNormal>Cox's Bazar is a nature lover's paradise, with stunning landscapes and diverse wildlife. You can admire the longest natural sea beach in the world, the lush green hills, the turquoise sea, and the colorful coral reefs. You can also spot the rare and endangered animals, such as the Irrawaddy dolphins, the olive ridley turtles, the saltwater crocodiles, and the migratory birds. Cox's Aura can organize nature walks, wildlife safaris, and eco-tours for you<a href="nature.html">Read More</a></p>
+<img src="dis206.jpg"style="width:100%">
+</div>
+<div style="padding:16px">
+<h1>Solo Travelers</h1>
+<p class=MsoNormal>Cox's Bazar is a safe and friendly destination for solo travelers, with plenty of opportunities to meet new people and have fun. You can mingle with the locals, the other tourists, and the Cox's Aura staff, who will make you feel welcome and comfortable. You can also join the group activities, such as the yoga classes, the karaoke nights, and the beach parties. Cox's Aura offers single rooms, free Wi-Fi, and 24/7 security for solo travelers.<a href="solo.html">Read More</a></p>
+<img src="solo100.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>First-Timers</h3>
+<p class=MsoNormal>Cox's Bazar is a perfect destination for first-timers>, who want to experience the best of Bangladesh. You can enjoy the scenic beauty, the cultural diversity, the culinary delights, and the warm hospitality of Cox's Bazar. You can also get a glimpse of the other attractions of Bangladesh, such as the Sundarbans, the Chittagong Hill Tracts, and the Dhaka city. Cox's Aura offers airport transfers, travel assistance, and information for first-timers.<a href="first.html">Read More</a></p>
+<img src="dis1000.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>Romance Seekers</h3>
+<p class=MsoNormal>Cox's Bazar is a romantic destination for couples, who want to spend some quality time together. You can relax on the private beach, watch the sunset, or take a candlelit dinner. You can also pamper yourselves with a spa treatment, a massage, or a jacuzzi. Cox's Aura offers honeymoon suites, romantic packages, and special arrangements for couples.<a href="romance.html">Read More</a></p>
+<img src="romanceboli.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>Outdoor Adventurers</h3>
+<p class=MsoNormal>Cox's Bazar is an adventurous destination for thrill-seekers, who want to challenge themselves and have some fun. You can try the various water sports, such as surfing, jet skiing, parasailing, and scuba diving. You can also go for the land activities, such as hiking, biking, ziplining, and camping. Cox's Aura offers equipment rental, training, and guidance for outdoor adventurers<a href="outdoor.html">Read More</a></p>
+<img src="romancegirlboykole.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>Shoppers</h3>
+<p class=MsoNormal>Cox's Bazar is a shopper's paradise, with a range of products and prices to suit your needs and preferences. You can shop for the local handicrafts, such as the bamboo baskets, the jute bags, the pottery, and the jewelry. You can also shop for the branded items, such as the clothes, the accessories, the electronics, and the souvenirs. Cox's Aura has a gift shop, a convenience store, and a shuttle service for shoppers.<a href="shopper.html">Read More</a></p>
+<img src="shoppers1.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>Health & Wellness Enthuslasts</h3>
+<p class=MsoNormal>Cox's Bazar is a health and wellness destination for those who want to rejuvenate their body, mind, and soul. You can practice yoga, meditation, or tai chi on the beach, or join the fitness center or the swimming pool. You can also detox your system with the organic food, the herbal tea, or the fresh juice. Cox's Aura has a wellness center, a spa, and a health club for health and wellness enthusiasts.<a href="health.html">Read More</a></p>
+<img src="soloboy.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>Nightlife Lovers</h3>
+<p class=MsoNormal>Cox's Bazar is a nightlife destination for those who want to party and have a good time. You can enjoy the live music, the DJ, the karaoke, or the dance floor at the bar club. You can also sip on the cocktails, the mocktails, the beer, or the wine at the lounge. Cox's Aura has a bar club, a lounge, and a happy hour for nightlife lovers<a href="night.html">Read More</a></p>
+<img src="night201.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>SPA</h3>
+<p class=MsoNormal>Cox's Bazar is a spa destination for those who want to relax and pamper themselves. You can choose from a variety of treatments, such as the massage, the facial, the manicure, or the pedicure. You can also indulge in the aromatherapy, the hydrotherapy, or the sauna. Cox's Aura has a spa, a beauty salon, and a steam room for spa lovers.<a href="spa.html">Read More</a></p>
+<img src="spg.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>Rooms & Suites</h3>
+<p class=MsoNormal>Planning a trip to Cox's Bazar can be
+challenging, especially if you are not familiar with the destination. That's
+why we have a team of experienced and professional travel agents who can help
+you with every aspect of your travel, from booking your flights, buses, or
+trains, to arranging your visa, insurance, and local transportation. They will
+also give you tips and advice on how to make the most of your time in Cox's
+Bazar, and what to expect when you arrive. You can trust them to take care of
+all the details, so you can focus on enjoying your trip. Some of the benefits
+of booking with our travel agents<a href="room.html">Read More</a></p>
+<img src="spr.jpeg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>Meetings & Events</h3>
+<p class=MsoNormal>Cox's Bazar is a meetings and events destination for those who want to host or attend professional or social gatherings. You can book the conference hall, the banquet hall, or the meeting room for your business or personal needs. You can also avail the catering, the audiovisual, or the internet services for your convenience. Cox's Aura has a meetings and events center, a business center, and a secretarial service for meetings and events.<a href="meeting.html">Read More</a></p>
+<img src="event.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>Recreation</h3>
+<p class=MsoNormal>Cox's Bazar is a recreation destination for those who want to have fun and enjoy various activities. You can play the golf, the tennis, or the badminton at the sports center. You can also explore the marine park, the fishing village, or the Buddhist temple at the nearby attractions. Cox's Aura has a recreation center, a sports center, and a tour desk for recreation<a href="recreation.html">Read More</a></p>
+<img src="recreationgirl.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<h3>Special Offers</h3>
+<p class=MsoNormal>Cox's Bazar is a special offers destination for those who want to save money and get the best deals. You can benefit from the discounts, the packages, or the vouchers for your stay. You can also get the freebies, the upgrades, or the rewards for your loyalty. Cox's Aura has a special offers page, a loyalty program, and a gift shop for special offers.<a href="special.html">Read More</a></p>
+<img src="special100.jpg" style="width:100%">
+
+<div class="navbar">
+<a href="#about">Romance</a>
+<a href="spa.html">SPA</a>
+<a href="#about">Room Booking</a>
+<a href="#about">Restaurant</a>
+<a href="#about">Bar Club</a>
+<a href="solo.html">Solo Travelers</a>
+</div>
+<div style="padding:16px">
+<h3>Gallery</h3>
+<p class=MsoNormal>They will
+also give you tips and advice on how to make the most of your time in Cox's
+Bazar, and what to expect when you arrive. You can trust them to take care of
+all the details, so you can focus on enjoying your trip. Some of the benefits
+of booking with our travel agents</p>
+<img src="beach3.jpg" style="width:100%">
+<img src="beach5.jpg" style="width:100%">
+<img src="beach6.jpg" style="width:100%">
+<img src="beach7.jpg" style="width:100%">
+</div>
+<div style="padding:16px">
+<p>You can enjoy a comfortable and clean room
+with all the facilities and services you need.</p>
+</div>
+<footer>
+<!-- ফুটার এরিয়া -->
+</footer>
+</body>
+<div class="navbar">
+<a href="Terms.html">Terms and Conditions</a>
+<a href="Privacy.html">Privacy Policy</a>
+
+</div>
+<div style="padding:16px">
+<p class=MsoNormal>@2024 Cox's Aura. All right reserved.</p>
+</html>
+
+</body>
+</html>
