@@ -64,11 +64,65 @@ border-radius: 12px; /* বুতামের কোণার গোলাকা
 }
 </style>
 </head>
-	<body>
-		<div class="header">
+</html>
+<head>
+	<div class="header">
 			<h1>MJ-AHMAD</h1>
 			<p>Bridging the Gap in Islamic Education and Resources</p>
-		</div>
+	</div>
+	<body>
+		<div class="slideshow-container">
+					<div class="mySlides fade">
+						<div class="numbertext">1 / 3</div>
+						<img src="mjmodel.jpg" style="width:100%">
+					</div>
+					<div class="mySlides fade">
+						<div class="numbertext">2 / 3</div>
+						<img src="mj19tola.jpg" style="width:100%">
+					</div>
+					<div class="mySlides fade">
+						<div class="numbertext">3 / 3</div>
+						<img src="mjsteker.jpg" style="width:100%">
+					</div>
+					<a class="prev" onclick="plusSlides(-1)">❮</a>
+					<a class="next" onclick="plusSlides(1)">❯</a>
+				</div>
+				<br>
+				<div style="text-align:center">
+					<span class="dot" onclick="currentSlide(1)"></span> 
+					<span class="dot" onclick="currentSlide(2)"></span> 
+					<span class="dot" onclick="currentSlide(3)"></span> 
+				</div>
+				<script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+
+// পরবর্তী/পূর্ববর্তী নিয়ন্ত্রণ
+					function plusSlides(n) {
+						showSlides(slideIndex += n);
+					}
+
+// ইমেজ ডটস নিয়ন্ত্রণ
+					function currentSlide(n) {
+						showSlides(slideIndex = n);
+					}
+					function showSlides(n) {
+						var i;
+						var slides = document.getElementsByClassName("mySlides");
+						var dots = document.getElementsByClassName("dot");
+						if (n > slides.length) {slideIndex = 1}    
+						if (n < 1) {slideIndex = slides.length}
+						for (i = 0; i < slides.length; i++) {
+							slides[i].style.display = "none";  
+						}
+						for (i = 0; i < dots.length; i++) {
+							dots[i].className = dots[i].className.replace(" active", "");
+						}
+						slides[slideIndex-1].style.display = "block";  
+						dots[slideIndex-1].className += " active";
+					}
+				</script>
+	</body>
 		<div class="navbar">
 			<a>Hi ! I'm Md Jafor Ahmad,</a>
             <a>A fervent advocate for technological advancement and education in Bangladesh,</a> 
@@ -78,7 +132,7 @@ border-radius: 12px; /* বুতামের কোণার গোলাকা
             <a>And as the owner of "Quraner Fariwala," I take pride in leading Bangladesh's largest Quran printing organization.</a>
             <a>My role as a developer at the UK Company Developer Forum further reflects my commitment to professional excellence and innovation.</a>  
 		</div>
-        <body>
+	<body>
             <a href="https://www.mjahmad.com/" class="link-button">INNOVATE</a> <a href="https://www.qfbd.org/" class="link-button">Quraner Fariwala</a>
         </body>
 		<meta charset="UTF-8">
@@ -193,59 +247,7 @@ border-radius: 12px; /* বুতামের কোণার গোলাকা
 				</style>
 	
 			</head>
-			<body>
-				<div class="slideshow-container">
-					<div class="mySlides fade">
-						<div class="numbertext">1 / 3</div>
-						<img src="mjmodel.jpg" style="width:100%">
-					</div>
-					<div class="mySlides fade">
-						<div class="numbertext">2 / 3</div>
-						<img src="mj19tola.jpg" style="width:100%">
-					</div>
-					<div class="mySlides fade">
-						<div class="numbertext">3 / 3</div>
-						<img src="mjsteker.jpg" style="width:100%">
-					</div>
-					<a class="prev" onclick="plusSlides(-1)">❮</a>
-					<a class="next" onclick="plusSlides(1)">❯</a>
-				</div>
-				<br>
-				<div style="text-align:center">
-					<span class="dot" onclick="currentSlide(1)"></span> 
-					<span class="dot" onclick="currentSlide(2)"></span> 
-					<span class="dot" onclick="currentSlide(3)"></span> 
-				</div>
-				<script>
-					var slideIndex = 1;
-					showSlides(slideIndex);
 
-// পরবর্তী/পূর্ববর্তী নিয়ন্ত্রণ
-					function plusSlides(n) {
-						showSlides(slideIndex += n);
-					}
-
-// ইমেজ ডটস নিয়ন্ত্রণ
-					function currentSlide(n) {
-						showSlides(slideIndex = n);
-					}
-					function showSlides(n) {
-						var i;
-						var slides = document.getElementsByClassName("mySlides");
-						var dots = document.getElementsByClassName("dot");
-						if (n > slides.length) {slideIndex = 1}    
-						if (n < 1) {slideIndex = slides.length}
-						for (i = 0; i < slides.length; i++) {
-							slides[i].style.display = "none";  
-						}
-						for (i = 0; i < dots.length; i++) {
-							dots[i].className = dots[i].className.replace(" active", "");
-						}
-						slides[slideIndex-1].style.display = "block";  
-						dots[slideIndex-1].className += " active";
-					}
-				</script>
-				<body>
 					<div class="header">
 						<h1>The Technological Journey of MJ-AHMAD</h1>
 						<h4>Unveiling the Art of Coding and AI: A Microsoft Developer's Odyssey in HTML, CSS, and Beyond</h4>
