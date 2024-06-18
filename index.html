@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            .header {
-                background-color: #000000; /* ব্যাকগ্রাউন্ড কালার কালো */
-                color: #FFFFFF; /* ফন্ট কালার সাদা */
-                padding: 20px; /* প্যাডিং */
-                text-align: center; /* সেন্টার সেটাপ */
-            }
-            .header .menu {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                list-style-type: none;
-            }
-            .header .menu li {
-                display: inline;
-                margin-left: 10px;
-            }
-            .header .menu li a {
-                text-decoration: none;
-                color: #D4AF37; /* মেনু আইকনের কালার সোনালি */
-            }
-            .golden-text {
-                color: #D4AF37; /* সোনালি রঙের কোড */
-                font-family: 'Times New Roman', Times, serif; /* ফন্ট সেটিং */
-            }
-            .custom-font {
-                font-family: Arial, Helvetica, sans-serif; /* অন্য একটি ফন্ট সেটিং */
-            }
-            .left-align {
-                text-align: left;
-            }
-            .right-align {
-                text-align: right;
-            }
-            .center-align {
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-        <header class="header">
-            <h1 class="center-align golden-text">MJ-AHMAD</h1>
-            <p class="center-align custom-font">Bridging the Gap in Islamic Education and Resources</p>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </header>
-    </body>
+	<head>
+		<style>
+			.header {
+				background-color: #000000; /* ব্যাকগ্রাউন্ড কালার কালো */
+				color: #FFFFFF; /* ফন্ট কালার সাদা */
+				padding: 20px; /* প্যাডিং */
+				text-align: center; /* সেন্টার সেটাপ */
+			}
+			.menu-icon {
+				color: #D4AF37;
+				font-size: 30px;
+				cursor: pointer;
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
+			.nav-menu {
+				display: none;
+				background-color: #333;
+				position: absolute;
+				right: 20px;
+				top: 60px;
+				width: 200px;
+				border: 1px solid #FFF;
+			}
+			.nav-menu a {
+				color: white;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+			}
+			.nav-menu a:hover {
+				background-color: #555;
+			}
+			.golden-text {
+				color: #D4AF37; /* সোনালি রঙের কোড */
+				font-family: 'Times New Roman', Times, serif; /* ফন্ট সেটিং */
+			}
+			.custom-font {
+				font-family: Arial, Helvetica, sans-serif; /* অন্য একটি ফন্ট সেটিং */
+			}
+			.left-align {
+				text-align: left;
+			}
+			.right-align {
+				text-align: right;
+			}
+			.center-align {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<span class="menu-icon" onclick="toggleMenu()">:::</span>
+			<div id="navMenu" class="nav-menu">
+				<a href="#home">Home</a>
+				<a href="#services">Service</a>
+				<a href="#contact">Contact</a>
+			</div>
+		</div>
+		<script>
+			function toggleMenu() {
+				var menu = document.getElementById("navMenu");
+				if (menu.style.display === "block") {
+					menu.style.display = "none";
+				} else {
+					menu.style.display = "block";
+				}
+			}
+		</script>
+		<header class="header">
+			<h1 class="center-align golden-text">MJ-AHMAD</h1>
+			<p class="left-align custom-font">Bridging the Gap of Islamic Education and Resources</p>
+		</header>
+	</body>
 </html>
 
-
-<html lang="bn">
+<!DOCTYPE html>
+<html>
 	<head>
 		<style>
 			.header {
