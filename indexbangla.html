@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Comp atible" content="ie=edge">
+		<title>MJ-AHMAD</title>
+		<!-- SEO Tage -->
+		<meta name="description" content="Bridging the Gap in Islamic Education and Resources">
+		<meta name="keywords" content="আপনার, কীওয়ার্ড, এখানে">
+		<meta name="author" content="আপনার নাম">
+		<!-- ফেভিকন -->
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<!-- স্টাইলশিট  -->
+		<link rel="stylesheet" href="styles.css">
+		<!-- জাভাস্ক্রিপ্ট ফাইল -->
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<!-- বডি কন্টেন্ট -->
+	</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .header {
+                background-color: #000000;
+                color: #FFFFFF;
+                padding: 20px;
+                position: relative;
+            }
+            .header-title {
+                display: inline-block; /* টাইটেলকে ইনলাইন ব্লক এলিমেন্ট হিসেবে সেট করা */
+                margin-center: 50px; /* ডান দিকে মার্জিন দেওয়া */
+            }
+            .menu-icon {
+                color: #D4AF37;
+                font-size: 30px;
+                cursor: pointer;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            .nav-menu {
+                display: none;
+                background-color: #333;
+                position: absolute;
+                right: 20px;
+                top: 60px;
+                width: 200px;
+                border: 1px solid #FFF;
+            }
+            .nav-menu a {
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;display: block;
+            }
+            .nav-menu a:hover {
+                background-color: #555;
+            }
+        </style>
+	    <body>
+		    <header class="header">
+			    <h1 class="center-align golden-text">MJ-AHMAD</h1>
+			    <p class="center-align custom-font">Bridging the Gap in Islamic Education and Resources</p>
+		    </header>
+	    </body>
+        </header>
+    </head>
+</html>
+
+<!--Section--slideshow-->
+<html>
+	<head>
+		<body>
+			<style>
+				.section {
+					{box-sizing:border-box}
+				.mySlides {display:none}
+				img {vertical-align: middle;}
+				}
+				.slideshow-container {
+					max-width: 1000px;
+					position: relative;
+					margin: auto;
+				}
+				.dot {
+					height: 15px;
+					width: 15px;
+					margin: 0 2px;
+					background-color: #bbb;
+					border-radius: 50%;
+					display: inline-block;
+					transition: background-color 0.6s ease;
+				}
+				.active {
+					background-color: #717171;
+				}
+				.fade {
+					-webkit-animation-name: fade;
+					-webkit-animation-duration: 1.5s;
+					animation-name: fade;
+					animation-duration: 1.5s;
+				}
+				@-webkit-keyframes fade {
+					from {opacity: .4}
+				to {opacity: 1}
+				}
+				@keyframes fade {
+					from {opacity: .4} 
+				to {opacity: 1}
+				}
+			</style>
+			<div class="slideshow-container">
+				<div class="mySlides fade">
+					<img src="mjmodel.jpg" alt="self" width="100%" height="320">
+				</div>
+				<div class="mySlides fade">
+					<img src="mj19tola.jpg" alt="self me" width="100%" height="320">
+				</div>
+				<div class="mySlides fade">
+					<img src="mjsteker.jpg" alt="steker" width="100%" height="320">
+				</div>
+			</div>
+			<br>
+			<div style="text-align:center">
+				<span class="dot"></span>
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+			</div>
+			<script>
+				var slideIndex = 0;
+				showSlides();
+				function showSlides() {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("dot");
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					slideIndex++;
+					if (slideIndex > slides.length) {slideIndex = 1}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";
+					dots[slideIndex-1].className += " active";
+					setTimeout(showSlides, 2000); // ছবি পরিবর্তনের সময় ইন্টারভাল
+				}
+			</script>
+		</body>
+	</head>
+</html>
+
+
+<!--section--colam-->
+<html>
+	<head>
+		<title>Two Column Section</title>
+		<style>
+			.container {
+				display: flex;
+			}
+			.column {
+				flex: 1;
+				padding: 20px;
+				text-align: center;
+			}
+			.black-background {
+				background-color: black;
+				color: white;
+			}
+			.white-background {
+				background-color: white;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="column black-background">
+				<p>বাংলা</p>
+			</div>
+			<div class="column white-background">
+				<p>العربية</p>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+<!---section--self-->
+<html>
+	<head>
+		<style>
+			.line-text {
+				padding-left: 20px; /* লাইনের আগে স্পেস */
+				border-left: 3px solid #000; /* লাইনের স্টাইল */
+				margin-bottom: 10px; /* প্রতিটি লাইনের মধ্যে দূরত্ব */
+			}
+			.emoji {
+				font-size: 24px; /* ইমোজির সাইজ */
+				padding-right: 10px; /* ইমোজির পরে স্পেস */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="line-text">- Hi! I'm MD JAFOR AHMAD</div>
+		<div class="line-text">- A fervent advocate for technological advancement and education in Bangladesh,</div>
+		<div class="line-text">- With a robust background in Microsoft 365, Azure, and cloud solutions,</div>
+		<div class="line-text">- I strive to enhance my expertise and contribute to the development of a skilled workforce in my country.</div>
+		<div class="line-text">- As the founder of "Innovate," I am dedicated to providing educational support,</div>
+		<div class="line-text">- And as the owner of "Quraner Fariwala," I take pride in leading Bangladesh's largest Quran printing organization</div>
+	</body>
+</html>
+
+
+<!--section-->
+<html>
+	<head>
+		<style>
+			.line-text {
+				padding-left: 20px; /* লাইনের আগে স্পেস */
+				border-left: 3px solid #000; /* লাইনের স্টাইল */
+				margin-bottom: 10px; /* প্রতিটি লাইনের মধ্যে দূরত্ব */
+			}
+			.emoji {
+				font-size: 24px; /* ইমোজির সাইজ */
+				padding-right: 10px; /* ইমোজির পরে স্পেস */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="line-text">- My role as a developer at the UK Company Developer Forum further reflects my commitment to professional excellence and innovation.</div>
+		<div class="line-text">- Expert in HTML, CSS, and JavaScript coding, with a keen ability to craft responsive and dynamic web experiences.</div>
+		<div class="line-text">-Skilled in AI technologies, leveraging machine learning and data analysis to drive innovation and efficiency.</div>
+		<div class="line-text">- Proficient with Microsoft 365, Azure Portal, and Microsoft Copilot Studio, harnessing the power of cloud computing and collaborative tools to achieve operational excellence.</div>
+		<div class="line-text">- A Microsoft Intra ID P2 user, adept at navigating and utilizing Microsoft's internal platforms for optimal performance.</div>
+		<div class="line-text">- Offering assistance in cybersecurity, app registration, and cloud computing, along with a broad range of software and digital technology applications.To learn more about me and my work, Click <a href="profile.html">here</a></div>
+	</body>
+</html>
+
+
+<!---Section--button-->
+<html>
+    <head>
+        <style>
+            .link-button {
+                background-color: #000000; /* সবুজ ব্যাকগ্রাউন্ড */
+                border: none;
+                color: white;
+                padding: 15px 32px; /* প্যাডিং দিয়ে বুতামের আকার নির্ধারণ */
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 12px; /* বুতামের কোণার গোলাকার করা */
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://www.mjahmad.com/innovate/" class="link-button">INNOVATE</a>
+        <a href="https://www.qfbd.org/" class="link-button">Quraner Fariwala</a>
+    </body>
+</html>
+
+
+
+<!--section-->
+<html>
+	<head>
+		<body>
+			<div>
+				<img src="crmsl3.jpg" style="width:100%">
+			</div>
+		</body>
+	</head>
+</html>
+
+<!---Section----->
+<html>
+	<head>
+		<body>
+			<style>
+				<link rel="stylesheet" type="text/css" href="styles.css">
+			</style>
+			<script src="script.js">
+				
+			</script>
+		</body>
+		<body>
+			<div class="header">
+				<h1>The Technological Journey of MJ-AHMAD</h1>
+				<h4>Unveiling the Art of Coding and AI: A Microsoft Developer's Odyssey in HTML, CSS, and Beyond</h4>
+				<img src="ai7.jpg" style="width:100%">
+			</div>
+			<div class="header">
+				<h2>Ignite the power of knowledge</h2>
+				<h3>One Click at a time</h3>
+				<img src="duyhat.jpg" style="width:100%">
+			</div>
+			<div class="header">
+				<h3>Connecting Minds,</h3>
+				<h3>Enriching Futures</h3>
+				<img src="mind.jpg" style="width:100%">
+				<h3>Where Are You?</h3>
+				<h4>Open the door to a world of connected minds and exciting possibilities!</h4>
+			</div>
+		</body>
+		<body>
+			<div class="header">
+				<h1>Your companion in the expansion of knowledge.</h1>
+			</div>
+			<div style="padding:16px">
+				<h4>MJ AHMAD is an innovative education and research platform where, through "Quraner Fariwala" and "INNOVATE," the boundaries of knowledge are expanded, and students are assisted in unlocking their full potential.</h4>
+				<h4>Through the "Quraner Fariwala" project, we engage in the printing, supply, and distribution of the Holy Quran, contributing to the spread of religious education.</h4>
+				<h4>With the "INNOVATE" initiative, we employ cutting-edge technology for education and development, encouraging students to pursue their own research and innovation.</h4>
+				<h4>Our goal is to create a society where education is accessible and readily available to everyone.</h4>
+				<h4>We believe that every individual holds infinite potential, and the MJ AHMAD platform is built to realize those possibilities.</h4>
+			</div>
+			<img src="digital2.jpg" style="width:100%">
+		</body>
+	</head>
+</html>
+
+<!---section------>
+<html>
+	<head>
+		<body>
+			<div class="header">
+				<div style="padding:16px">
+					<h3>We must not be a nation of beggars; we must be a nation of producers.</h3>
+					<img src="shekh.jpg" style="width:100%">
+					<p>- Sheikh Mujibur Rahman</p>
+				</div>
+				<div style="padding:16px">
+					<h3>Education is not the lerning of facts, but the training of the mind to think</h3>
+					<img src="albert.jpg" style="width:100%">
+					<p>- Albert Einstein</p>
+				</div>
+				<div style="padding:16px">
+					<h3>Education is the most powerful weapon which you can use to change the world</h3>
+					<img src="th1.jpg" style="width:100%">
+					<p>- Nelson Mandela</p>
+				</div>
+				<div style="padding:16px">
+					<h3>Educate the youth in such a way that they can develop themselves as worthy citizens of independent Bangladesh." and "Today's generation will be the leaders of Bangladesh in the future</h3>
+					<img src="shekhhasina.jpg" style="width:100%">
+					<p>- Prime Minister Sheikh Hasina</p>
+				</div>
+				<div style="padding:16px">
+					<h3>One child, one teacher, one book, one pen canchange the world</h3>
+					<img src="th.jpg" style="width:100%">
+					<p>- Malala Yousafzai</p>
+				</div>
+			</div>
+		</body>
+	</head>
+</html>
+
+<!-----section----->
+<html>
+	<head>
+		<style>
+			.section {
+				width: 100%;
+				height: 400px;
+				background-image: url('digital.jpg');
+				background-size: cover;
+				background-position: center;
+		</style>
+	</head>
+</html>
+<!-----section---->
+<html>
+	<head>
+		<body>
+			<div>
+				<img src="ai5.jpg" style="width:100%">
+				<div style="padding:16px">
+					<h2>We provide you..</h2>
+					<h3>Technical Support</h3>
+					<p>We Provide comprehens ivetraining and development programs to help your team acquire new skills and stay up-to-date with the latesttechnologies</p>
+					<h3>Cyber Security</h3>
+					<p>Every day, the information we share online is exposed to various threats. To protect against these threats, cybersecurity experts work tirelessly. They innovate new technologies and methods that keep our information safe and thwart cybercriminals</p>
+					<h3>Marketing Assistance</h3>
+					<p>Promoting your business effectively is crucial for success.  manage social media accounts, and optimize your online presence to attract more customers and increase brand awareness</p>
+					<h3>Administrative Support</h3>
+					<p>Managing administrative tasks can be time-consuming and overwhelming. Unleash the power of DigitalDelights</p>
+				</div>
+			</div>
+		</body>
+	</head>
+</html>
+		
+<!---Section-- Mission and Vission--->
+<html>
+	<head>
+		<style>
+			.section {
+				background-color: #000000; /* ব্যাকগ্রাউন্ড কালার কালো */
+				color: #FFFFFF; /* লিখার কালার সাদা */
+				padding-top: 50px; /* উপরের প্যাডিং */
+				padding-bottom: 50px; /* নিচের প্যাডিং */
+				padding-left: 20px; /* বাম দিকের প্যাডিং */
+				padding-right: 20px; /* ডান দিকের প্যাডিং */
+			}
+			.left-align {
+				text-align: left; /* বাম দিকে সাজানো */
+			}
+			.right-align {
+				text-align: right; /* ডান দিকে সাজানো */
+			}
+			.center-align {
+				text-align: center; /* মাঝখানে সাজানো */
+			}
+			.golden-text {
+				color: #D4AF37; /* সোনালি রঙের কোড */
+				font-family: 'Times New Roman', Times, serif; /* ফন্ট সেটিং */
+			}
+			.custom-font {
+				font-family: Arial, Helvetica, sans-serif; /* অন্য একটি ফন্ট সেটিং */
+			}
+		</style>
+	</head>
+    <body>
+        <section class="section">
+            <h2 class="center-align">Mission and Vision</h2>
+            <h5 class="left-align custom-font">Our primary objective is to offer groundbreaking solutions that empower businesses to achieve success.</h5>
+            <h5>Furthermore, we are committed to creating a society where education is easily accessible to all individuals.</h5>
+            <h5>We firmly believe that every person possesses unlimited potential.</h5>
+            <h5>As a reliable partner, we are dedicated to delivering exceptional value to our esteemed clients.</h5>
+            <h5>Our ultimate vision is to become the foremost provider of cutting-edge technologies and services, enabling organizations to thrive in the digital age.</h5>
+        </section>
+    </body>
+</html>
+<!----section----->
+<html>
+	<head>
+		<body>
+			<div style="padding:16px">
+				<p>Together, we can harness the power of cutting-edge technology to elevate our educational pursuits and make a lasting impact. Let's unite in this endeavor to shape a brighter, more informed future.</p>
+		</body>
+	</head>
+</html>
+
+
+
+<!--section-->
+<html>
+	<head>
+		<body>
+			<div>
+				<img src="ai6.jpg" style="width:100%">
+			</div>
+		</body>
+	</head>
+</html>
+    
+    
+<!--Section--- Footer--->
+<html>
+	<head>
+		<style>
+			.footer {
+				background-color: #000000; /* ব্যাকগ্রাউন্ড কালার কালো */
+				color: #FFFFFF; /* লিখার কালার সাদা */
+				padding-top: 50px; /* উপরের প্যাডিং */
+				padding-bottom: 50px; /* নিচের প্যাডিং */
+				padding-left: 20px; /* বাম দিকের প্যাডিং */
+				padding-right: 20px; /* ডান দিকের প্যাডিং */
+			}
+			.left-align {
+				text-align: left; /* বাম দিকে সাজানো */
+			}
+			.right-align {
+				text-align: right; /* ডান দিকে সাজানো */
+			}
+			.center-align {
+				text-align: center; /* মাঝখানে সাজানো */
+			}
+			.golden-text {
+				color: #D4AF37; /* সোনালি রঙের কোড */
+				font-family: 'Times New Roman', Times, serif; /* ফন্ট সেটিং */
+			}
+			.custom-font {
+				font-family: Arial, Helvetica, sans-serif; /* অন্য একটি ফন্ট সেটিং */
+			}
+            .social-icons {
+                margin: 0 10px; /* প্রতিটি আইকনের মধ্যে দুরত্ব সেট করে */
+                display: inline-block; /* আইকনগুলোকে একই লাইনে রাখে */
+            }
+            .social-icons img {
+                width: 30px; /* আইকনের আকার সেট করে */
+                height: auto;
+            }
+        </style>
+	</head>
+	<head>
+		<body>
+			<div class="header">
+				<div style="padding:16px">
+					<h1>What's new</h1>
+					<p>Surface Pro</p>
+					<p>Copilot + PC</p>
+					<p>Windows 11</p>
+				</div>
+			</div>
+			<div class="header">
+				<div style="Solution'sing:16px">
+					<h1>Solutions</h1>
+					<p>Technical Consulting</p>
+					<p>System Integration</p>
+					<p>Custom Software Development</p>
+					<p>Website Builders</p>
+					<p>Domain and Hosting</p>
+					<p>Enterprise Solutions</p>
+					<p>Professional Tool's</p>
+					<p>Coding and AI</p>
+				</div>
+			</div>
+			<div class="header">
+				<div style="padding:16px">
+					<h1>Education</h1>
+					<p>Microsoft in education</p>
+					<p>Devices for education</p>
+					<p>Microsoft Teams for Education</p>
+					<p>Microsoft 365 Education</p>
+					<p>Office Education</p>
+					<p>Educator training and development</p>
+					<p>Azure for Students</p>
+				</div>
+			</div>
+			<div class="footer">
+				<h2 class="lift-align">Join us</h2>
+				<footer class="footer">
+					<a href="https://www.facebook.com/MdJaforAhmad1989/" class="social-icons"><img src="svgfcb.svg" alt="Facebook"></a>
+					<a href="https://www.twitter.com/QuranerFariwala/" class="social-icons"><img src="svgtwi.svg" alt="Twitter"></a>
+					<a href="https://www.linkedin.com/in/jafor-ahmad/" class="social-icons"><img src="svglink.svg" alt="Linkedin"></a>
+					<a href="https://www.github.com/mjahmad1/" class="social-icons"><img src="svggit.svg" alt="GitHub"></a>
+					<a href="https://www.orcid.org/0009-0008-8560-0756" class="social-icons"><img src="svgorc.svg" alt="ORCID"></a>
+					<p class="center-align">©2024 MJ-AHMAD. All right reserved.</p>
+				</footer>
+			</div>
+		</body>
+	</head>
+	<head>
+		<style>
+			.footer {
+				background-color: #f1f1f1;
+				padding: 10px;
+				text-align: center;
+			}
+			.footer a {
+				margin: 0 20px; /* মাঝখানের দূরত্ব বাড়ানোর জন্য */
+				text-decoration: none;
+				color: #000000;
+			}
+			.footer a:hover {
+				text-decoration: underline;
+			}
+			.golden-text {
+				color: #D4AF37; /* সোনালি রঙের কোড */
+				font-family: 'Times New Roman', Times, serif; /* ফন্ট সেটিং */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="footer">
+			<a href="https://www.mjahmad.com/blank-4">Contact</a>|
+			<a href="privacy.html">Privacy Policy</a>|
+			<a href="terms.html">Terms</a>
+		</div>
+	</body>
+</html>
