@@ -157,6 +157,8 @@
 		</body>
 	</head>
 </html>
+
+
 <!--section--colam-->
 <html>
 	<head>
@@ -191,6 +193,8 @@
 		</div>
 	</body>
 </html>
+
+
 <!---section--self-->
 <html>
 	<head>
@@ -279,6 +283,46 @@
 		</body>
 	</head>
 </html>
+
+
+<!--Section--slide-->
+<html>
+    <head>
+        <style>
+            .mySlides {display: none;}
+        </style>
+    </head>
+    <body>
+        <h2>Automatic Slideshow</h2>
+        <p>Change image every 2 seconds:</p>
+        <div class="mySlides">
+            <img src="img1.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="img2.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="img3.jpg" style="width:100%">
+        </div>
+        <script>
+            var myIndex = 0;
+            carousel();
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}
+                    x[myIndex-1].style.display = "block";
+                setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+            </script>
+    </body>
+<html>
+
+
 <!---Section----->
 <html>
 	<head>
