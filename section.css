@@ -1,0 +1,28 @@
+/* section.css */
+.section {
+background-color: black;
+color: white;
+padding: 20px;
+text-align: leaft;
+}
+.title {
+font-weight: bold; /* Make the title bold */
+font-size: 58px; /* Increase the font size */
+margin-bottom: 10px; /* Adjust the space between title and subtitle */
+}
+.subtitle {
+font-size: 20px;
+}
+
+/* Responsive layout for mobile devices */
+@media screen and (max-width: 600px) {
+.header {
+padding: 10px;
+}
+.title {
+font-size: 30px; /* Adjust font size for mobile devices */
+}
+.subtitle {
+font-size: 18px; /* Adjust font size for mobile devices */
+}
+}
