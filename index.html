@@ -28,8 +28,86 @@
 				<p>- Sheikh Mujibur Rahman</p>
 			</div>
 		</div>
+		<div class="section">
+			<div style="padding:16px">
+				<h2>Education is not the lerning of facts, but the training of the mind to think</h2>
+				<img src="albert.jpg" style="width:100%">
+				<p>- Albert Einstein</p>
+			</div>
+		</div>
+		<div class="section">
+			<div style="padding:16px">
+				<h2>Education is the most powerful weapon which you can use to change the world</h2>
+				<img src="th1jpg" style="width:100%">
+				<p>- Nelson Mandela</p>
+			</div>
+		</div>
+		<div class="section">
+			<div style="padding:16px">
+				<h2>Educate the youth in such a way that they can develop themselves as worthy citizens of independent Bangladesh." and "Today's generation will be the leaders of Bangladesh in the future</h2>
+				<img src="shekhhasina.jpg" style="width:100%">
+				<p>- Prime Minister Sheikh Hasina</p>
+			</div>
+		</div>
+		<div class="section">
+			<div style="padding:16px">
+				<h2>One child, one teacher, one book, one pen canchange the world</h2>
+				<img src="th.jpg" style="width:100%">
+				<p>- Malala Yousafzai</p>
+			</div>
+		</div>
 	</body>
 </html>
+
+
+<!--Section--slideshow-->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="sliders.css">
+		<body>
+			<div class="slideshow-container">
+				<div class="mySlides fade">
+					<img src="mjmodel.jpg" alt="self" width="100%" height="320">
+				</div>
+				<div class="mySlides fade">
+					<img src="mj19tola.jpg" alt="self me" width="100%" height="320">
+				</div>
+				<div class="mySlides fade">
+					<img src="mjsteker.jpg" alt="steker" width="100%" height="320">
+				</div>
+			</div>
+			<br>
+			<div style="text-align:center">
+				<span class="dot"></span>
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+			</div>
+			<script>
+				var slideIndex = 0;
+				showSlides();
+				function showSlides() {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("dot");
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					slideIndex++;
+					if (slideIndex > slides.length) {slideIndex = 1}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";
+					dots[slideIndex-1].className += " active";
+					setTimeout(showSlides, 2000); // ছবি পরিবর্তনের সময় ইন্টারভাল
+				}
+			</script>
+		</body>
+	</head>
+</html>
+
+
+
 
 
 
