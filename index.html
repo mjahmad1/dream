@@ -25,6 +25,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+.container {
+width: 100%;
+padding: 0 15px; /* Adjust the padding to push the columns a bit from the sides */
+}
+
+.column {
+float: left;
+width: 20%; /* Five columns */
+padding: 10px;
+box-sizing: border-box;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+img {
+max-width: 100%;
+height: auto;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="row">
+<div class="column">
+<p>প্যারাগ্রাফ ১</p>
+<img src="image1.jpg" alt="Image 1">
+<p>প্যারাগ্রাফ ২</p>
+</div>
+<!-- Repeat for the other four columns -->
+<div class="column">
+<p>প্যারাগ্রাফ ১</p>
+<img src="image2.jpg" alt="Image 2">
+<p>প্যারাগ্রাফ ২</p>
+</div>
+<!-- ... -->
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
 <link rel="stylesheet" type="text/css" href="footer.css">
 </head>
 <body>
