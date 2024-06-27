@@ -6,7 +6,7 @@ padding: 20px;
 text-align: center;
 }
 .title {
-font-size: 60px;
+font-size: 40px;
 margin-bottom: 10px; /* Adjust the space between title and subtitle */
 }
 .subtitle {
@@ -19,7 +19,7 @@ font-size: 20px;
 padding: 10px;
 }
 .title {
-font-size: 24px; /* Smaller font size for mobile devices */
+font-size: 35px; /* Smaller font size for mobile devices */
 }
 .subtitle {
 font-size: 16px; /* Smaller font size for mobile devices */
