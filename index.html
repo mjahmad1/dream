@@ -17,6 +17,42 @@
 		<!-- Link to the JavaScript file -->
 <script src="script.js"></script>
 	</body>
+    	<head>
+		<link rel="stylesheet" type="text/css" href="sliders.css">
+		<body>
+			<div class="slideshow-container">
+				<div class="mySlides fade">
+					<img src="mjsteker.jpg" alt="steker" width="360" height="320">
+				</div>
+			</div>
+			<br>
+			<div style="text-align:center">
+				<span class="dot"></span>
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+			</div>
+			<script>
+				var slideIndex = 0;
+				showSlides();
+				function showSlides() {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("dot");
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+					slideIndex++;
+					if (slideIndex > slides.length) {slideIndex = 1}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";
+					dots[slideIndex-1].className += " active";
+					setTimeout(showSlides, 2000); // ছবি পরিবর্তনের সময় ইন্টারভাল
+				}
+			</script>
+		</body>
+	</head>
 	<head>
 		<link rel="stylesheet" type="text/css" href="section.css">
 	</head>
@@ -57,42 +93,6 @@
 			</div>
 		</div>
 	</body>
-	<head>
-		<link rel="stylesheet" type="text/css" href="sliders.css">
-		<body>
-			<div class="slideshow-container">
-				<div class="mySlides fade">
-					<img src="mjsteker.jpg" alt="steker" width="360" height="320">
-				</div>
-			</div>
-			<br>
-			<div style="text-align:center">
-				<span class="dot"></span>
-				<span class="dot"></span> 
-				<span class="dot"></span> 
-			</div>
-			<script>
-				var slideIndex = 0;
-				showSlides();
-				function showSlides() {
-					var i;
-					var slides = document.getElementsByClassName("mySlides");
-					var dots = document.getElementsByClassName("dot");
-					for (i = 0; i < slides.length; i++) {
-						slides[i].style.display = "none";
-					}
-					slideIndex++;
-					if (slideIndex > slides.length) {slideIndex = 1}
-					for (i = 0; i < dots.length; i++) {
-						dots[i].className = dots[i].className.replace(" active", "");
-					}
-					slides[slideIndex-1].style.display = "block";
-					dots[slideIndex-1].className += " active";
-					setTimeout(showSlides, 2000); // ছবি পরিবর্তনের সময় ইন্টারভাল
-				}
-			</script>
-		</body>
-	</head>
 </html>
 
 
