@@ -1,7 +1,7 @@
 /*column.css*/
 .column {
 float: left;
-width: 50%;
+width: 30%;
 padding: 20px;
 box-sizing: border-box;
 text-align: center;
@@ -17,7 +17,7 @@ clear: both;
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other on smaller screens */
 @media screen and (max-width:100px) {
 .column {
-width: 100%;
+width: 100px;
 display: block;
 }
 }
