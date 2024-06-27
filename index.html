@@ -154,38 +154,39 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Three Column Section</title>
 		<style>
-			.container {
-				display: flex;
-			}
 			.column {
-				flex: 1;
+				float: left;
+				width: 50%;
 				padding: 20px;
+				box-sizing: border-box;
 				text-align: center;
 			}
-			.black-background {
-				background-color: black;
-				color: white;
+
+			/* Clear floats after the columns */
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
 			}
-			.white-background {
-				background-color: white;
-				color: black;
-			}
-			.pink-background {
-				background-color: pink;
-				color: black;
+			/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+			@media screen and (max-width: 600px) {
+				.column {
+					width: 100%;
+				}
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
-			<a href="indexbangla.html" class="black-background" target="_blank">বাংলা</a>
-			<a href="indexarabic.html" class="white-background" target="_blank">العربية</a>
+		<div class="row">
+			<div class="column" style="background-color:black;">
+				<a href="indexbangla.html" style="text-decoration:none; color:white;">বাংলা</a>
+			</div>
+			<div class="column" style="background-color:white;">
+				<a href="indexarabic.html" style="text-decoration:none; color:black;">العربية</a>
+			</div>
 		</div>
 	</body>
 </html>
