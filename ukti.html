@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; }
+.slideshow-container {
+width: 100%;
+position: relative;
+margin: auto;
+}
+.slide {
+display: none;
+padding: 20px;
+text-align: center;
+}
+.active {
+display: block;
+}
+.quote { font-style: italic; }
+.author { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="slide active">
+<p class="quote">"What we know is a drop, what we don't know is an ocean."</p>
+<p class="author">-Isaac Newton</p>
+</div>
+
+<div class="slide">
+<p class="quote">"If I have seen further it is by standing on the shoulders of Giants."</p>
+<p class="author">-Isaac Newton</p>
+</div>
+
+<div class="slide">
+<p class="quote">"To every action there is always opposed an equal reaction."</p>
+<p class="author">-Isaac Newton</p>
+</div>
+
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+var i;
+var slides = document.getElementsByClassName("slide");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";  
+}
+slideIndex++;
+if (slideIndex > slides.length) {slideIndex = 1}    
+slides[slideIndex-1].style.display = "block";  
+setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; }
+.slideshow-container {
+width: 100%;
+position: relative;
+margin: auto;
+background-color: black;
+}
+.slide {
+display: none;
+padding: 20px;
+text-align: center;
+color: white;
+}
+.active {
+display: block;
+}
+.quote { font-style: italic; font-weight: bold; }
+.author { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="slide active">
+<p class="quote">"What we know is a drop, what we don't know is an ocean."</p>
+<p class="author">-Isaac Newton</p>
+</div>
+
+<div class="slide">
+<p class="quote">"If I have seen further it is by standing on the shoulders of Giants."</p>
+<p class="author">-Isaac Newton</p>
+</div>
+
+<div class="slide">
+<p class="quote">"To every action there is always opposed an equal reaction."</p>
+<p class="author">-Isaac Newton</p>
+</div>
+
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+var i;
+var slides = document.getElementsByClassName("slide");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";  
+}
+slideIndex++;
+if (slideIndex > slides.length) {slideIndex = 1}    
+slides[slideIndex-1].style.display = "block";  
+setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+</body>
+</html>
