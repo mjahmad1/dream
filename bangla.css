@@ -1,7 +1,7 @@
 /* বাংলা ভাষার জন্য CSS */
 body {
 direction: ltr; /* টেক্সট বাম দিক থেকে শুরু হবে */
-font-family: 'SolaimanLipi', 'Kalpurush', sans-serif; /* বাংলা ফন্ট */
+font-family: 'Galada', 'Tiro Bangla', sans-serif; /* বাংলা ফন্ট */
 }
 
 /* শিরোনামের জন্য স্টাইল */
