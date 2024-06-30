@@ -76,6 +76,69 @@ font-family: 'Tiro Bangla', sans-serif; /* Tiro Bangla ফন্ট ব্যব
 </html>
 </section>
 
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; }
+.slideshow-container {
+width: 100%;
+position: relative;
+margin: auto;
+}
+.slide {
+display: none;
+padding: 20px;
+text-align: center;
+}
+.active {
+display: block;
+}
+.quote { font-style: italic; }
+.author { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="slide active">
+<p class="quote">"আমাদের ভিক্ষুক জাতি না হয়ে উৎপাদনশীল জাতি হওয়া উচিত"</p>
+<p class="author">-বঙ্গবন্ধু শেখ মুজিবুর রহমান</p>
+</div>
+
+<div class="slide">
+<p class="quote">"আজকের প্রজন্ম ভবিষ্যতে বাংলাদেশের নেতৃত্ব দেবে"</p>
+<p class="author">-প্রধানমন্ত্রী শেখ হাসিনা</p>
+</div>
+
+<div class="slide">
+<p class="quote">"আমি চাই বাংলার মানুষের মুক্তি। শোষণের মুক্তি। বাংলার মানুষের মুখে হাসি ফোটানোর জন্য বঙ্গবন্ধু সংগ্রাম করেছিলেন"</p>
+<p class="author">-প্রধানমন্ত্রী শেখ হাসিনা</p>
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+var i;
+var slides = document.getElementsByClassName("slide");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";  
+}
+slideIndex++;
+if (slideIndex > slides.length) {slideIndex = 1}    
+slides[slideIndex-1].style.display = "block";  //
+setTimeout(showSlides, 3000); // Change image every 4 seconds
+}
+</script>
+
+</body>
+</html>    
+    
 <footer>
 <p>এখানে আপনার ফুটারের কন্টেন্ট যোগ করুন।</p>
 </footer>
