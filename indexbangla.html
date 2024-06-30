@@ -44,31 +44,6 @@ padding: 20px;
 font-family: 'Tiro Bangla', sans-serif; /* Tiro Bangla ফন্ট ব্যবহার */
 }
 </style>
-	<style>
-		<style>
-.centered-column {
-text-align: center;
-background-color: white;
-padding: 20px;
-}
-
-.centered-column a {
-background-color: black;
-color: #FFA500; /* কমলালেবু রঙের জন্য হেক্স কোড */
-text-decoration: none; /* লিংকের নিচে দাগ থাকবে না */
-padding: 10px;
-margin: 10px; /* শব্দ দুটির মাঝখানে ফাকা থাকবে */
-display: inline-block; /* শব্দ দুটি আলাদা বুঝা যাবে */
-}
-
-/* সেকশনের দুই পাশে খালি রাখতে ফ্লেক্সবক্স ব্যবহার করা হয়েছে */
-.container {
-display: flex;
-justify-content: center;
-background-color: white;
-min-height: 100vh; /* পুরো ভিউপোর্ট জুড়ে সেকশন থাকবে */
-}
-</style>
 </head>
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
@@ -90,16 +65,51 @@ min-height: 100vh; /* পুরো ভিউপোর্ট জুড়ে স�
 	</body>
 </html>
 
+<!DOCTYPE html>
 <html>
-	<body>
-		<div class="container">
-			<div class="centered-column">
-				<a href="bangla.html">বাংলা</a>
-				<a href="english.html">English</a>
-			</div>
-		</div>
-	</body>
+<head>
+<style>
+/* এই স্টাইলটি শুধুমাত্র unique-section ক্লাসের জন্য প্রযোজ্য হবে */
+.unique-section {
+display: flex;
+justify-content: center;
+background-color: white;
+min-height: 100vh;
+}
+
+.unique-section .centered-column {
+background-color: black;
+color: #FFA500; /* কমলালেবু রঙের জন্য হেক্স কোড */
+text-decoration: none; /* লিংকের নিচে দাগ থাকবে না */
+padding: 10px;
+margin: 10px; /* শব্দ দুটির মাঝখানে ফাকা থাকবে */
+display: inline-block; /* শব্দ দুটি আলাদা বুঝা যাবে */
+}
+
+/* অন্যান্য সেকশনের উপর প্রভাব না ফেলার জন্য স্পেসিফিক সেলেক্টর ব্যবহার করা হয়েছে */
+.unique-section a {
+background-color: black;
+color: #FFA500;
+text-decoration: none;
+padding: 10px;
+margin: 10px;
+display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<div class="unique-section">
+<div class="centered-column">
+<a href="bangla.html">বাংলা</a>
+<a href="english.html">English</a>
+</div>
+</div>
+
+</body>
 </html>
+
+
 <!--section-->
 <html>
 	<head>
