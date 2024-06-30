@@ -1,0 +1,38 @@
+/* হেডার স্টাইল */
+header {
+text-align: center;
+background-color: black;
+color: white;
+font-family: 'Galada', sans-serif;
+}
+
+/* হেডারের টাইটেল ও সাব-টাইটেল স্টাইল */
+header h1 {
+font-family: 'Galada', sans-serif;
+}
+
+header h2 {
+font-family: 'Tiro Bangla', sans-serif;
+}
+
+/* সেকশন স্টাইল */
+section {
+text-align: left;
+background-color: white;
+color: black;
+font-family: 'Tiro Bangla', sans-serif;
+}
+
+/* সেকশনের টাইটেল ও সাব-টাইটেল স্টাইল */
+section h1 {
+font-family: 'Galada', sans-serif;
+}
+
+section h2,
+section p {
+font-family: 'Tiro Bangla', sans-serif;
+}
+
+এই CSS ফাইলটি আপনার HTML ফাইলের <head> ট্যাগের মধ্যে লিঙ্ক করতে হবে। যেমন:
+
+<link rel="stylesheet" type="text/css" href="path_to_your_stylesheet.css">
