@@ -3,16 +3,16 @@ header {
 text-align: center;
 background-color: black;
 color: white;
-font-family: 'Galada', sans-serif;
+font-family: 'Galada';
 }
 
 /* হেডারের টাইটেল ও সাব-টাইটেল স্টাইল */
 header h1 {
-font-family: 'Galada', sans-serif;
+font-family: 'Galada';
 }
 
 header h2 {
-font-family: 'Tiro Bangla', sans-serif;
+font-family: 'Tiro Bangla';
 }
 
 /* সেকশন স্টাইল */
