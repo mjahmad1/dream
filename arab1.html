@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Arabic Website Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Amiri', serif;
+direction: rtl;
+text-align: right;
+}
+h1, h2, h3, h5, p {
+text-align: center;
+}
+.bismillah {
+font-size: 32px;
+border: 2px solid #000;
+display: inline-block;
+padding: 20px;
+margin-top: 20px;
+border-radius: 20px;
+background-color: #f2f2f2;
+}
+.ayah {
+position: relative;
+padding-right: 30px; /* Space for waqf sign */
+}
+.ayah::after {
+content: '';
+position: absolute;
+right: 0;
+top: 0;
+font-size: 24px;
+}
+</style>
+</head>
+<body>
+
+<h1>بسم الله الرحمن الرحيم</h1>
+<div class="bismillah">بسم الله الرحمن الرحيم</div>
+
+<p class="ayah">إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ</p>
+<p class="ayah">وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ</p>
+<!-- Add more ayahs here -->
+
+</body>
+</html>
