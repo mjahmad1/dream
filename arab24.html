@@ -444,3 +444,75 @@ margin-top: 20px; /* Space above the paragraph */
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<!-- Existing styles... -->
+<style>
+/* Donation Section Styles */
+.donation-section {
+background-color: #f7f7f7; /* Light grey background */
+padding: 40px; /* Padding around the donation section */
+text-align: center; /* Center align the content */
+}
+
+.donation-options {
+margin: 20px auto; /* Center the options */
+display: flex; /* Use flexbox for layout */
+justify-content: center; /* Center the items horizontally */
+gap: 20px; /* Space between the items */
+}
+
+.donation-button {
+padding: 10px 20px; /* Padding inside the button */
+font-size: 1em; /* Font size for the button text */
+cursor: pointer; /* Cursor style when hovering over the button */
+border: none; /* No border for the button */
+background-color: #008CBA; /* Blue background for the button */
+color: white; /* White text for the button */
+}
+
+/* Responsive styles... */
+</style>
+</head>
+<body>
+<!-- Existing content... -->
+<!-- Donation Section -->
+<div class="donation-section">
+<h2>تبرع الآن</h2>
+<div class="donation-options">
+<button class="donation-button" data-amount="200">200 Tk</button>
+<button class="donation-button" data-amount="500">500 Tk</button>
+<button class="donation-button" data-amount="1000">1000 Tk</button>
+</div>
+<button id="donateNow" class="donation-button">Donate Now</button>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// Initialize Stripe with your publishable key
+var stripe = Stripe('pk_test_51NSjLzHI6KpMDN4wCyCp6BsIXUIppX284VFnQmyln0GP8GxR0isD6uzBZVGCCl14l6rpud2QVffXQZMuZe6aYJ7F00hfCpDvBk');
+
+// Handle the donation button click
+document.getElementById('donateNow').addEventListener('click', function() {
+// You can customize this part to redirect to your Stripe checkout page
+// For now, it just logs the selected amount to the console
+var selectedAmount = document.querySelector('.donation-button[data-amount].selected')?.getAttribute('data-amount') || '200';
+console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+// Redirect to Stripe checkout page
+// stripe.redirectToCheckout({ ... });
+});
+</script>
+<!-- Existing content... -->
+</body>
+</html>
