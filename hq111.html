@@ -332,6 +332,39 @@ font-size: 1.2em;
 	</head>
 </html>
 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* প্রথম দুই প্যারাগ্রাফের জন্য 10px ফাঁকা */
+p:nth-child(1), p:nth-child(2) {
+margin-bottom: 10px;
+}
+
+/* তৃতীয় প্যারাগ্রাফের জন্য 20px ফাঁকা */
+p:nth-child(3) {
+margin-bottom: 20px;
+}
+
+/* প্রতি দুই প্যারাগ্রাফের পর পর 20px ফাঁকা */
+p:nth-child(odd):not(:first-child) {
+margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+<section>
+<p>প্যারাগ্রাফ ১</p>
+<p>প্যারাগ্রাফ ২</p>
+<p>প্যারাগ্রাফ ৩</p>
+<!-- এভাবে বাকি প্যারাগ্রাফগুলো যোগ করুন -->
+</section>
+
+</body>
+</html>
+
+
 <html>
     <head>
         <body>
