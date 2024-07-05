@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Reem+Kufi+Ink&family=Reem+Kufi+Fun&display=swap');
+body {
+margin: 0;
+padding: 0;
+font-family: 'Reem Kufi Ink', serif; /* Default font for the body */
+background-color: white;
+color: black;
+direction: rtl; /* Right-to-left layout */
+}
+.header {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+.header h1 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+.header p {
+font-family: 'Reem Kufi Ink', serif; /* Specific font for the subtitle */
+margin: 0;
+font-size: 1.5em;
+white-space: nowrap; /* Ensures the subtitle is on one line */
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.welcome-section {
+width: 100%;
+height: auto;
+text-align: center;
+}
+.welcome-section img {
+max-width: 100%;
+height: auto;
+}
+.profile-section {
+padding: 20px 30px; /* Padding around the text */
+}
+.profile-section p {
+margin: 20px 0; /* Margin between paragraphs */
+font-family: 'Reem Kufi Ink', sans-serif; /* Specific font for the profile section */
+position: relative; /* Added for emoji alignment */
+padding-right: 40px; /* Added space for emoji */
+}
+/* Emoji styles */
+.emoji {
+position: absolute; /* Changed to absolute */
+right: 10px; /* Aligns emoji to the right */
+top: 0; /* Aligns emoji to the top of the paragraph */
+width: 24px; /* Sets the emoji image width */
+height: auto; /* Maintains the aspect ratio of the emoji image */
+}
+/* New Section Styles */
+.new-section {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+    .new-section-1 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+    .new-section-2 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-2 {
+background-color: black;
+color: white;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-2 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-2 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-2 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-2 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-2 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-2 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+        .new-section-3 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-3 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-3 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-3 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-3 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-3 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-3 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-3 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+
+        .new-section-4 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-4 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-4 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-4 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-4 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-4 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-4 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-4 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+        .new-section-5 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-5 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-5 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-5 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-5 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-5 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-5 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-5 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+
+/* Additional styles for the new column */
+.column {
+background-color: black; /* Black background for the column */
+color: white; /* White text for contrast */
+margin: 0 auto; /* Center the column */
+width: 80%; /* Width of the column */
+padding: 20px; /* Padding inside the column */
+font-family: 'Reem Kufi Ink', sans-serif; /* Using the header font for consistency */
+}
+/* Center the text inside the column */
+.column p {
+color: white; /* White text for contrast */
+text-align: center; /* Center the text */
+font-size: 2.5em; /* Larger font size for the title */
+font-weight: bold; /* Bold font weight for the title */
+}
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2em;
+}
+.header p {
+font-size: 1.2em;
+}
+}
+</style>
+    <style>
+        .new-section-2 a {
+            text-decoration: none;
+        }
+        .new-section-3 a {
+            text-decoration: none;
+        }
+        .new-section-4 a {
+            text-decoration: none;
+        }
+        .new-section-5 a {
+            text-decoration: none;
+        }
+        </style>
+</head>
+<body>
+<div class="header">
+	<h1>رحلة القرآن</h1>
+	<p>لخدمة كلام الرحمن</p>
+</div>
+<div class="welcome-section">
+<img src="mjsteker.jpg" alt="Welcome Image">
+    <div class="new-section-3">
+    <h4>بقيادة</h4>
+    <h1> محمد جعفر أحمد</h1>
+</div>
+    <div class="new-section-5">
+                <h3> بن معين الدين بن يوسف بن سادت علي</h3>
+            </div>
+</div>
+<div class="profile-section">
+<p><img src="emojieesptal1.png" class="emoji" alt="emoji">طالب متحمس ومروج للتقدم التكنولوجي والتعليم في بنغلاديش،</p>
+<p><img src="emojircccs2.png" class="emoji" alt="emoji">لدي خبرة عميقة في ترميز حلول الحوسبة السحابية،</p>
+<p><img src="emojirwibw1.png" class="emoji" alt="emoji">أعمل على تحسين مهاراتي و بناء قوة عاملة ماهرة,</p>
+<p><img src="emojirpcid4.png" class="emoji" alt="emoji">️كمطور في منتدى مطوري شركة بلاد المتحدة "لندن"، يعكس دوري مهاراتي المهنية والتزامي بالابتكار,</p>
+<p><img src="emojicpsetmlda4.png" class="emoji" alt="emoji">أمارس باستمرار الابتكار وتعزيز المهارات من خلال تكنولوجيا الذكاء الاصطناعي وتعلم الآلة وتحليل البيانات،</p>
+</div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="new-section-4">
+	<h2>رحلة القرآن</h2>
+	<h3> ، مشعل النور في درب الزمان</h3>
+	<h3>موقعٌ للحكمة، للآيات صدى الأكوان</h3>
+	<h3>كل آيةٍ فيه، لؤلؤةٌ من بحر الإيمان</h3>
+	<h3></h3>
+	<h3>يهدي للطلاب، لغير العرب، معاني القرآن،</h3>
+	<h3>ليفهموا الأسرار، ويعيشوا القرآن بكل أمان.</h3>
+	<h3>موقعٌ للتلاوة، للبحث، لكشف الألحان.</h3>
+	<h3></h3>
+	<h3>جهدٌ نبيلٌ، ينشر الخير لكل إنسان،</h3>
+	<h3>يُدار بحكمة، بقيادة جعفر، العنوان.</h3>
+	<h3>لله وحده، للروح سلام، ليس للأموال مكان.</h3>
+	<h3></h3>
+	<h3>مهمة السكينة، للإنسانية خدمةٌ وإحسان،</h3>
+	<h3>ضد التجارة بالقدسية، رسالةٌ وبيان.</h3>
+	<h3>يستمر جعفر وفريقه، بنشر القرآن،</h3>
+	<h3>لكل أركان الأرض، بلا حدودٍ أو أوان."</h3>
+
