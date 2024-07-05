@@ -808,6 +808,938 @@ display: block;
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Linked Dropdown Menu</title>
+<style>
+/* Your CSS styles go here */
+</style>
+</head>
+<body>
+
+<div class="dropdown">
+<button class="dropbtn">إفتح القائمة</button>
+<div class="dropdown-content">
+<div class="sub-dropdown">
+<a href="#">الرئيسية +</a>
+<div class="sub-dropdown-content">
+<a href="example.html">من نحن</a>
+<a href="example.html">المكتبة</a>
+<!-- Add more sub-menu items with links to example.html here -->
+</div>
+</div>
+<!-- Add more main menu items with sub-menus and links to example.html here -->
+</div>
+</div>
+
+<script>
+// JavaScript code to toggle menu text and handle sub-menu dropdowns
+</script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Advanced Dropdown Menu</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+}
+.dropdown {
+position: relative;
+display: inline-block;
+}
+.dropdown-content, .sub-dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+.dropdown-content a, .sub-dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+.dropdown-content a:hover, .sub-dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {display: block;}
+.sub-dropdown:hover .sub-dropdown-content {display: block;}
+.dropdown:hover .dropbtn, .sub-dropdown:hover .sub-dropbtn {background-color: #3e8e41;}
+.sub-dropdown {
+position: relative;
+display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<div class="dropdown">
+<button class="dropbtn">إفتح القائمة</button>
+<div class="dropdown-content">
+<div class="sub-dropdown">
+<a href="#">الرئيسية +</a>
+<div class="sub-dropdown-content">
+<a href="#">من نحن</a>
+<a href="#">المكتبة</a>
+<!-- Add more sub-menu items here -->
+</div>
+</div>
+<!-- Add more main menu items with sub-menus here -->
+</div>
+</div>
+
+<script>
+// JavaScript code to toggle menu text and handle sub-menu dropdowns
+</script>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Dropdown Menu</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+}
+.dropdown {
+position: relative;
+display: inline-block;
+}
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+</head>
+<body>
+
+<div class="dropdown">
+<button class="dropbtn">إفتح القائمة</button>
+<div class="dropdown-content">
+<a href="#">الرئيسية</a>
+<a href="#">القرآن</a>
+<a href="#">تدوين المصحف</a>
+<a href="#">القراءات والسند</a>
+<a href="#">الحروف والأصوات</a>
+<a href="#">مخارج الحروف</a>
+<a href="#">سالام العمر</a>
+<a href="#">علاقة الحروف</a>
+<a href="#">الوقف</a>
+<a href="#">متون التجويد</a>
+</div>
+</div>
+
+<script>
+document.querySelector('.dropbtn').onclick = function() {
+var menuText = this.innerHTML;
+this.innerHTML = menuText == 'إفتح القائمة' ? 'أغلق القائمة' : 'إفتح القائمة';
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>آداب تلاوة القرءان الكريم</title>
+<style>
+body {
+direction: rtl;
+font-family: 'Amiri', serif;
+font-size: 1.2em;
+line-height: 1.6;
+background-color: #f5f5f5;
+color: #333;
+padding: 20px;
+}
+h1 {
+text-align: center;
+margin-bottom: 20px;
+}
+p {
+text-indent: 24px;
+}
+.ayah {
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>آداب تلاوة القرءان الكريم</h1>
+<p><span class="ayah">﴿إِنَّهُۥ لَقُرۡءَانٞ كَرِيمٞ 77 فِي كِتَٰبٖ مَّكۡنُونٖ 78 لَّا يَمَسُّهُۥٓ إِلَّا ٱلۡمُطَهَّرُونَ﴾</span> [الواقعة: 77-79]</p>
+<!-- ... other ayahs and their references ... -->
+<p><span class="ayah">﴿وَإِذَا قُرِئَ ٱلۡقُرۡءَانُ فَٱسۡتَمِعُواْ لَهُۥ وَأَنصِتُواْ لَعَلَّكُمۡ تُرۡحَمُونَ﴾</span> [الأعراف: 204]</p>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>أساليب القراءة غير الجائزة</title>
+<style>
+body {
+direction: rtl;
+font-family: 'Amiri', serif;
+font-size: 1.2em;
+line-height: 1.6;
+background-color: #f5f5f5;
+color: #333;
+padding: 20px;
+}
+h1 {
+text-align: center;
+margin-bottom: 20px;
+}
+p {
+text-indent: 24px;
+}
+</style>
+</head>
+<body>
+<h1>أساليب القراءة غير الجائزة</h1>
+<p>لابد من الإلتزام بأحكام التلاوة عند قراءة القرءان دون إفراط أو تكلف، وقد نبه العلماء على ما ابتدعه الناس في قراءة القرءان بنغم شجي يتردد فيه الصوت تردد الوقع الموسيقي والعزف على آلات الطرب، والتي تنقسم إلى ما يلي:</p>
+<ul>
+<li><strong>الترجيع:</strong> تمويج الصوت أثناء القراءة، وخاصة في المد وذلك برفع الصوت ثم خفضه بشكل متكرر في المد الواحد.</li>
+<li><strong>الترقيص:</strong> أن يروم السكوت على الساكن ثم ينقر مع الحركة كأنه في عدْو أو هرولة.</li>
+<li><strong>التطريب:</strong> ملامسة قراءة القارئ لطبوع الموسيقى والطرب بأي وجه من المقامات غير الخاصة بلحون العرب وأصواتها.</li>
+<li><strong>التحزين:</strong> أن يقرأ القارئ بهيئة حزينة اصطناعًا منه ليوهم السامع أنه يبكي من الخشوع.</li>
+<li><strong>الترعيد:</strong> أن يجعل القارئ صوته يرتعد وذلك باهتزاز أحباله الصوتية.</li>
+<li><strong>التحريف:</strong> أن يجتمع أكثر من قارئ ويقرؤون بصوت واحد فيقطع بعضهم القراءة بأن يأتي ببعض الكلمة ويأتي الباقون ببعضها الآخر.</li>
+<li><strong>الهذرمة:</strong> سرعة القراءة بشكل يفقد القراءة فهم حروفها وكلماتها.</li>
+<li><strong>الترديد:</strong> رد الجماعة على القارئ في ختام قراءته بلحن.</li>
+</ul>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>قصيدة</title>
+<style>
+body {
+direction: rtl;
+font-family: 'Amiri', serif;
+font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+<div>
+<p>أَيَا قَـــــارِئَ القُــــرْآنِ أَحْسِـــــنْ أَدَاءَهُ … يُضَاعِــفْ لَكَ اللهُ الجَزِيلَ مِنَ الأجْــرٍ</p>
+<p>فَمَا كُـــلُّ مَـنْ يَتْلُـــو الكِتَـــابَ يُقِيمُـــهُ … وَلا كُلُّ مَــنْ في النَّاسِ يُقْرِئُهُمْ مُقْرِي</p>
+<p>وإِنَّ لَنَــا أَخْـــــذَ القِـــــرَاءَةِ سُنَّـــــــةً … عَنْ الأَوَّلِيـــنَ المُقْرِئِيــــنَ ذَوِى السِّتْرِ</p>
+<p>فَلِلسَّبْعَـــةِ القُــــرْاءِ حَــقٌّ عَلَى الوَرَى …  لإِقْرَائِهِـــمْ قُـــــرْآنَ رَبِّهُــــمُ لِلْوِتْــــرِ</p>
+</div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المقدمة الجزرية</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: right;
+margin-top: 50px;
+}
+.poetry-section {
+margin-right: 20px;
+padding: 20px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+}
+h2 {
+color: #0051a2;
+}
+.poem {
+font-size: 1.2em;
+color: #555;
+margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+
+<div class="poetry-section">
+<h2>المقدمة الجزرية للإمام ابن الجزري</h2>
+<p class="poem">
+(وَبَـعْــــدُ) إِنَّ هَــــــذِهِ مُـقَـدِّمَــــهْ … فِيـمَـا عَـلَـــى قَـارِئِـــهِ أَنْ يَعْـلَـمَــهْ<br>
+إذْ وَاجِـــــبٌ عَلَـيْـهِـــمُ مُـحَـتَّــــمُ … قَـبْـــلَ الـشُّـــرُوعِ أَوَّلاً أَنْ يَعْـلَـمُـوا<br>
+مَـخَـارِجَ الْـحُــرُوفِ وَالـصِّـفَـاتِ … لِيَلْـفِـظُــــوا بِـأَفْـصَــــحِ الـلُّـغَـــاتِ<br>
+مُـحَـرِّرِي التَّـجْـوِيـدِ وَالمَـــوَاقِـفِ … وَمَـا الَّـذِي رُسِّـمَ فِـي المَصَـاحِـفِ<br>
+مِـنْ كُـلِّ مَقْطُـوعٍ وَمَوْصُولٍ بِـهَـا … وَتَـــاءِ أُنْثَـى لَـمْ تَكُـنْ تُكْـتَـبْ بِّـهَـا
+</p>
+</div>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الشاطبية</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: right;
+margin-top: 50px;
+}
+.poetry-section {
+margin-right: 20px;
+padding: 20px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+}
+h2 {
+color: #0051a2;
+}
+.poem {
+font-size: 1.2em;
+color: #555;
+margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+
+<div class="poetry-section">
+<h2>الشاطبية للإمام الشاطبي</h2>
+<p class="poem">
+وَبَعْــدُ فَحَبْــــلُ اللـــهِ فِينَا كِتَابُــــــهُ … فَجَاهِـــدْ بِــــهِ حِبْلَ الْعِدَا مُتَحَبِّلاَ<br>
+وَأَخْلِــــــقْ بـــهِ إذْ لَيْسَ يَخْلُــقُ جِدَّةً … جَدِيداً مُوَاليــــهِ عَلَـى الْجِدِّ مُقْبِلاَ<br>
+وَقَارِئُــــــهُ الْمَرْضِـــــيُّ قَـــرَّ مِثَالُهُ … كاَلاتْــرُجّ حَالَيْــهِ مُرِيحًا وَمُوكَلاَ<br>
+هُوَ الْمُرْتَضَـــــــــى أَمًّا إِذَا كَانَ أُمَّهً … وَيَمَّمَـــهُ ظِـلُّ الرَّزَانَــــةِ قَنْقَـــلاَ<br>
+هُوَ الْحُــرُّ إِنْ كانَ الْحَـــرِيّ حَوَارِياً … لَــــهُ بِتَحَـــرّيهِ إلَـــى أَنْ تَنَبَّـــلاَ<br>
+وَإِنَّ كِتَــــــابَ اللـــــــــهِ أَوْثَقُ شَافِعٍ … وَأَغْنـى غَنَـــاءً وَاهِبـــاً مُتَفَضِّلاَ<br>
+وَخَيْــــرُ جَلِيـسٍ لاَ يُمَـــــلُّ حَدِيثُـــهُ … وَتَرْدَادُهُ يَزْدَادُ فِيــــــهِ تَجَمُّــــلاً<br>
+وَحَيْثُ الْفَتى يَرْتَاعُ فــــيِ ظُلُمَاتِــــهِ … مِــــنَ اْلقَبـــرِ يَلْقَـــاهُ سَناً مُتَهَلِّلاً<br>
+هُنَالِكَ يَهْنِيــــهِ مَقِيــــلاً وَرَوْضَـــــةً … وَمِنْ أَجْلِهِ فِي ذِرْوَةِ الْعِزّ يجتُلَى<br>
+يُنَاشِـــدُه فــــي إرْضَائِـــــهِ لحبِيِبِــهِ … وَأَجْـدِرْ بِهِ سُــؤْلاً إلَيْـهِ مُوَصَّلاَ<br>
+فَيَــا أَيُّهَــا الْقَـــارِى بِــــهِ مُتَمَسِّكـــاً … مُجِلاًّ لَــهُ فِـــي كُـلِّ حَالٍ مُبَجِّلا<br>
+هَنِيئـــاً مَرِيئـــاً وَالِــــدَاكَ عَلَيْهِمـــا … مَلاَبِسُ أَنْـوَأرٍ مِـنَ التَّاجِ وَالحُلاْ<br>
+فَما ظَنُّكُــــمْ بالنَّجْـــلِ عِنْــــدَ جَزَائِهِ … أُولئِكَ أَهْـــلُ اللهِ والصَّفَوَةُ المَلاَ<br>
+أُولُو الْبِرِّ وَالْإِحْسَانِ وَالصَّبْرِ وَالتُّقَى … حُلاَهُمُ بِهَا جَـــاءَ الْقُرَانُ مُفَصَّلاَ<br>
+عَلَيْـــــكَ بِهَا مَا عِشْــــتَ فِيهَا مُنَافِساً … وَبِـعْ نَفْسَــكَ الدُّنْيَا بِأَنْفَاسِهَا الْعُلاَ
+</p>
+</div>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الشاطبية</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: right;
+margin-top: 50px;
+}
+.poetry-section {
+margin-right: 20px;
+padding: 20px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+}
+h2 {
+color: #0051a2;
+}
+.poem {
+font-size: 1.2em;
+color: #555;
+margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+
+<div class="poetry-section">
+<h2>الشاطبية للإمام الشاطبي</h2>
+<p class="poem">
+وَبَعْــدُ فَحَبْــــلُ اللـــهِ فِينَا كِتَابُــــــهُ … فَجَاهِـــدْ بِــــهِ حِبْلَ الْعِدَا مُتَحَبِّلاَ<br>
+وَأَخْلِــــــقْ بـــهِ إذْ لَيْسَ يَخْلُــقُ جِدَّةً … جَدِيداً مُوَاليــــهِ عَلَـى الْجِدِّ مُقْبِلاَ<br>
+وَقَارِئُــــــهُ الْمَرْضِـــــيُّ قَـــرَّ مِثَالُهُ … كاَلاتْــرُجّ حَالَيْــهِ مُرِيحًا وَمُوكَلاَ<br>
+...<br>
+عَلَيْـــــكَ بِهَا مَا عِشْــــتَ فِيهَا مُنَافِساً … وَبِـعْ نَفْسَــكَ الدُّنْيَا بِأَنْفَاسِهَا الْعُلاَ
+</p>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من السنة</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: right;
+margin-top: 50px;
+}
+.hadith-section {
+margin-right: 20px;
+padding: 20px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+}
+h2 {
+color: #0051a2;
+}
+.hadith {
+font-size: 1.2em;
+color: #555;
+margin-bottom: 15px;
+}
+.reference {
+font-size: 0.8em;
+color: #777;
+}
+</style>
+</head>
+<body>
+
+<div class="hadith-section">
+<h2>من السنة</h2>
+<p class="hadith">“مَثَلُ المُؤْمِنِ الذي يَقْرَأُ القُرْآنَ كَمَثَلِ الأُتْرُجَّةِ...” <span class="reference">[البخاري: 5111]</span></p>
+<p class="hadith">“ما اجتَمَعَ قَومٌ في بَيتٍ مِن بُيوتِ اللهِ تَعالى يَتلونَ كِتابَ اللهِ...” <span class="reference">[مسلم: 2699]</span></p>
+<p class="hadith">“يُقالُ لصاحِبِ القرآنِ اقرأ وارتَقِ ورتِّل كما كنتَ ترتِّلُ في الدُّنيا...” <span class="reference">[أبو داود: 1464]</span></p>
+<p class="hadith">“الْماهِرُ بالقُرْآنِ مع السَّفَرَةِ الكِرامِ البَرَرَةِ...” <span class="reference">[مسلم: 798]</span></p>
+<p class="hadith">“منْ قرأَ حرفًا من كتابِ اللهِ فله به حسنةٌ...” <span class="reference">[الترمذي: 2910]</span></p>
+<p class="hadith">“... إنَّ اللهَ تعالى يَرفَعُ بهذا الكِتابِ أَقوامًا...” <span class="reference">[مسلم: 817]</span></p>
+<p class="hadith">“لا حسدَ إلا في اثنتَينِ...” <span class="reference">[البخاري: 4738]</span></p>
+<p class="hadith">“مَنْ قامَ بِعَشْرِ آياتٍ لمْ يُكْتَبْ مِنَ الغَافِلِينَ...” <span class="reference">[أبو داود: 1398]</span></p>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من القرآن</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: right;
+margin-top: 50px;
+}
+.quran-section {
+margin-right: 20px;
+padding: 20px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+}
+h2 {
+color: #0051a2;
+}
+.ayah {
+font-size: 1.2em;
+color: #555;
+margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+
+<div class="quran-section">
+<h2>من القرآن</h2>
+<p class="ayah">﴿ٱلَّذِينَ ءَاتَيۡنَٰهُمُ ٱلۡكِتَٰبَ يَتۡلُونَهُۥ حَقَّ تِلَاوَتِهِۦٓ أُوْلَٰٓئِكَ يُؤۡمِنُونَ بِهِۦۗ وَمَن يَكۡفُرۡ بِهِۦ فَأُوْلَٰٓئِكَ هُمُ ٱلۡخَٰسِرُونَ﴾ [البقرة: 121]</p>
+<p class="ayah">﴿لَيۡسُواْ سَوَآءٗۗ مِّنۡ أَهۡلِ ٱلۡكِتَٰبِ أُمَّةٞ قَآئِمَةٞ يَتۡلُونَ ءَايَٰتِ ٱللَّهِ ءَانَآءَ ٱلَّيۡلِ وَهُمۡ يَسۡجُدُونَ 113 يُؤۡمِنُونَ بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِ وَيَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَيَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِ وَيُسَٰرِعُونَ فِي ٱلۡخَيۡرَٰتِۖ وَأُوْلَٰٓئِكَ مِنَ ٱلصَّٰلِحِينَ﴾ [آل عمران: 113-114]</p>
+<p class="ayah">﴿ٱلَّذِينَ ءَاتَيۡنَٰهُمُ ٱلۡكِتَٰبَ مِن قَبۡلِهِۦ هُم بِهِۦ يُؤۡمِنُونَ 52 وَإِذَا يُتۡلَىٰ عَلَيۡهِمۡ قَالُوٓاْ ءَامَنَّا بِهِۦٓ إِنَّهُ ٱلۡحَقُّ مِن رَّبِّنَآ إِنَّا كُنَّا مِن قَبۡلِهِۦ مُسۡلِمِينَ 53 أُوْلَٰٓئِكَ يُؤۡتَوۡنَ أَجۡرَهُم مَّرَّتَيۡنِ بِمَا صَبَرُواْ وَيَدۡرَءُونَ بِٱلۡحَسَنَةِ ٱلسَّيِّئَةَ وَمِمَّا رَزَقۡنَٰهُمۡ يُنفِقُونَ﴾ [القصص: 52-54]</p>
+<p class="ayah">﴿إِنَّ ٱلَّذِينَ يَتۡلُونَ كِتَٰبَ ٱللَّهِ وَأَقَامُواْ ٱلصَّلَوٰةَ وَأَنفَقُواْ مِمَّا رَزَقۡنَٰهُمۡ سِرّٗا وَعَلَانِيَةٗ يَرۡجُونَ تِجَٰرَةٗ لَّن تَبُورَ 29 لِيُوَفِّيَهُمۡ أُجُورَهُمۡ وَيَزِيدَهُم مِّن فَضۡلِهِۦٓۚ إِنَّهُۥ غَفُورٞ شَكُورٞ﴾ [فاطر: 29-30]</p>
+<p class="ayah">﴿ٱللَّهُ نَزَّلَ أَحۡسَنَ ٱلۡحَدِيثِ كِتَٰبٗا مُّتَشَٰبِهٗا مَّثَانِيَ تَقۡشَعِرُّ مِنۡهُ جُلُودُ ٱلَّذِينَ يَخۡشَوۡنَ رَبَّهُمۡ ثُمَّ تَلِينُ جُلُودُهُمۡ وَقُلُوبُهُمۡ إِلَىٰ ذِكۡرِ ٱللَّهِۚ ذَٰلِكَ هُدَى ٱللَّهِ يَهۡدِي بِهِۦ مَن يَشَآءُۚ وَمَن يُضۡلِلِ ٱللَّهُ فَمَا لَهُۥ مِنۡ هَادٍ﴾ [الزمر: 23]</p>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أحرف القرآن الكريم</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: right;
+margin-top: 50px;
+}
+.harf-section {
+margin-right: 20px;
+padding: 20px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+}
+h2 {
+color: #0051a2;
+}
+p {
+text-align: justify;
+}
+</style>
+</head>
+<body>
+
+<div class="harf-section">
+<h2>أحرف القرآن الكريم</h2>
+<p><strong>حرف قريش:</strong> كان أول نزول القرآن الكريم على قلب النبي صلى الله عليه وسلم على حرف واحد بلسان قريش...</p>
+<p><strong>الأحرف السبعة:</strong> ونظرًا لاختلاف القبائل العربية في اللهجات والأصوات وطرق الأداء...</p>
+<p><strong>معنى الأحرف السبعة:</strong> تباينت آراء العلماء في المراد من الأحرف السبعة...</p>
+<p><strong>الحكمة من الأحرف السبعة:</strong> لعل الحكمة من نزول القرآن الكريم على سبعة أحرف هي التيسير على المسلمين...</p>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>القرآن الكريم</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl; /* توجيه النص من اليمين لليسار */
+text-align: right; /* محاذاة النص إلى اليمين */
+margin-top: 50px;
+}
+.quran-section {
+text-align: justify;
+margin-right: 20px; /* هامش من اليمين */
+padding: 20px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+}
+h1 {
+color: #0051a2;
+}
+</style>
+</head>
+<body>
+
+<div class="quran-section">
+<h1>القرآن الكريم</h1>
+<p>القرآن الكريم هو كلام الله عز وجل، المنزل على رسوله محمد صلى الله عليه وسلم، بواسطة جبريل عليه السلام، بلسان عربي مبين، المنقول إلينا بالتواتر، المتعبد بتلاوته، المعجز بألفاظه، الموجود بين دفتي المصحف، المبدوء بأول سورة الفاتحة، المختوم بآخر سورة الناس.</p>
+</div>
+
+</body>
+</html>
+
+
+
+
+<section>
+<h1>مراحل نزول القرءان الكريم</h1>
+<h2>المرحلة الأولى</h2>
+<p>نزل القرءان الكريم جملة واحدة من الذات الإلهية إلى اللوح المحفوظ...</p>
+
+<h2>المرحلة الثانية</h2>
+<p>نزل القرءان الكريم جملة واحدة من اللوح المحفوظ إلى السماء الدنيا في ليلة القدر...</p>
+
+<h2>المرحلة الثالثة</h2>
+<p>نزل القرءان الكريم من السماء الدنيا على محمد صلى الله عليه وسلم بواسطة جبريل...</p>
+</section>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>القرآن الكريم</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: center;
+margin-top: 50px;
+}
+.quran-section {
+text-align: justify;
+margin: 20px;
+padding: 20px;
+border: 1px solid #ddd;
+background-color: #f9f9f9;
+}
+h1 {
+color: #0051a2;
+}
+</style>
+</head>
+<body>
+
+<div class="quran-section">
+<h1>القرآن الكريم</h1>
+<p>القرآن الكريم هو كلام الله عز وجل، المنزل على رسوله محمد صلى الله عليه وسلم، بواسطة جبريل عليه السلام، بلسان عربي مبين، المنقول إلينا بالتواتر، المتعبد بتلاوته، المعجز بألفاظه، الموجود بين دفتي المصحف، المبدوء بأول سورة الفاتحة، المختوم بآخر سورة الناس.</p>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محتويات الصفحة</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: center;
+margin-top: 50px;
+}
+.content-section {
+text-align: left;
+margin: 20px;
+}
+h2 {
+color: #333;
+}
+ul {
+list-style-type: none;
+}
+li {
+margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="content-section">
+<h2>محتويات الصفحة</h2>
+<ul>
+<li>القرآن الكريم</li>
+<li>مراحل نزول القرآن</li>
+<li>أحرف القرآن الكريم</li>
+<li>التمييز بين المكي والمدني</li>
+<li>أهمية القرآن الكريم</li>
+<li>صفات القرآن الكريم</li>
+<li>فضائل تلاوة القرآن</li>
+<li>آداب تلاوة القرآن</li>
+<li>مراتب التلاوة</li>
+<li>المعارف الواجبة على القارئ</li>
+<li>ممارسات القراءة المحظورة</li>
+</ul>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تفاصيل أجزاء القرآن</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: center;
+margin-top: 50px;
+}
+.juz-details {
+text-align: left;
+margin: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>تفاصيل أجزاء القرآن</h1>
+
+<div class="juz-details">
+<h2>الجزء الأول:</h2>
+<ul>
+<li>يبدأ من الصفحة رقم 1</li>
+<li>يشمل سورة الفاتحة وجزء من سورة البقرة</li>
+<li>الكلمة الأولى هي "الحمد" من سورة الفاتحة</li>
+</ul>
+
+<h2>الجزء الثاني:</h2>
+<ul>
+<li>يبدأ من الصفحة رقم 22</li>
+<li>يستمر في سورة البقرة</li>
+<li>الكلمة الأولى هي "سيقول"</li>
+</ul>
+
+<h2>الجزء الثالث:</h2>
+<ul>
+<li>يبدأ من الصفحة رقم 42</li>
+<li>يستمر في سورة البقرة وينتهي عند بداية سورة آل عمران</li>
+<li>الكلمة الأولى هي "تلك الرسل"</li>
+</ul>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أجزآء القرآن</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: center;
+margin-top: 50px;
+}
+select {
+width: 200px;
+padding: 10px;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>أجزآء القرآن</h1>
+<label for="juz">نيرباشن كورون:</label>
+<select name="juz" id="juz">
+<option value="juz1">الجزء الأول</option>
+<option value="juz2">الجزء الثاني</option>
+<option value="juz3">الجزء الثالث</option>
+<option value="juz4">الجزء الرابع</option>
+<option value="juz5">الجزء الخامس</option>
+<option value="juz6">الجزء السادس</option>
+<option value="juz7">الجزء السابع</option>
+<option value="juz8">الجزء الثامن</option>
+<option value="juz9">الجزء التاسع</option>
+<option value="juz10">الجزء العاشر</option>
+<option value="juz11">الجزء الحادي عشر</option>
+<option value="juz12">الجزء الثاني عشر</option>
+<option value="juz13">الجزء الثالث عشر</option>
+<option value="juz14">الجزء الرابع عشر</option>
+<option value="juz15">الجزء الخامس عشر</option>
+<option value="juz16">الجزء السادس عشر</option>
+<option value="juz17">الجزء السابع عشر</option>
+<option value="juz18">الجزء الثامن عشر</option>
+<option value="juz19">الجزء التاسع عشر</option>
+<option value="juz20">الجزء العشرون</option>
+<option value="juz21">الجزء الحادي والعشرون</option>
+<option value="juz22">الجزء الثاني والعشرون</option>
+<option value="juz23">الجزء الثالث والعشرون</option>
+<option value="juz24">الجزء الرابع والعشرون</option>
+<option value="juz25">الجزء الخامس والعشرون</option>
+<option value="juz26">الجزء السادس والعشرون</option>
+<option value="juz27">الجزء السابع والعشرون</option>
+<option value="juz28">الجزء الثامن والعشرون</option>
+<option value="juz29">الجزء التاسع والعشرون</option>
+<option value="juz30">الجزء الثلاثون</option>
+</select>
+
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أجزآء القرآن</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+direction: rtl;
+text-align: center;
+margin-top: 50px;
+}
+select {
+width: 200px;
+padding: 10px;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>أجزآء القرآن</h1>
+<label for="juz">نيرباشন كورون:</label>
+<select name="juz" id="juz">
+<option value="juz1">الجزء الأول</option>
+<option value="juz2">الجزء الثاني</option>
+<option value="juz3">الجزء الثالث</option>
+<!-- Add the rest of the Juz options here -->
+</select>
+
+</body>
+</html>
+
+
+
+
+<html>
+    <head>
+        <body>
+            <ul>
+                <li>الجزء الأول</li>
+                <li>الجزء الثاني</li>
+                <li>الجزء الثالث</li>
+                <li>الجزء الرابع</li>
+                <li>الجزء الخامس</li>
+                <li>الجزء السادس</li>
+                <li>الجزء السابع</li>
+                <li>الجزء الثامن</li>
+                <li>الجزء التاسع</li>
+                <li>الجزء العاشر</li>
+                <li>الجزء الحادي عشر</li>
+                <li>الجزء الثانير</li>
+                <li>الجزءر</li>
+                <li>الجزء الرابع عشر</li>
+                <li>الجزء الخامس عشر</li>
+                <li>الجزء السادس عشر</li>
+                <li>الجزء السابع عشر</li>
+                <li>الجزء الثامن عشر</li>
+                <li>الجزء التاسع عشر</li>
+                <li>الجزء العشرون</li>
+                <li>الجزء الحادي والعشرون</li>
+                <li>الجزء الثاني والعشرون</li>
+                <li>الجزء الثالث والعشرون</li>
+                <li>الجزء الرابع والعشرون</li>
+                <li>الجزء الخامس والعشرون</li>
+                <li>الجزء السادس والعشرون</li>
+                <li>الجزء السابع والعشرون></li>
+                <li>الجزء الثامن والعشرون</li>
+                <li>الجزء التاسع والعشرون</li>
+                <li>الجزء الثلاثون</li>
+            </ul>
+        </body>
+    </head>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!DOCTYPE html>
 <html lang="ar">
