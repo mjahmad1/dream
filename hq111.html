@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Reem+Kufi+Ink&family=Reem+Kufi+Fun&display=swap');
+body {
+margin: 0;
+padding: 0;
+font-family: 'Reem Kufi Ink', serif; /* Default font for the body */
+background-color: white;
+color: black;
+direction: rtl; /* Right-to-left layout */
+}
+.header {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+.header h1 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+.header p {
+font-family: 'Reem Kufi Ink', serif; /* Specific font for the subtitle */
+margin: 0;
+font-size: 1.5em;
+white-space: nowrap; /* Ensures the subtitle is on one line */
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.welcome-section {
+width: 100%;
+height: auto;
+text-align: center;
+}
+.welcome-section img {
+max-width: 100%;
+height: auto;
+}
+.profile-section {
+padding: 20px 30px; /* Padding around the text */
+}
+.profile-section p {
+margin: 20px 0; /* Margin between paragraphs */
+font-family: 'Reem Kufi Ink', sans-serif; /* Specific font for the profile section */
+position: relative; /* Added for emoji alignment */
+padding-right: 40px; /* Added space for emoji */
+}
+/* Emoji styles */
+.emoji {
+position: absolute; /* Changed to absolute */
+right: 10px; /* Aligns emoji to the right */
+top: 0; /* Aligns emoji to the top of the paragraph */
+width: 24px; /* Sets the emoji image width */
+height: auto; /* Maintains the aspect ratio of the emoji image */
+}
+/* New Section Styles */
+.new-section {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+    .new-section-1 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+    .new-section-2 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-2 {
+background-color: black;
+color: white;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-2 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-2 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-2 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-2 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-2 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-2 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+        .new-section-3 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-3 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-3 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-3 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-3 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-3 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-3 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-3 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+
+        .new-section-4 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-4 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-4 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-4 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-4 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-4 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-4 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-4 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+        .new-section-5 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-5 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-5 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-5 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-5 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-5 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-5 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-5 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+
+/* Additional styles for the new column */
+.column {
+background-color: black; /* Black background for the column */
+color: white; /* White text for contrast */
+margin: 0 auto; /* Center the column */
+width: 80%; /* Width of the column */
+padding: 20px; /* Padding inside the column */
+font-family: 'Reem Kufi Ink', sans-serif; /* Using the header font for consistency */
+}
+/* Center the text inside the column */
+.column p {
+color: white; /* White text for contrast */
+text-align: center; /* Center the text */
+font-size: 2.5em; /* Larger font size for the title */
+font-weight: bold; /* Bold font weight for the title */
+}
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2em;
+}
+.header p {
+font-size: 1.2em;
+}
+}
+</style>
+    <style>
+        .new-section-2 a {
+            text-decoration: none;
+        }
+        .new-section-3 a {
+            text-decoration: none;
+        }
+        .new-section-4 a {
+            text-decoration: none;
+        }
+        .new-section-5 a {
+            text-decoration: none;
+        }
+        </style>
+</head>
+<body>
+<div class="header">
+<h1>أهلا وسهلا بك في موقعي</h1>
+<p>متطلعا إلى جيل لامع يجمع بين المعرفة والإيمان</p>
+</div>
+<div class="welcome-section">
+<img src="mjsteker.jpg" alt="Welcome Image">
+</div>
+<div class="profile-section">
+<p><img src="emojieesptal1.png" class="emoji" alt="emoji">طالب متحمس ومروج للتقدم التكنولوجي والتعليم في بنغلاديش،</p>
+<p><img src="emojircccs2.png" class="emoji" alt="emoji">لدي خبرة عميقة في ترميز حلول الحوسبة السحابية،</p>
+<p><img src="emojirwibw1.png" class="emoji" alt="emoji">أعمل على تحسين مهاراتي و بناء قوة عاملة ماهرة,</p>
+<p><img src="emojirpcid4.png" class="emoji" alt="emoji">️كمطور في منتدى مطوري شركة بلاد المتحدة "لندن"، يعكس دوري مهاراتي المهنية والتزامي بالابتكار,</p>
+<p><img src="emojicpsetmlda4.png" class="emoji" alt="emoji">أمارس باستمرار الابتكار وتعزيز المهارات من خلال تكنولوجيا الذكاء الاصطناعي وتعلم الآلة وتحليل البيانات،</p>
+</div>
+<div class="new-section-3">
+    <h4> نعم، </h4>
+    <h1>هاأنا</h1>
+    <h1> محمد جعفر أحمد</h1>
+</div>
+</div>
+</body>
+</html>
+<html>
+	<head>
+		<body>
+            <div class="new-section-5">
+                <h3> بن معين الدين بن يوسف بن سادت علي</h3>
+            </div>
+        </body>
+	</head>
+</html>
+
+<html>
+    <head>
+        <body>
+            <div class="new-section-3">
+                <h3>بدلاً من أن نكون أمة من المتسولين، يجب أن نكون أمة منتجة</h3>
+                <img src="shekh2.jpg" style="width:100%">
+                <p>بنغاباندو شيخ مجيب الرحمن</p>
+            </div>
+        </body>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-5">
+                <h4>أريد تحرير شعب بنغال. التحرير من القمع. جاهد بنغاباندو لإحضار الابتسامات إلى وجوه شعب بنغال</h4>
+                <p>رئيسة الوزراء شيخة حسينة</p>
+                <h4>جيل اليوم سيقود بنغلاديش في المستقبل، إن شاء الله</h4>
+            </div>
+        </body>
+    </head>
+</html>
+
+<html>
+	<head>
+		<body>
+			<div>
+				<img src="crmsl3.jpg" style="width:100%">
+			</div>
+		</body>
+	</head>
+	<head>
+		<img src="ai501.jpg" style="width:100%">
+	</head>
+</html>
+<html>
+<head>
+<body>
+<div class="new-section-3">
+    <h1>جعفر أحمد</h1>
+<h4>مطور ويب في مايكروسوفت متحمس وماهر وعضو فخور في مجتمع Windows Insider</h4>
+<h4>أعتقد أن مساهمتي في تقدم التكنولوجيا وتحقيق بنغلاديش الرقمية ستشكل مني مواطنًا كفؤًا وماهرًا ومثاليًا، إن شاء الله</h4>
+</div>
+</body>
+</head>
+</html>
+
+<html>
+<head>
+<body>
+    <div class="new-section-5">
+<h4>يسأل الكثيرون،</h4>
+    </div>
+    <div class="new-section-2">
+<h2>متى سينتهي الدراسة والممارسة؟</h2>
+</div>
+    <img src="emojigo.png" style="width:100%">
+<div class="new-section-4">
+<h2>اليوم الذي تقول فيه جوجل إنه لم يعد هناك ما يمكن تعلمه، ذلك اليوم!</h2>
+</div>
+    <img src="emojisa.png" style="width:100%">
+</body>
+</head>
+    <head>
+        <body>
+            <div class="new-section-3">
+                <h1>لقد غصت في محيط المعرفة، ولم أفكر أبدًا في العودة إلى الشاطئ</h1>
+            </div>
+        </body>
+    </head>
+	<head>
+		<body>
+			<img src="emojirpcid3.png" style="width:100%">
+		</body>
+	</head>
+</html>
+
+<html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; }
+.slideshow-container {
+width: 100%;
+position: relative;
+margin: auto;
+}
+.slide {
+display: none;
+padding: 20px;
+text-align: center;
+}
+.active {
+display: block;
+}
+.quote { font-style: italic; }
+.author { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="slideshow-container">
+<div class="slide active">
+<p class="quote">"ما أعرفه هو مجرد قطرة؛ ما لا أعرفه هو محيط."</p>
+<p class="author">-إسحاق نيوتن</p>
+</div>
+<div class="slide">
+<p class="quote">"الحياة مثل ركوب الدراجة، للحفاظ على توازنك يجب أن تستمر في التحرك."</p>
+<p class="author">-ألبرت أينشتاين</p>
+</div>
+<div class="slide">
+<p class="quote">"لا أرى موهبة خاصة في حياتي. أنا فقط فضولي بشغف."</p>
+<p class="author">-ماري كوري</p>
+</div>
+<div class="slide">
+<p class="quote">"أكبر خطأ هو عدم التعلم من جميع الأخطاء."</p>
+<p class="author">-تشارلز داروين</p>
+</div>
+<div class="slide">
+<p class="quote">"الحياة قصيرة، لذا تجرأ على صنع شيء جديد."</p>
+<p class="author">-ستيفن هوكينج</p>
+</div>
+</div>
+</body>
+</html>
+
+</body>
+    <html>
+        <body>
+		<script>
+			var slideIndex = 0;
+			showSlides();
+			function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("slide");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				slideIndex++;
+				}
+				if (slideIndex > slides.length) {slideIndex = 1}    
+				slides[slideIndex-1].style.display = "block";  //
+				setTimeout(showSlides, 3000); // Change image every 4 seconds
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<style>
+		* { box-sizing: border-box; }
+		body { font-family: Arial, sans-serif; }
+		.slideshow-container {
+			width: 100%;
+			position: relative;
+			margin: auto;
+		}
+		.slide {
+			display: none;
+			padding: 20px;
+			text-align: center;
+		}
+		.active {
+			display: block;
+		}
+		.quote { font-style: italic; }
+		.author { margin-top: 20px; font-weight: bold; }
+	</style>
+</head>
+	
+		<script>
+			var slideIndex = 0;
+			showSlides();
+			function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("slide");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1}    
+				slides[slideIndex-1].style.display = "block";  //
+				setTimeout(showSlides, 3000); // Change image every 4 seconds
+			}
+		</script>
+	</body>
+</header>
+</header>
+</html>
+
+<html>
+	<head>
+		<body>
+			<img src="ai500.jpg" style="width:100%">
+		</body>
+	</head>
+</html>
+
+
+<html>
+    <head>
+        <body>
+            <div class="new-section-3">
+                <h1>أشعل قوة المعرفة</h1>
+                <h2>أشعل قوة المعرفة</h2>
+                <h3>أشعل قوة المعرفة</h3>
+            </div>
+            <div class="new-section-5">
+              <h1>نقرة واحدة في كل مرة</h1>
+                <img src="duyhat.jpg" style="width:100%">
+            </div>
+        </body>
+    </head>
+<body>
+<div class="new-section">
+<h2>"انضم إلى رحلة التكنولوجيا مع  محمد جعفر أحمد
+"</h2>
+</div>
+</body>
+</head>
+</html>
+<html>
+<head>
+<div class="new-section-1">
+<h3>درس بانتظام أحدث التطورات في التكنولوجيا بما في ذلك</h3>
+	<h4>مايكروسوفت في التعليم,أجهزة التعليم,فرق مايكروسوفت للتعليم,مايكروسوفت للتعليم,تعليم أوفيس,تدريب وتطوير المعلمين</h4>
+</div>
+<img src="ai7.jpg" style="width:100%">
+</head>
+</html>
+<html>
+	<head>
+		<body>
+			<div class="new-section-3">
+				<h3>"في العالم، أيا كانت الإبداعات العظيمة والخيرة الموجودة،<br>نصفها قامت به النساء، والنصف الآخر قام به الرجال."</h3>
+				<p>- الشاعر كازي نظر الإسلام</p>
+				<img src="aibgm.jpg" style="width:100%">
+			</div>
+		</body>
+	</head>
+</html>
+
+<!--section-->
+
+<html>
+<head>
+<body>
+<div class="new-section">
+<h1>رفيقك في نشر المعرفة.</h1>
+</div>
+</body>
+</head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-1">
+                <h4>جعفر أحمد هي منصة تعليمية وبحثية مبتكرة حيث يتم توسيع حدود المعرفة من خلال "قرآنر فريوالا" و"الابتكار"، ويتم مساعدة الطلاب على إطلاق كامل إمكاناتهم.</h4>
+                <h4>من خلال مشروع "قرآنر فريوالا"، نشارك في طباعة وتوزيع وتوزيع القرآن الكريم، مساهمين في نشر التعليم الديني.</h4>
+                <h4>مع مبادرة "الابتكار"، نستخدم التكنولوجيا المتطورة للتعليم والتطوير، مشجعين الطلاب على البحث والابتكار الخاص بهم.</h4>
+                <h4>هدفنا هو خلق مجتمع حيث التعليم سهل الوصول ومتاح للجميع.</h4>
+                <h4>نحن نؤمن بأن لكل فرد إمكانات لا محدودة، وتم تصميم منصة جعفر أحمد
+لتحقيق هذه الإمكانيات.</h4>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+<html>
+	<head>
+		<body>
+			<img src="digital2.jpg" style="width:100%">
+		</body>
+	</head>
+</html>
+
+<html>
+<head>
+<body>
+<div class="new-section">
+<h3>التعليم ليس فقط عن تعلم الحقائق، بل عن تدريب العقل على التفكير.</h3>
+<img src="albert.jpg" style="width:100%">
+<p>- ألبرت أينشتاين</p>
+</div>
+<div class="new-section">
+<h3>التعليم هو أقوى سلاح يمكنك استخدامه لتغيير العالم.</h3>
+<img src="th1.jpg" style="width:100%">
+<p>- نيلسون مانديلا</p>
+</div>
+<div class="new-section">
+<h3>طفل واحد، معلم واحد، كتاب واحد، قلم واحد يمكن أن يغير العالم.</h3>
+<img src="th.jpg" style="width:100%">
+<p>- ملالا يوسفزاي</p>
+</div>
+</body>
+</head>
+</html>
+
+
+<!--section-->
+<html>
+	<head>
+		<body>
+			<div>
+				<img src="digital.jpg" style="width:100%">
+			</div>
+		</body>
+	</head>
+</html>
+
+<!--section-->
+<html>
+<head>
+<body>
+<div>
+<div class="new-section">
+<h1>ما نقدمه لك...</h1>
+<h2>الدعم الفني</h2>
+<p>حلول موثوقة وماهرة: يقدم فريقنا المتفاني الدعم الفني على مدار الساعة لضمان سير عملياتك بسلاسة. مع التركيز على الاستجابة السريعة والحلول، نمكنك من التغلب بسهولة على التحديات التقنية.</p>
+<h2>الأمان السيبراني</h2>
+<p>حماية قوية لأصولك الرقمية: احمِ حضورك على الإنترنت بخدماتنا الشاملة للأمان السيبراني. من الكشف عن التهديدات إلى الوقاية منها، نوفر دفاعًا قويًا ضد التهديدات السيبرانية، مع الحفاظ على أمان بياناتك.</p>
+<h2>مساعدة التسويق</h2>
+<p>نمو استراتيجي لعلامتك التجارية: عزز جهودك التسويقية بمساعدة خبرائنا. نحن نخلق استراتيجيات مخصصة تتماشى مع جمهورك المستهدف، مما يدفع الانخراط ويحقق نموًا مستدامًا.</p>
+<h2>الدعم الإداري</h2>
+<p>عمليات منظمة لأقصى كفاءة: ينظم دعمنا الإداري المحترف مهامك اليومية، مما يتيح لك التركيز على الأنشطة التجارية الأساسية. تجربة الإنتاجية المحسنة مع طرقنا المنظمة والدقيقة.</p>
+</div>
+</div>
+</body>
+</head>
+</html>
+
+<html>
+	<head>
+		<body>
+			<img src="emojircccs4.png" style="width:100%">
+		</body>
+	</head>
+</html>
+
+
+
+
+
+<html>
+	<head>
+		<body>
+			<div>
+				<div class="new-section">
+<h2>المهمة والرؤية</h2>
+<p>هدفنا الأساسي هو تقديم حلول رائدة تمكّن الشركات من تحقيق النجاح.</p>
+<p>علاوة على ذلك، نحن ملتزمون بخلق مجتمع يسهل فيه الوصول إلى التعليم لجميع الأفراد.</p>
+<p>نحن نؤمن بشدة أن كل شخص يمتلك إمكانات غير محدودة.</p>
+<p>كشريك موثوق، نحن مكرسون لتقديم قيمة استثنائية لعملائنا الكرام.</p>
+<p>رؤيتنا النهائية هي أن نصبح المزود الرائد للتقنيات والخدمات المتطورة، مما يمكّن المنظمات من الازدهار في عصر الرقمنة.</p>
+</div>
+			</div>
+		</body>
+	</head>
+</html>
+<html>
+	<head>
+		<body>
+			<img src="aij500.jpg" style="width:100%">
+		</body>
+	</head>
+</html>
+<html>
+	<head>
+		<body>
+			<div class="new-section">
+				<p>معًا، يمكننا استغلال قوة التكنولوجيا المتطورة لرفع مستوى تطلعاتنا التعليمية وإحداث تأثير دائم. دعونا نتحد في هذا السعي لتشكيل مستقبل أكثر إشراقًا وإطلاعًا.</p>
+
+			</div>
+		</body>
+	</head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-2">
+                <h1>الحلول...</h1>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+
+<html>
+    <head>
+        <body>
+            <div class="new-section-4">
+                <h5><a href="arab5.html">الاستشارات التقنية</a></h5>
+                <h5><a href="arab6.html">التكامل النظامي</a></h5>
+        <h5><a href="arab7.html">تطوير البرمجيات المخصصة</a></h5>
+        <h5><a href="arab8.html">منشئو المواقع</a></h5>
+       <h5><a href="arab9.html">النطاق والاستضافة</a></h5>
+        <h5><a href="arab10.html">حلول المؤسسات</a></h5>
+        <h5><a href="arab11.html">الأدوات المهنية</a></h5>
+        <h5><a href="arab12.html">البرمجة والذكاء الاصطناعي</a></h5>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+<html>
+    <head>
+        <body>
+            <div class="new-section-2">
+                <h1>التعليم...</h1>
+	    </div>
+        </body>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-4">
+                <h5><a href="arab13.html">مايكروسوفت في التعليم</a></h5>
+                <h5><a href="arab14.html">أجهزة التعليم</a></h5>
+                <h5><a href="arab16.html">فرق مايكروسوفت للتعليم</a></h5>
+                <h5><a href="arab17.html">مايكروسوفت 365 للتعليم</a></h5>
+                <h5><a href="arab18.html">تعليم أوفيس</a></h5>
+                <h5><a href="arab19.html">تدريب وتطوير المعلمين</a></h5>
+                <h5><a href="arab20.html">أزور للطلاب</a></h5>
+            </div>
+        </body>
+    </head>
+</html>
+    
+
+ <html>
+      <head>
+          <body>
+              <div class="new-section-2">
+                  <h1>نبذة عن موقعنا</h1>
+                  <p> إن موقع "محمد جعفر أحمد" مبادرة تعليمية مبتكرة، تُدار من خلال استخدام التقنيات المدعومة من مايكروسوفت بشكل صحيح. هذه المنصة لا تستخدم أي عناصر غير آمنة أو مشكوك فيها. المؤسس، محمد جعفر أحمد، غير مرتبط بأي أنشطة معادية للوطن أو انتهاكات لحقوق الإنسان. يرى هذا الموقع التعليم كحق للجميع ويعمل بلا كلل من أجل خلق عالم أخضر، وفير، هادئ، وجميل، وفقًا لهذا المثال.</p>
+                  <p></p>
+			  </div>
+          </body>
+      </head>
+ </html>
+</div>
+</div>
+</body>
+</html>
+
+
+    <!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<style>
+/* Existing styles... */
+/* Footer Styles */
+.footer {
+background-color: black; /* Black background for the footer */
+color: white; /* White text for contrast */
+padding: 20px; /* Padding around the text */
+font-family: 'Amiri Quran', serif; /* Amiri Quran font */
+}
+.footer h2 {
+font-size: 1.5em; /* Larger font size for titles */
+margin-bottom: 10px; /* Space below the title */
+text-align: right; /* Align title to the right */
+}
+.footer ul {
+list-style-type: none; /* No bullets for the list */
+padding: 0; /* No padding for the list */
+text-align: right; /* Align list to the right */
+}
+.footer li {
+margin-bottom: 5px; /* Space below each list item */
+}
+.footer a {
+color: white; /* White text for the links */
+text-decoration: none; /* No underline for the links */
+font-size: 1.2em; /* Slightly larger font size for links */
+}
+.footer p {
+font-size: 1em; /* Standard font size for text */
+margin-top: 20px; /* Space above the paragraph */
+text-align: right; /* Align paragraph to the right */
+}
+/* Responsive styles... */
+/* Emoji styles */
+.emoji-img {
+width: 50px; /* Set a fixed width for emojis */
+height: auto; /* Maintain aspect ratio */
+margin: 0 5px; /* Add some space around each emoji */
+}
+@media (max-width: 480px) {
+.emoji-img {
+width: 30px; /* Smaller size for mobile devices */
+}
+}
+</style>
+</head>
+<body>
+<footer class="new-section-2">
+    <h2>صفحات مهمة</h2>
+<p><a href="privacypolicy.html">سياسة الخصوصية</a></p>
+<p><a href="terms.html">شروط الاستخدام</a></p>
+<p><a href="about.html">نبذة عن موقعنا</a></p>
+<p><a href="contact.html">الاتصال بنا</a></p>
+    
+    <h2>ما الجديد</h2>
+        <p><a href="arab2.html">سيرفيس برو</a></p>
+        <p><a href="arab3.html">كوبيلوت + الحاسوب</a></p>
+        <p><a href="arab4.html">ويندوز 11</a></p>
+    
+    <h2>الحلول</h2>
+        <p><a href="arab5.html">الاستشارات التقنية</a></p>
+        <p><a href="arab6.html">التكامل النظامي</a></p>
+        <p><a href="arab7.html">تطوير البرمجيات المخصصة</a></p>
+        <p><a href="arab8.html">منشئو المواقع</a></p>
+        <p><a href="arab9.html">النطاق والاستضافة</a></p>
+        <p><a href="arab10.html">حلول المؤسسات</a></p>
+        <p><a href="arab11.html">الأدوات المهنية</a></p>
+        <p><a href="arab12.html">البرمجة والذكاء الاصطناعي</a></p>
+
+    <h2>التعليم</h2>
+        <p><a href="arab13.html">مايكروسوفت في التعليم</a></p>
+        <p><a href="arab14.html">أجهزة التعليم</a></p>
+        <p><a href="arab16.html">فرق مايكروسوفت للتعليم</a></p>
+        <p><a href="arab17.html">مايكروسوفت 365 للتعليم</a></p>
+        <p><a href="arab18.html">تعليم أوفيس</a></p>
+        <p><a href="arab19.html">تدريب وتطوير المعلمين</a></p>
+        <p><a href="arab20.html">أزور للطلاب</a></p>
+<h2>نبذة عن موقعنا</h2>
+<p> إن موقع "محمد جعفر أحمد" مبادرة تعليمية مبتكرة، تُدار من خلال استخدام التقنيات المدعومة من مايكروسوفت بشكل صحيح. هذه المنصة لا تستخدم أي عناصر غير آمنة أو مشكوك فيها. المؤسس، محمد جعفر أحمد، غير مرتبط بأي أنشطة معادية للوطن أو انتهاكات لحقوق الإنسان. يرى هذا الموقع التعليم كحق للجميع ويعمل بلا كلل من أجل خلق عالم أخضر، وفير، هادئ، وجميل، وفقًا لهذا المثال.
+</p>
+    <p></p>
+    <p></p>
+    <p></p>
+</footer>
+    <html>
+        <head>
+            <body>
+                <div class="new-section-1">
+    <h2>جعفر أحمد هي منصة تعليمية وبحثية مبتكرة حيث يتم توسيع حدود المعرفة من خلال "قرآنر فريوالا" و"الابتكار"، ويتم مساعدة الطلاب على إطلاق كامل إمكاناتهم.</h2>
+<h3>من خلال مشروع "قرآنر فريوالا"، نشارك في طباعة وتوزيع وتوزيع القرآن الكريم، مساهمين في نشر التعليم الديني.</h3>
+<h4>مع مبادرة "الابتكار"، نستخدم التكنولوجيا المتطورة للتعليم والتطوير، مشجعين الطلاب على البحث والابتكار الخاص بهم.</h4>
+<h5>هدفنا هو خلق مجتمع حيث التعليم سهل الوصول ومتاح للجميع.</h5>
+<p>نحن نؤمن بأن لكل فرد إمكانات لا محدودة، وتم تصميم منصة جعفر أحمد
+ لتحقيق هذه الإمكانيات.</p>
+</div>
+            </body>
+        </head>
+    </html>
+    <div style="text-align: center; clear: both;">
+<img class="emoji-img" src="facebook.png" alt="Facebook">
+<img class="emoji-img" src="twitter.png" alt="Twitter">
+<img class="emoji-img" src="linkedin.png" alt="LinkedIn">
+<img class="emoji-img" src="ORCID.png" alt="ORCID">
+<img class="emoji-img" src="github2.png" alt="GitHub">
+</div>
+<p>©2024</p>
+<p>محمد جعفر أحمد، جميع الحقوق محفوظة</p>
+</div>
+</div>
+</body>
+</html>
