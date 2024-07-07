@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Reem+Kufi+Ink&family=Reem+Kufi+Fun&display=swap');
+body {
+margin: 0;
+padding: 0;
+font-family: 'Reem Kufi Ink', serif; /* Default font for the body */
+background-color: white;
+color: black;
+direction: rtl; /* Right-to-left layout */
+}
+.header {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+.header h1 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+    .header h5 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+.header p {
+font-family: 'Reem Kufi Ink', serif; /* Specific font for the subtitle */
+margin: 0;
+font-size: 1.5em;
+white-space: nowrap; /* Ensures the subtitle is on one line */
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.welcome-section {
+width: 100%;
+height: auto;
+text-align: center;
+}
+.welcome-section img {
+max-width: 100%;
+height: auto;
+}
+.profile-section {
+padding: 20px 30px; /* Padding around the text */
+}
+.profile-section p {
+margin: 20px 0; /* Margin between paragraphs */
+font-family: 'Reem Kufi Ink', sans-serif; /* Specific font for the profile section */
+position: relative; /* Added for emoji alignment */
+padding-right: 40px; /* Added space for emoji */
+}
+/* Emoji styles */
+.emoji {
+position: absolute; /* Changed to absolute */
+right: 10px; /* Aligns emoji to the right */
+top: 0; /* Aligns emoji to the top of the paragraph */
+width: 24px; /* Sets the emoji image width */
+height: auto; /* Maintains the aspect ratio of the emoji image */
+}
+/* New Section Styles */
+.new-section {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+    .new-section-1 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+    .new-section-2 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-2 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-2 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-2 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-2 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-2 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-2 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-2 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+        .new-section-3 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-3 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-3 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-3 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-3 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-3 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-3 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-3 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+
+        .new-section-4 {
+background-color: black; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-4 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-4 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-4 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-4 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-4 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-4 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-4 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+        .new-section-5 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-5 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-5 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-5 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-5 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-5 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-5 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-5 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+   .new-section-6 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-6 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-6 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+    .new-section-6 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-6 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-6 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-6 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-6 p {
+font-family: 'Amiri', serif;
+margin: 15px;
+font-size: 1.3em;
+}
+       .new-section-7 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-7 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-7 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+    .new-section-7 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-7 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-7 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-7 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-7 p {
+font-family: 'Amiri', serif;
+margin: 25px;
+font-size: 1.3em;
+}
+        .new-section-8 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-8 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-8 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-8 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-8 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-8 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-8 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.4em;
+}
+.new-section-8 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+	        .new-section-9 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-9 {
+background-color: black;
+color: white;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-9 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-9 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-9 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-9 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-9 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.4em;
+}
+.new-section-9 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+    /* Decorative Column Styles */
+.decorative-column {
+border: 2px solid black; /* Black border for the column */
+padding: 10px; /* Padding inside the column */
+margin: 20px 30px; /* Reduced margin from sides to increase width */
+text-align: center; /* Centered text in the column */
+font-family: 'Reem Kufi Fun', sans-serif; /* Reem Kufi Fun font */
+font-size: 28px; /* Increased font size */
+}
+/* Additional styles for the new column */
+.column {
+background-color: black; /* Black background for the column */
+color: white; /* White text for contrast */
+margin: 0 auto; /* Center the column */
+width: 80%; /* Width of the column */
+padding: 20px; /* Padding inside the column */
+font-family: 'Reem Kufi Ink', sans-serif; /* Using the header font for consistency */
+}
+/* Center the text inside the column */
+.column p {
+color: white; /* White text for contrast */
+text-align: center; /* Center the text */
+font-size: 2.5em; /* Larger font size for the title */
+font-weight: bold; /* Bold font weight for the title */
+}
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2em;
+}
+.header p {
+font-size: 1.2em;
+}
+}
+</style>
+    <style>
+        .new-section-2 a {
+            text-decoration: none;
+        }
+        .new-section-3 a {
+            text-decoration: none;
+        }
+        .new-section-4 a {
+            text-decoration: none;
+        }
+        .new-section-5 a {
+            text-decoration: none;
+        }
+        .new-section-6 a {
+            text-decoration: none;
+        }
+        </style>
+</head>
+    <!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<style>
+/* Existing styles... */
+/* Footer Styles */
+.footer {
+background-color: white; /* Black background for the footer */
+color: black; /* White text for contrast */
+padding: 20px; /* Padding around the text */
+font-family: 'Amiri', serif; /* Amiri Quran font */
+}
+.footer h2 {
+font-size: 1.5em; /* Larger font size for titles */
+margin-bottom: 10px; /* Space below the title */
+text-align: right; /* Align title to the right */
+}
+.footer ul {
+list-style-type: none; /* No bullets for the list */
+padding: 0; /* No padding for the list */
+text-align: right; /* Align list to the right */
+}
+.footer li {
+margin-bottom: 5px; /* Space below each list item */
+}
+.footer a {
+color: white; /* White text for the links */
+text-decoration: none; /* No underline for the links */
+font-size: 1.2em; /* Slightly larger font size for links */
+}
+.footer p {
+font-size: 1em; /* Standard font size for text */
+margin-top: 20px; /* Space above the paragraph */
+text-align: right; /* Align paragraph to the right */
+}
+/* Responsive styles... */
+/* Emoji styles */
+.emoji-img {
+width: 50px; /* Set a fixed width for emojis */
+height: auto; /* Maintain aspect ratio */
+margin: 0 5px; /* Add some space around each emoji */
+}
+@media (max-width: 480px) {
+.emoji-img {
+width: 30px; /* Smaller size for mobile devices */
+}
+}
+</style>
+</head>
+<body>
+<body>
+<div class="header">
+	<h1>رحلة القرآن</h1>
+	<p>لخدمة كلام الرحمن</p>
+</div>
+    <div class="new-section-5">
+    <p>بقيادة</p>
+    <h2> محمد جعفر أحمد</h2>
+        <h3> بن معين الدين بن يوسف بن سادت علي</h3>
+    </div>
+</body>
+</head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-5">
+                <p>روح شجاع،</p>
+                <p>مُختبر منذ الطفولة في اختبارات الحياة القاسية</p>
+                <p>محارب لا يعرف الهزيمة أبدًا</p>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+<html>
+    <head>
+        <body>
+            <div class="new-section-9">
+                <p>عفوا ، هذا قيد التطوير ...</p>
+            </div>
+            <div class="new-section-6">
+                <p><strong>عزيزي الزائر الكريم،</strong></p>
+                <p>نود أن نُعلمكم بأن الصفحة التي تسعون لزيارتها ما زالت تحت التطوير. نعمل جاهدين لإتمامها وإطلاقها في أقرب وقت ممكن.</p>
+                <p>نقدر صبركم الجميل وتفهمكم لهذا التأخير، ونعدكم بأن الانتظار سيكون مُجزيًا بإذن الله.</p>
+                <p><strong>شكرًا لكم من القلب على تحليكم بالصبر ونتطلع قُدمًا لتقديم محتوى يليق بتطلعاتكم.</strong></p>
+                <p>مع خالص التقدير والاحترام،</p>
+                <p><strong> محمد جعفر أحمد</strong></p>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+<html>
+    <head>
+        <body>
+            <div class="header">
+                <h5>القرآن الكريم</h5>
+            </div>
+        </body>
+    </head>
+</html>
+
+<html>
+    <head>
+        <bOdy>
+            <div class="new-section-6">
+                <p>القرآن الكريم هو كلام الله الذي أودع فيه شريعته وحقائق دينه. أُنزل للناس هاديًا وسراجًا منيرًا ليخرجهم من الظلمات إلى النور. يُعتبر أساس الدين وباب الإسلام. وهو كلمة الله التامة وإرادته الكاملة للبشرية في كل زمان ومكان. يُحث على تلاوته والتمسك به، لأنه حرز من الشيطان ورجحان في الميزان. القرآن يحمل في طياته العلم الإلهي ويعتبر مأدبة الله للإنسان.</p>
+                   <p> فلنستمع إليه ونستفيد من هديه ونوره.</p>
+            </div>
+        </bOdy>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-3">
+                <h5>حقوق القرآن الكريم عديدة ومتعددة. إليك بعضها:</h5>
+            </div>
+        </body>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-6">
+                <p><strong>حق الاستماع والتلاوة</strong></p>
+                <p>يجب على المسلمين أن يستمعوا إلى القرآن ويتلوه بتدبر وتأمل. القراءة والتلاوة تعزز الروحانية وتقرب إلى الله</p>
+                <p><strong>حق الفهم والتدبر</strong></p>
+                <p>يجب أن نفهم معاني القرآن ونتدبرها. القرآن ليس مجرد حروف وألفاظ، بل هو دليل للحياة والتوجيه الإلهي</p>
+                <p><strong>حق العمل بما فيه</strong></p>
+                <p>يجب أن نطبق تعاليم القرآن في حياتنا اليومية. القرآن يحث على العدل، الرحمة، والتسامح</p>
+                <p><strong>حق الحفظ والنشر</strong></p>
+                <p>يجب أن نحفظ القرآن وننشره بين الناس. القرآن هو كنز لا يفنى، ويجب أن يكون متاحًا للجميع</p>
+                <p><strong>حق الاحترام والتقدير</strong></p>
+                <p>يجب أن نحترم القرآن ونعظم قدره. نتجنب تركه في أماكن غير لائقة ونتعامل معه بأدب وتقدير</p>
+                <p>فلنكن ملتزمين بحقوق القرآن ونعيش حياتنا وفقًا التعاليمه.</p>
+            </div>
+        </body>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-3">
+                <h5>عناوين الصفحة</h5>
+            </div>
+        </body>
+    </head>
+</html>
+
+<html>
+    <head>
+        <body>
+            <div class="new-section-6">
+                <p><a href="q1.html">القرآن الكريم</a></p>
+                <p><a href="q2.html">مراحل نزول القرآن</a></p>
+                <p><a href="q3.html">أحرف القرآن الكريم</a></p>
+                <p><a href="q4.html">التمييز بين المكي والمدني</a></p>
+                <p><a href="q5.html">آهمية القرآن الكريم</a></p>
+                <p><a href="q6.html">صفات القرآن الكريم</a></p>
+                <p><a href="q7.html">فضيلة تلاوة القرآن</a></p>
+                <p><a href="q8.html">آداب تلاوة القرآن</a></p>
+                <p><a href="q9.html">درجات التلاوة</a></p>
+                <p><a href="q10.html">معلومات يجب على القارئ معرفتها</a></p>
+                <p><a href="q11.html">طرق القراءة المحظورة</a></p>
+            </div>
+        </body>
+    </head>
+</html>
+
+<html>
+    <footer>
+        <body>
+            <div class="new-section-2">
+    <h2>أقسام الموقع</h2>
+                <p><a href="quran-search.html">الباحث القرآني</a></p>
+<p><a href="q12.html">أحاديث نبوية</a></p>
+<p><a href="q13.html">تفسير القرآن الكريم</a></p>
+<p><a href="q14.html">ترجمة معاني القرآن</a></p>
+<h2>فهارس القرآن</h2>
+<p><a href="q15.html">فهرس السور</a></p>
+<p><a href="q16.html">فهرس الأجزاء</a></p>
+<p><a href="q17.html">فهرس الصفحات</a></p>
+<h2>روابط تهمكم</h2>
+<p><a href="q18.html">مصاحف عثمانية</a></p>
+<p><a href="q19.html">أفضل كتب التفسير</a></p>
+<p><a href="q20.html">كتب الحديث الستة</a></p>
+<p><a href="q21.html">أفضل كتب التاريخ</a></p>
+</div>
+</body>
+    </footer>
+</html>
+
+
+
+
+<html>
+    <head>
+        <body>
+            <div class="header">
+                <h1>رحلة القرآن</h1>
+                <p>لخدمة كلام الرحمن</p>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+ <html>
+      <head>
+          <body>
+              <div class="new-section-6">
+                  <h1>نبذة عن موقعنا</h1>
+                   <p>رحلة القرآن، هي مؤسسة تُضيء الطريق نحو النور. هذا الموقع مُخصص للقرآن الكريم، حيث كل آية فيه تُعتبر لؤلؤة من لآلئ محيط المعرفة</p>
+    <p>الهدف منه هو جعل رسائل القرآن سهلة ومُتاحة للطلاب غير الناطقين بالعربية، ليتمكنوا من فهم تلاوته، ومعانيه، وتفسيره بعمق</p>
+    <p>يُعد هذا الموقع مؤسسة فريدة لتلاوة القرآن والبحث فيه، حيث يتم الكشف عن المعاني والعلوم المُتأصلة في كل حرف من حروف القرآن</p>
+    <p>يُمثل هذا الموقع جهدًا نبيلًا لنقل الرسائل الصحيحة للقرآن بهدف رفاهية البشرية في جميع أنحاء العالم</p>
+    <p><strong>يتم إدارة الموقع عبر منصة محمد جعفر أحمد، وهو مطور ويب في شركة مايكروسوفت</strong></p>
+    <p>لقد تم إنشاء هذا الموقع خالصًا لمرضاة الخالق وللسلام الروحي، وليس بهدف الربح الشخصي</p>
+    <p>يحمل الموقع رسالة السكينة الروحية، ويُستخدم حصريًا لخدمة الإنسانية</p>
+    <p><strong>يُقدم الموقع رسالة واضحة ضد أولئك الذين يستخدمون هذا النص المقدس لأغراض تجارية أو يُحرفون رسائله</strong></p>
+    <p><strong>من خلال هذا الموقع، يواصل محمد جعفر أحمد وفريقه جهودهم المُخلصة لنشر الكلمات الأصيلة للقرآن في كل ركن من أركان العالم</strong></p>
+              </div>
+          </body>
+      </head>
+ </html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-7">
+                  <h2>إن شاء الله</h2>
+                  <h3>والله هو الموفق وهو المعين</h3>
+                  <h4>وهو على كل شيء قدير</h4>
+              </div>
+        </body>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-2">
+                <h4>وهذا العرض لمحبي الشعر</h4>
+        </body>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-2">
+                <p> مشعل النور في درب الزمان،</p>
+                <p>موقعٌ للحكمة، للآيات صدى الأكوان،</p>
+                <p>كل آيةٍ فيه، لؤلؤةٌ من بحر الإيمان،</p>
+                <p>يهدي للطلاب، لغير العرب، معاني القرآن،</p>
+                <p>ليفهموا الأسرار، ويعيشوا القرآن بكل أمان.</p>
+            </div>
+        </body>
+        <body>
+            <div class="new-section-2">
+                <p>موقعٌ للتلاوة، للبحث، لكشف الألحان.</p>
+                <p>جهدٌ نبيلٌ، ينشر الخير لكل إنسان،</p>
+                <p><strong>يُدار بحكمة، بقيادة جعفر، العنوان.</strong></p>
+                <p><strong>لله وحده، للروح سلام، ليس للأموال مكان.</strong></p>
+            </div>
+        </body>
+        <body>
+            <div class="new-section-2">
+                <p>مهمة السكينة، للإنسانية خدمةٌ وإحسان،</p>
+                <p>ضد التجارة بالقدسية، رسالةٌ وبيان.</p>
+                <p><strong>يستمر جعفر وفريقه، بنشر القرآن،</strong></p>
+                <p><strong>لكل أركان الأرض، بلا حدودٍ أو أوان.</strong></p>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+<!-- Decorative Column -->
+<html>
+    <body>
+        <div class="decorative-column">
+                  <p>إن شاء الله</p>
+        </div>
+    </body>
+</html>
+
+
+
+
+<html>
+    <footer>
+        <body>
+            <div class="new-section-7">
+                <a href="https://www.facebook.com/mdjaforahmad10.11.1989/"><img class="emoji-img" src="facebook.png" alt="Facebook"></a>
+                <a href="https://www.twitter.com/QuranerFariwala"><img class="emoji-img" src="twitter.png" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/in/jafor-ahmad"><img class="emoji-img" src="linkedin.png" alt="LinkedIn"></a>
+                <a href="https://orcid.org/0009-0008-8560-0756"><img class="emoji-img" src="ORCID.png" alt="ORCID"></a>
+                <a href="https://www.github.com/mjahmad1"><img class="emoji-img" src="github2.png" alt="GitHub"></a>
+            </div>
+        </body>
+    </footer>
+</html>
+<html>
+<html>
+    <footer>
+        <body>
+            <div class="new-section-7">
+                <p>©2024</p>
+                <p>رحلة القرآن ، جميع الحقوق محفوظة</p>
+            </div>
+        </body>
+    </footer>
+</html>
