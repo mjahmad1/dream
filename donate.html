@@ -153,25 +153,3 @@ console.log('Selected donation amount: ' + selectedAmount + ' Tk');
 });
 </script>
 
-
-
-// Modify your existing donateNow click event handler
-document.getElementById('donateNow').addEventListener('click', function() {
-var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value || '200';
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
-
-// Redirect to Stripe checkout page
-stripe.redirectToCheckout({
-lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
-mode: 'payment',
-successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
-cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
-}).then(function (result) {
-if (result.error) {
-// If `redirectToCheckout` fails due to a browser or network
-// error, display the localized error message to your customer.
-alert(result.error.message);
-}
-});
-});
-
