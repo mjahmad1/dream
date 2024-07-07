@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout Page</title>
+<!-- Include Stripe.js -->
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+<div class="container">
+<h2>Checkout</h2>
+<p>Please select the amount you would like to donate:</p>
+
+<!-- Donation options -->
+<button class="button" id="donate500">500 Tk</button>
+<button class="button" id="donate1000">1000 Tk</button>
+<button class="button" id="donate1500">1500 Tk</button>
+
+<p>After selecting the amount, you will be redirected to the payment page.</p>
+</div>
+
+<script>
+// Your publishable key
+var stripe = Stripe('pk_live_51PZzciCyC8OWGlHKxmnWEFHf35h9eqQdLfXkQy4coHfiKFfs4Q0znWh7qHi7N9TKNWnlnttZ8kAgtKK0ygmBp5Nn00DvLhJnlx');
+
+// Handle the donation button clicks
+document.getElementById('donate500').addEventListener('click', function() {
+// Create a new Checkout Session using the server-side endpoint you
+// created in step 3.
+fetch('/create-checkout-session', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify({amount: 500}),
+})
+.then(function(response) {
+return response.json();
+})
+.then(function(session) {
+return stripe.redirectToCheckout({ sessionId: session.id });
+})
+.then(function(result) {
+// If redirectToCheckout fails due to a browser or network
+// error, display the localized error message to your customer.
+if (result.error) {
+alert(result.error.message);
+}
+});
+});
+</script>
+
+</body>
+</html>
