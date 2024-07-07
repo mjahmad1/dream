@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<!-- Donation Section Styles -->
+<style>
+.donation-section {
+background-color: #f7f7f7;
+padding: 40px;
+text-align: center;
+}
+.donation-options {
+margin: 20px auto;
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+.donation-button {
+padding: 10px 20px;
+font-size: 1em;
+cursor: pointer;
+border: none;
+background-color: #008CBA;
+color: white;
+}
+.custom-amount-input {
+margin: 10px auto;
+padding: 10px;
+width: 80%;
+font-size: 1em;
+}
+/* Responsive styles... */
+</style>
+</head>
+<body>
+<!-- Donation Section -->
+<div class="donation-section">
+<h2>تبرع الآن</h2>
+<div class="donation-options">
+<button class="donation-button" data-amount="200">200 Tk</button>
+<button class="donation-button" data-amount="500">500 Tk</button>
+<button class="donation-button" data-amount="1000">1000 Tk</button>
+<input type="text" id="customAmount" class="custom-amount-input" placeholder="আপনার ইচ্ছামত অ্যামাউন্ট লিখুন">
+</div>
+<button id="donateNow" class="donation-button">Donate Now</button>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// Initialize Stripe with your publishable key
+var stripe = Stripe('pk_live_51PZzciCyC8OWGlHKxmnWEFHf35h9eqQdLfXkQy4coHfiKFfs4Q0znWh7qHi7N9TKNWnlnttZ8kAgtKK0ygmBp5Nn00DvLhJnlx');
+
+// Function to update the displayed amount and handle the selected class
+function updateDisplayedAmount(amount, button) {
+document.getElementById('donateNow').innerText = 'Donate ' + amount + ' Tk';
+// Remove selected class from all buttons
+var donationButtons = document.querySelectorAll('.donation-button');
+donationButtons.forEach(function(btn) {
+btn.classList.remove('selected');
+});
+// Add selected class to the clicked button
+if (button) {
+button.classList.add('selected');
+}
+}
+
+// Event listeners for the donation buttons
+var donationButtons = document.querySelectorAll('.donation-button');
+donationButtons.forEach(function(button) {
+button.addEventListener('click', function() {
+var amount = this.getAttribute('data-amount');
+updateDisplayedAmount(amount, this); // Pass the clicked button as well
+});
+});
+
+// Event listener for the custom amount input
+document.getElementById('customAmount').addEventListener('input', function() {
+var amount = this.value;
+updateDisplayedAmount(amount); // Update the display
+});
+
+// Modify the existing donateNow click event handler
+document.getElementById('donateNow').addEventListener('click', function() {
+// Get the selected amount from the selected donation button or the custom amount input
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
+
+// Check if the selected amount is not empty or null
+if (selectedAmount && selectedAmount.trim() !== '') {
+console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+
+// Redirect to Stripe checkout page with the selected amount
+stripe.redirectToCheckout({
+lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
+mode: 'payment',
+successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
+cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
+}).then(function (result) {
+if (result.error) {
+// If `redirectToCheckout` fails due to a browser or network
+// error, display the localized error message to your customer.
+alert(result.error.message);
+}
+});
+} else {
+// If no amount is selected, alert the user and do not proceed to checkout
+alert('Please select an amount to donate.');
+}
+});
+</script>
+<!-- Existing content... -->
+</body>
+</html>
