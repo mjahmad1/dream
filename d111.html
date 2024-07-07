@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>চেকআউট পেইজ</title>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+function handleFormSubmit(event) {
+event.preventDefault(); // ফর্ম সাবমিট হওয়া থেকে বাধা দেয়
+// এখানে আপনার কোড যুক্ত করুন যা ফর্ম ডেটা প্রক্রিয়া করবে
+alert('ফর্ম সাবমিট হয়েছে!');
+}
+</script>
+</head>
+<body>
+<h2>চেকআউট ফর্ম</h2>
+<form onsubmit="handleFormSubmit(event)">
+<label for="fname">পূর্ণ নাম:</label><br>
+<input type="text" id="fname" name="fname" required><br>
+<label for="email">ইমেইল:</label><br>
+<input type="email" id="email" name="email" required><br>
+<label for="adr">ঠিকানা:</label><br>
+<input type="text" id="adr" name="address" required><br>
+<label for="city">শহর:</label><br>
+<input type="text" id="city" name="city" required><br>
+<label for="zip">জিপ কোড:</label><br>
+<input type="text" id="zip" name="zip" required><br>
+<input type="submit" value="চেকআউট করুন">
+</form>
+</body>
+</html>
