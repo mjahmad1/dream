@@ -113,6 +113,39 @@ alert('Please select an amount to donate.');
 }
 });
 </script>
+    <script>
+        // Event listeners for the donation buttons
+var donationButtons = document.querySelectorAll('.donation-button');
+donationButtons.forEach(function(button) {
+button.addEventListener('click', function() {
+// Remove selected class from all buttons
+donationButtons.forEach(function(btn) {
+btn.classList.remove('selected');
+});
+// Add selected class to the clicked button
+this.classList.add('selected');
+// Update the displayed amount
+var amount = this.getAttribute('data-amount');
+document.getElementById('donateNow').innerText = 'Donate ' + amount + ' Tk';
+});
+});
+
+// Modify the existing donateNow click event handler
+document.getElementById('donateNow').addEventListener('click', function() {
+// Get the selected amount from the selected donation button or the custom amount input
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
+
+// Check if the selected amount is not empty or null
+if (selectedAmount && selectedAmount.trim() !== '') {
+console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+// Redirect to Stripe checkout page with the selected amount
+// stripe.redirectToCheckout({ ... });
+} else {
+// If no amount is selected, alert the user and do not proceed to checkout
+alert('Please select an amount to donate.');
+}
+});
+    </script>
 <!-- Existing content... -->
 </body>
 </html>
