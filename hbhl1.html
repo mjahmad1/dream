@@ -1,4 +1,587 @@
 <!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Reem+Kufi+Ink&family=Reem+Kufi+Fun&display=swap');
+body {
+margin: 0;
+padding: 0;
+font-family: 'Reem Kufi Ink', serif; /* Default font for the body */
+background-color: white;
+color: black;
+direction: rtl; /* Right-to-left layout */
+}
+.header {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+.header h1 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+    .header h5 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+.header p {
+font-family: 'Reem Kufi Ink', serif; /* Specific font for the subtitle */
+margin: 0;
+font-size: 1.5em;
+white-space: nowrap; /* Ensures the subtitle is on one line */
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.welcome-section {
+width: 100%;
+height: auto;
+text-align: center;
+}
+.welcome-section img {
+max-width: 100%;
+height: auto;
+}
+.profile-section {
+padding: 20px 30px; /* Padding around the text */
+}
+.profile-section p {
+margin: 20px 0; /* Margin between paragraphs */
+font-family: 'Reem Kufi Ink', sans-serif; /* Specific font for the profile section */
+position: relative; /* Added for emoji alignment */
+padding-right: 40px; /* Added space for emoji */
+}
+/* Emoji styles */
+.emoji {
+position: absolute; /* Changed to absolute */
+right: 10px; /* Aligns emoji to the right */
+top: 0; /* Aligns emoji to the top of the paragraph */
+width: 24px; /* Sets the emoji image width */
+height: auto; /* Maintains the aspect ratio of the emoji image */
+}
+/* New Section Styles */
+.new-section {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+    .new-section-1 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+    .new-section-2 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-2 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-2 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-2 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-2 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-2 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-2 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-2 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+        .new-section-3 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-3 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-3 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-3 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-3 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-3 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-3 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-3 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+
+        .new-section-4 {
+background-color: black; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-4 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-4 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-4 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-4 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-4 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-4 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-4 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+        .new-section-5 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-5 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-5 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-5 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-5 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-5 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-5 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-5 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+   .new-section-6 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-6 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-6 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+    .new-section-6 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-6 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-6 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-6 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-6 p {
+font-family: 'Amiri', serif;
+margin: 15px;
+font-size: 1.3em;
+}
+       .new-section-7 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-7 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-7 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+    .new-section-7 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-7 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-7 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-7 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-7 p {
+font-family: 'Amiri', serif;
+margin: 25px;
+font-size: 1.3em;
+}
+        .new-section-8 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-8 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-8 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-8 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-8 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-8 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-8 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.4em;
+}
+.new-section-8 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+	        .new-section-9 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-9 {
+background-color: black;
+color: white;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-9 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+    .new-section-9 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-9 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-9 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-9 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.4em;
+}
+.new-section-9 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+    /* Decorative Column Styles */
+.decorative-column {
+border: 2px solid black; /* Black border for the column */
+padding: 10px; /* Padding inside the column */
+margin: 20px 30px; /* Reduced margin from sides to increase width */
+text-align: center; /* Centered text in the column */
+font-family: 'Reem Kufi Fun', sans-serif; /* Reem Kufi Fun font */
+font-size: 28px; /* Increased font size */
+}
+/* Additional styles for the new column */
+.column {
+background-color: black; /* Black background for the column */
+color: white; /* White text for contrast */
+margin: 0 auto; /* Center the column */
+width: 80%; /* Width of the column */
+padding: 20px; /* Padding inside the column */
+font-family: 'Reem Kufi Ink', sans-serif; /* Using the header font for consistency */
+}
+/* Center the text inside the column */
+.column p {
+color: white; /* White text for contrast */
+text-align: center; /* Center the text */
+font-size: 2.5em; /* Larger font size for the title */
+font-weight: bold; /* Bold font weight for the title */
+}
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2em;
+}
+.header p {
+font-size: 1.2em;
+}
+}
+</style>
+    <style>
+        .new-section-2 a {
+            text-decoration: none;
+        }
+        .new-section-3 a {
+            text-decoration: none;
+        }
+        .new-section-4 a {
+            text-decoration: none;
+        }
+        .new-section-5 a {
+            text-decoration: none;
+        }
+        .new-section-6 a {
+            text-decoration: none;
+        }
+        </style>
+</head>
+    <!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<style>
+/* Existing styles... */
+/* Footer Styles */
+.footer {
+background-color: white; /* Black background for the footer */
+color: black; /* White text for contrast */
+padding: 20px; /* Padding around the text */
+font-family: 'Amiri', serif; /* Amiri Quran font */
+}
+.footer h2 {
+font-size: 1.5em; /* Larger font size for titles */
+margin-bottom: 10px; /* Space below the title */
+text-align: right; /* Align title to the right */
+}
+.footer ul {
+list-style-type: none; /* No bullets for the list */
+padding: 0; /* No padding for the list */
+text-align: right; /* Align list to the right */
+}
+.footer li {
+margin-bottom: 5px; /* Space below each list item */
+}
+.footer a {
+color: white; /* White text for the links */
+text-decoration: none; /* No underline for the links */
+font-size: 1.2em; /* Slightly larger font size for links */
+}
+.footer p {
+font-size: 1em; /* Standard font size for text */
+margin-top: 20px; /* Space above the paragraph */
+text-align: right; /* Align paragraph to the right */
+}
+/* Responsive styles... */
+/* Emoji styles */
+.emoji-img {
+width: 50px; /* Set a fixed width for emojis */
+height: auto; /* Maintain aspect ratio */
+margin: 0 5px; /* Add some space around each emoji */
+}
+@media (max-width: 480px) {
+.emoji-img {
+width: 30px; /* Smaller size for mobile devices */
+}
+}
+</style>
+</head>
+<body>
+<body>
+<div class="header">
+	<h1>رحلة القرآن</h1>
+	<p>لخدمة كلام الرحمن</p>
+</div>
+    <div class="new-section-5">
+    <p>بقيادة</p>
+    <h2> محمد جعفر أحمد</h2>
+        <h3> بن معين الدين بن يوسف بن سادت علي</h3>
+    </div>
+</body>
+</head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-5">
+                <p>روح شجاع،</p>
+                <p>مُختبر منذ الطفولة في اختبارات الحياة القاسية</p>
+                <p>محارب لا يعرف الهزيمة أبدًا</p>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
