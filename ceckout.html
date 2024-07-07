@@ -50,35 +50,65 @@ cursor: pointer;
 </div>
 
 <script>
-    require 'stripe'
-require 'sinatra'
+// Initialize Stripe with your publishable key
+var stripe = Stripe('pk_live_51PZzciCyC8OWGlHKxmnWEFHf35h9eqQdLfXkQy4coHfiKFfs4Q0znWh7qHi7N9TKNWnlnttZ8kAgtKK0ygmBp5Nn00DvLhJnlx');
 
-# This is your test secret API key.
-Stripe.api_key = 'sk_test_51PZzciCyC8OWGlHKE542bwYjZnBTEmCd4nTubWatfDsfQUWXV3pNVe6MDhhYLSJWjwR4CZ9FYNAVCE56cfbIpP2Z00uh7EeZOl'
+// Function to update the displayed amount and handle the selected class
+function updateDisplayedAmount(amount, button) {
+document.getElementById('donateNow').innerText = 'Donate ' + amount + ' Tk';
+// Remove selected class from all buttons
+var donationButtons = document.querySelectorAll('.donation-button');
+donationButtons.forEach(function(btn) {
+btn.classList.remove('selected');
+});
+// Add selected class to the clicked button
+if (button) {
+button.classList.add('selected');
+}
+}
 
-set :static, true
-set :port, 4242
+// Event listeners for the donation buttons
+var donationButtons = document.querySelectorAll('.donation-button');
+donationButtons.forEach(function(button) {
+button.addEventListener('click', function() {
+var amount = this.getAttribute('data-amount');
+updateDisplayedAmount(amount, this); // Pass the clicked button as well
+});
+});
 
-YOUR_DOMAIN = 'http://localhost:4242'
+// Event listener for the custom amount input
+document.getElementById('customAmount').addEventListener('input', function() {
+var amount = this.value;
+updateDisplayedAmount(amount); // Update the display
+});
 
-post '/create-checkout-session' do
-content_type 'application/json'
+// Modify the existing donateNow click event handler
+document.getElementById('donateNow').addEventListener('click', function() {
+// Get the selected amount from the selected donation button or the custom amount input
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
 
-session = Stripe::Checkout::Session.create({
-line_items: [{
-# Replace with the actual price ID from your Stripe Dashboard
-price: 'price_1HskYgIF3LHjPmQqPdpXANZq',
-quantity: 1,
-}],
+// Check if the selected amount is not empty or null
+if (selectedAmount && selectedAmount.trim() !== '') {
+console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+
+// Redirect to Stripe checkout page with the selected amount
+stripe.redirectToCheckout({
+lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
 mode: 'payment',
-success_url: YOUR_DOMAIN + '/success.html',
-cancel_url: YOUR_DOMAIN + '/cancel.html',
-automatic_tax: {enabled: true},
-})
-redirect session.url, 303
-end
-
-// Add your JavaScript code here if needed
+successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
+cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
+}).then(function (result) {
+if (result.error) {
+// If `redirectToCheckout` fails due to a browser or network
+// error, display the localized error message to your customer.
+alert(result.error.message);
+}
+});
+} else {
+// If no amount is selected, alert the user and do not proceed to checkout
+alert('Please select an amount to donate.');
+}
+});
 </script>
 
 </body>
