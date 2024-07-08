@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>কোরআন কালেক্ট ক্লাউড ফান্ডিং পেইজ</title>
+<style>
+/* ...আপনার স্টাইলশীট কোড... */
+</style>
+<script>
+let totalPieces = 0;
+let selectedAmount = 0;
+
+function updateProgressBar() {
+var progressBar = document.querySelector('.progress-bar-value');
+var percentage = (totalPieces / 10000) * 100;
+progressBar.style.width = percentage + '%';
+document.getElementById('total-pieces').innerText = totalPieces;
+}
+
+function addDonation(amount) {
+selectedAmount = amount;
+document.getElementById('selected-amount').value = amount;
+}
+
+function submitForm() {
+document.getElementById('donation-form').submit();
+}
+</script>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>কোরআন কালেক্ট ক্যাম্পেইন</h1>
+<p>আমাদের লক্ষ্য: ১০,০০০ পিস কোরআন কালেক্ট করা</p>
+</header>
+<section>
+<div class="donation-options">
+<button onclick="addDonation(5)">৫ পিস দান করুন</button>
+<button onclick="addDonation(10)">১০ পিস দান করুন</button>
+<button onclick="addDonation(20)">২০ পিস দান করুন</button>
+</div>
+<div class="goal">
+<h2>ফান্ডিং লক্ষ্য</h2>
+<div class="progress-bar">
+<div class="progress-bar-value"></div>
+</div>
+<p id="pieces-collected">আমরা ইতিমধ্যে <span id="total-pieces">0</span> পিস কোরআন কালেক্ট করেছি!</p>
+</div>
+<form id="donation-form" action="billing.html" method="post">
+<input type="hidden" id="selected-amount" name="pieces" value="0">
+<button type="button" onclick="submitForm()">দান করুন</button>
+</form>
+</section>
+</div>
+<script>
+// প্রারম্ভিক প্রগ্রেস বার আপডেট
+updateProgressBar();
+</script>
+</body>
+</html>
