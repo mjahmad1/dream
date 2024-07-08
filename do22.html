@@ -22,6 +22,7 @@ function updateProgressBar() {
 var progressBar = document.querySelector('.progress-bar-value');
 var percentage = (totalPieces / 10000) * 100;
 progressBar.style.width = percentage + '%';
+document.getElementById('total-pieces').innerText = totalPieces;
 }
 
 function addDonation(amount) {
@@ -49,7 +50,6 @@ updateProgressBar();
 </div>
 <p id="pieces-collected">আমরা ইতিমধ্যে <span id="total-pieces">0</span> পিস কোরআন কালেক্ট করেছি!</p>
 </div>
-<button class="donate-button" onclick="updateProgressBar()">দান করুন</button>
 </section>
 </div>
 <script>
