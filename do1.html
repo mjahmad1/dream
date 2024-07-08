@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>কোরআন কালেক্ট ক্লাউড ফান্ডিং পেইজ</title>
+<style>
+body { font-family: Arial, sans-serif; line-height: 1.6; }
+.container { width: 80%; margin: auto; overflow: hidden; }
+header { background: #50b3a2; color: white; padding: 20px; text-align: center; }
+section { margin: 20px 0; }
+.goal { margin-bottom: 20px; }
+.progress-bar { background-color: #ddd; border-radius: 13px; padding: 3px; }
+.progress-bar-value { background-color: #5cb85c; width: 0%; height: 20px; border-radius: 10px; }
+.donate-button { display: block; width: 100%; padding: 10px; margin-top: 20px; background: #f4b400; color: white; border: none; border-radius: 5px; cursor: pointer; }
+</style>
+<script>
+function updateProgressBar(value) {
+var progressBar = document.querySelector('.progress-bar-value');
+progressBar.style.width = value + '%';
+}
+</script>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>কোরআন কালেক্ট ক্যাম্পেইন</h1>
+<p>আমাদের লক্ষ্য: ১০,০০০ পিস কোরআন কালেক্ট করা</p>
+</header>
+<section>
+<div class="goal">
+<h2>ফান্ডিং লক্ষ্য</h2>
+<div class="progress-bar">
+<div class="progress-bar-value"></div>
+</div>
+<p>আমরা ইতিমধ্যে ২,৫০০ পিস কোরআন কালেক্ট করেছি!</p>
+</div>
+<button class="donate-button" onclick="updateProgressBar(25)">দান করুন</button>
+</section>
+</div>
+<script>
+// প্রারম্ভিক প্রগ্রেস বার আপডেট
+updateProgressBar(25);
+</script>
+</body>
+</html>
