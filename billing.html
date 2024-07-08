@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>বিলিং পেইজ</title>
+<style>
+body { font-family: Arial, sans-serif; line-height: 1.6; }
+.container { width: 80%; margin: auto; overflow: hidden; }
+header { background: #50b3a2; color: white; padding: 20px; text-align: center; }
+form { margin-top: 20px; }
+label { display: block; margin-bottom: 10px; }
+input[type="text"], input[type="number"], input[type="email"] { width: 100%; padding: 10px; margin-bottom: 20px; }
+button { display: block; width: 100%; padding: 10px; background: #f4b400; color: white; border: none; border-radius: 5px; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>দান করুন</h1>
+</header>
+<form action="submit_donation.php" method="post">
+<label for="amount">দানের পরিমাণ (পিস):</label>
+<input type="number" id="amount" name="amount" min="1" required>
+
+<label for="name">আপনার নাম:</label>
+<input type="text" id="name" name="name" required>
+
+<label for="email">ইমেইল:</label>
+<input type="email" id="email" name="email" required>
+
+<label for="card-info">কার্ডের তথ্য:</label>
+<input type="text" id="card-info" name="card-info" required>
+
+<button type="submit">সাবমিট করুন</button>
+</form>
+</div>
+</body>
+</html>
