@@ -29,6 +29,34 @@ function handleDonation() {
 alert('Thank you for your donation!');
 }
 </script>
+  
+<!-- আপনার HTML ফর্ম -->
+<form method="post" action="আপনার সার্ভারের পেমেন্ট প্রসেসিং URL">
+<!-- পেমেন্ট তথ্য ইনপুট ফিল্ড -->
+<input type="text" id="card-number" placeholder="কার্ড নম্বর">
+<input type="text" id="cvv" placeholder="CVV">
+<input type="text" id="expiration-date" placeholder="মেয়াদ শেষের তারিখ">
+<!-- সাবমিট বাটন -->
+<button type="submit" id="submit-button">পেমেন্ট করুন</button>
+</form>
+
+<!-- Square পেমেন্ট স্ক্রিপ্ট -->
+<script type="text/javascript" src="https://js.squareup.com/v2/paymentform">
+</script>
+
+<script>
+// Square পেমেন্ট ফর্ম ইনিশিয়ালাইজেশন এবং কনফিগারেশন
+var paymentForm = new SqPaymentForm({
+// আপনার কনফিগারেশন অপশন
+});
+
+// পেমেন্ট ফর্ম সাবমিট হ্যান্ডলার
+paymentForm.build();
+document.getElementById('submit-button').addEventListener('click', function(e) {
+e.preventDefault();
+paymentForm.requestCardNonce();
+});
+</script>
 
 </body>
 </html>
