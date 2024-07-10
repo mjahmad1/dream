@@ -13,6 +13,63 @@ section { margin: 20px 0; }
 .progress-bar { background-color: #ddd; border-radius: 13px; padding: 3px; }
 .progress-bar-value { background-color: #5cb85c; width: 0%; height: 20px; border-radius: 10px; }
 .donate-button { display: block; width: 100%; padding: 10px; margin-top: 20px; background: #f4b400; color: white; border: none; border-radius: 5px; cursor: pointer; }
+/* Donation Section Styles */
+.donation-section {
+background-color: #f7f7f7; /* Light grey background */
+padding: 40px; /* Padding around the donation section */
+text-align: center; /* Center align the content */
+}
+
+.donation-options {
+margin: 20px auto; /* Center the options */
+display: flex; /* Use flexbox for layout */
+justify-content: center; /* Center the items horizontally */
+gap: 20px; /* Space between the items */
+}
+
+.donation-button {
+padding: 10px 20px; /* Padding inside the button */
+font-size: 1em; /* Font size for the button text */
+cursor: pointer; /* Cursor style when hovering over the button */
+border: none; /* No border for the button */
+background-color: #008CBA; /* Blue background for the button */
+color: white; /* White text for the button */
+}
+    
+// Modify your existing donateNow click event handler
+document.getElementById('donateNow').addEventListener('click', function() {
+// Get the selected amount from the selected donation button or the custom amount input
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
+
+// Check if the selected amount is not empty or null
+if (selectedAmount && selectedAmount.trim() !== '') {
+console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+
+// Redirect to Stripe checkout page with the selected amount
+stripe.redirectToCheckout({
+lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
+mode: 'payment',
+successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
+cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
+}).then(function (result) {
+if (result.error) {
+// If `redirectToCheckout` fails due to a browser or network
+// error, display the localized error message to your customer.
+alert(result.error.message);
+}
+});
+} else {
+// If no amount is selected, alert the user and do not proceed to checkout
+alert('Please select an amount to donate.');
+}
+});
+.custom-amount-input {
+margin: 10px auto;
+padding: 10px;
+width: 80%;
+font-size: 1em;
+}
+
 </style>
 <script>
 function updateProgressBar(value) {
@@ -42,11 +99,21 @@ progressBar.style.width = value + '%';
 </div>
 <button class="donate-button" onclick="updateProgressBar(25)">দান করুন</button>
 </section>
+  <div class="donation-section">
+<h2>تبرع الآن</h2>
+<div class="donation-options">
+<button class="donation-button" data-amount="200">200 Tk</button>
+<button class="donation-button" data-amount="500">500 Tk</button>
+<button class="donation-button" data-amount="1000">1000 Tk</button>
 </div>
-<script>
-// প্রারম্ভিক প্রগ্রেস বার আপডেট
-updateProgressBar(25);
-</script>
+<button id="donateNow" class="donation-button">Donate Now</button>
+</div>
+</div>
+  <script src="https://js.stripe.com/v3/"></script>
 </body>
 </html>
+
+
+
+
 
