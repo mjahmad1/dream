@@ -4,6 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Donation Button</title>
+  // Program.cs
+//
+// Use this sample code to handle webhook events in your integration.
+//
+// 1) Create a new .NET project
+//   dotnet new console -o myapp
+//   cd myapp
+//
+// 2) Replace Program.cs with this code
+//
+// 3) Install dependencies
+//   dotnet add package Microsoft.AspNetCore.App
+//   dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+//   dotnet add package Stripe.net
+//
+// 4) Run the server on http://localhost:4242
+//   dotnet run
+
+using System;
+using System.IO;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System.Threading.Tasks;
+using Stripe;
+
+namespace StripeExample
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            WebHost.CreateDefaultBuilder(args)
+              .UseUrls("http://0.0.0.0:4242")
+              .UseWebRoot(".")
+              .UseStartup<Startup>()
+              .Build()
+              .Run();
+
+              // The library needs to be configured with your account's secret key.
+              // Ensure the key is kept out of any version control system you might be using.
+              Stripe.ApiKey = "sk_test_...";
+        }
+    }
+
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMvc().AddNewtonsoftJson();
+        }
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+              app.UseRouting();
+              app.UseEndpoints(endpoints => endpoints.MapControllers());
+        }
+    }
+
+    [Route("webhook")]
+    [ApiController]
+    public class WebhookController : Controller
+    {
+        
+        // This is your Stripe CLI webhook secret for testing your endpoint locally.
+        const string endpointSecret = "whsec_31cc9f5b7d1a7159c7dda9c43c20903eaafdc799f68de64ddac94854b95db322";
+
+        [HttpPost]
+        public async Task<IActionResult> Index()
+        {
+            var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
+            try
+            {
+                var stripeEvent = EventUtility.ConstructEvent(json,
+                    Request.Headers["Stripe-Signature"], endpointSecret);
+
+                // Handle the event
+                Console.WriteLine("Unhandled event type: {0}", stripeEvent.Type);
+
+                return Ok();
+            }
+            catch (StripeException e)
+            {
+                return BadRequest();
+            }
+        }
+    }
+}
 <style>
 .donation-button {
 background-color: #4CAF50; /* Green */
@@ -24,10 +115,117 @@ cursor: pointer;
 <button class="donation-button" onclick="handleDonation()">Donate Now</button>
 
 <script>
-function handleDonation() {
-// এখানে আপনার ডোনেশন হ্যান্ডলিং কোড যোগ করুন
-alert('Thank you for your donation!');
+  {
+  "id": "pmd_1Pa2LTCyC8OWGlHKi6VSeHVo",
+  "apple_pay": {
+    "status": "inactive",
+    "status_details": {
+      "error_message": "You do not have the correct file hosted at https://mjahmad.com/.well-known/apple-developer-merchantid-domain-association. To verify with Apple that you control your domain, you must host this file: https://stripe.com/files/apple-pay/apple-developer-merchantid-domain-association. For more information, see https://stripe.com/docs/payments/payment-methods/pmd-registration.",
+      "message_code": "apple_pay_wrong_verification_file",
+      "metadata": {
+        "domain": "mjahmad.com"
+      }
+    }
+  },
+  "created": 1720386607,
+  "domain_name": "mjahmad.com",
+  "enabled": true
 }
+  {
+  "include_only": [
+    "id,domain_name,enabled,created,apple_pay.status,apple_pay.status_details.error_message,apple_pay.status_details.message_code,apple_pay.status_details.metadata"
+  ]
+}
+  {
+  "domain_name": "mjahmad.com"
+}
+</script>
+  <script>
+{
+  "object": {
+    "id": "acct_1PZzciCyC8OWGlHK",
+    "object": "account",
+    "business_profile": {
+      "annual_revenue": null,
+      "estimated_worker_count": null,
+      "mcc": "7299",
+      "name": null,
+      "support_address": null,
+      "support_email": null,
+      "support_phone": "+88001920082926",
+      "support_url": null,
+      "url": "https://mjahmad.com"
+    },
+    "capabilities": {
+      "afterpay_clearpay_payments": "active",
+      "bancontact_payments": "active",
+      "card_payments": "active",
+      "cartes_bancaires_payments": "pending",
+      "eps_payments": "active",
+      "gb_bank_transfer_payments": "inactive",
+      "ideal_payments": "active",
+      "klarna_payments": "active",
+      "link_payments": "active",
+      "p24_payments": "active",
+      "revolut_pay_payments": "active",
+      "transfers": "active",
+      "us_bank_transfer_payments": "inactive"
+    },
+    "charges_enabled": true,
+    "controller": {
+      "type": "account"
+    },
+    "country": "GB",
+    "default_currency": "gbp",
+    "details_submitted": true,
+    "email": "quranerfariwala@gmail.com",
+    "payouts_enabled": true,
+    "settings": {
+      "bacs_debit_payments": {
+        "display_name": "Stripe",
+        "service_user_number": "449900"
+      },
+      "branding": {
+        "icon": null,
+        "logo": null,
+        "primary_color": null,
+        "secondary_color": null
+      },
+      "card_issuing": {
+        "tos_acceptance": {
+          "date": null,
+          "ip": null
+        }
+      },
+      "card_payments": {
+        "statement_descriptor_prefix": null,
+        "statement_descriptor_prefix_kana": null,
+        "statement_descriptor_prefix_kanji": null
+      },
+      "dashboard": {
+        "display_name": "MJ-AHMAD",
+        "timezone": "Asia/Dhaka"
+      },
+      "invoices": {
+        "default_account_tax_ids": null
+      },
+      "payments": {
+        "statement_descriptor": "INNOVATE ",
+        "statement_descriptor_kana": null,
+        "statement_descriptor_kanji": null
+      },
+      "sepa_debit_payments": {
+      }
+    },
+    "type": "standard"
+  },
+  "previous_attributes": {
+    "business_profile": {
+      "mcc": "8299"
+    }
+  }
+}
+
 </script>
   
 <!-- আপনার HTML ফর্ম -->
@@ -60,3 +258,10 @@ paymentForm.requestCardNonce();
 
 </body>
 </html>
+
+<div style="margin-top: 100px">    <div        id="widget-here-C01Pl"        class="widget-here"        data-shortcode="C01Pl"        data-lang="auto"        data-success_url=""        data-fail_url=""        value="donation-widget"    >
+  
+</div>
+</div>
+<link    rel="stylesheet"    href="https://plugin.whydonate.com/wdplugin-style.css"/>
+<script    src="https://plugin.whydonate.com/wp_styling.js"    type="text/javascript"></script>
