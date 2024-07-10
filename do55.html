@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>কোরআন কালেক্ট ক্লাউড ফান্ডিং পেইজ</title>
+<!-- অন্যান্য স্টাইলস... -->
+<style>
+/* আপনার স্টাইলস এখানে */
+</style>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// Stripe ইনিশিয়ালাইজেশন এবং অন্যান্য ফাংশনস...
+</script>
+</head>
+<body>
+<div class="container">
+<!-- আপনার কন্টেন্ট এখানে -->
+<div class="donation-section">
+<h2>দান করুন</h2>
+<div class="donation-options">
+<button class="donation-button" data-amount="200">200 Tk</button>
+<button class="donation-button" data-amount="500">500 Tk</button>
+<button class="donation-button" data-amount="1000">1000 Tk</button>
+<input type="text" id="customAmount" class="custom-amount-input" placeholder="আপনার ইচ্ছামত অ্যামাউন্ট লিখুন" />
+</div>
+<button id="donateNow" class="donation-button">Donate Now</button>
+</div>
+</div>
+<script>
+// আপনার জাভাস্ক্রিপ্ট কোড এখানে
+document.getElementById('donateNow').addEventListener('click', function() {
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
+if (selectedAmount && selectedAmount.trim() !== '') {
+// এখানে আপনার Stripe পেমেন্ট লিংক যোগ করুন
+window.location.href = "https://buy.stripe.com/bIY7w5gTW80wgyAcMM/" + selectedAmount;
+} else {
+alert('অনুগ্রহ করে একটি অ্যামাউন্ট নির্বাচন করুন।');
+}
+});
+</script>
+</body>
+</html>
