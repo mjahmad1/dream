@@ -54,65 +54,78 @@ font-size: 1em;
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-// Initialize Stripe with your publishable key
-var stripe = Stripe('pk_test_51NSjLzHI6KpMDN4wCyCp6BsIXUIppX284VFnQmyln0GP8GxR0isD6uzBZVGCCl14l6rpud2QVffXQZMuZe6aYJ7F00hfCpDvBk');
-
-// Function to update the displayed amount and handle the selected class
-function updateDisplayedAmount(amount, button) {
-document.getElementById('donateNow').innerText = 'Donate ' + amount + ' Tk';
-// Remove selected class from all buttons
-var donationButtons = document.querySelectorAll('.donation-button');
-donationButtons.forEach(function(btn) {
-btn.classList.remove('selected');
-});
-// Add selected class to the clicked button
-if (button) {
-button.classList.add('selected');
+{
+  "object": {
+    "id": "plink_1PaolECyC8OWGlHKT7vbFTc4",
+    "object": "payment_link",
+    "active": true,
+    "after_completion": {
+      "hosted_confirmation": {
+        "custom_message": null
+      },
+      "type": "hosted_confirmation"
+    },
+    "allow_promotion_codes": false,
+    "application": null,
+    "application_fee_amount": null,
+    "application_fee_percent": null,
+    "automatic_tax": {
+      "enabled": false,
+      "liability": null
+    },
+    "billing_address_collection": "auto",
+    "consent_collection": {
+      "payment_method_reuse_agreement": null,
+      "promotions": "none",
+      "terms_of_service": "none"
+    },
+    "currency": "usd",
+    "custom_fields": [
+    ],
+    "custom_text": {
+      "after_submit": null,
+      "shipping_address": null,
+      "submit": null,
+      "terms_of_service_acceptance": null
+    },
+    "customer_creation": "if_required",
+    "inactive_message": null,
+    "invoice_creation": {
+      "enabled": false,
+      "invoice_data": {
+        "account_tax_ids": null,
+        "custom_fields": null,
+        "description": null,
+        "footer": null,
+        "issuer": null,
+        "metadata": {
+        },
+        "rendering_options": null
+      }
+    },
+    "livemode": true,
+    "metadata": {
+    },
+    "on_behalf_of": null,
+    "payment_intent_data": null,
+    "payment_method_collection": "if_required",
+    "payment_method_types": null,
+    "phone_number_collection": {
+      "enabled": false
+    },
+    "restrictions": null,
+    "shipping_address_collection": null,
+    "shipping_options": [
+    ],
+    "submit_type": "auto",
+    "subscription_data": null,
+    "tax_id_collection": {
+      "enabled": false
+    },
+    "transfer_data": null,
+    "url": "https://buy.stripe.com/bIY7w5gTW80wgyAcMM"
+  }
 }
-}
-
-// Event listeners for the donation buttons
-var donationButtons = document.querySelectorAll('.donation-button');
-donationButtons.forEach(function(button) {
-button.addEventListener('click', function() {
-var amount = this.getAttribute('data-amount');
-updateDisplayedAmount(amount, this); // Pass the clicked button as well
-});
-});
-
-// Event listener for the custom amount input
-document.getElementById('customAmount').addEventListener('input', function() {
-var amount = this.value;
-updateDisplayedAmount(amount); // Update the display
-});
-
-// Modify the existing donateNow click event handler
-document.getElementById('donateNow').addEventListener('click', function() {
-// Get the selected amount from the selected donation button or the custom amount input
-var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
-
-// Check if the selected amount is not empty or null
-if (selectedAmount && selectedAmount.trim() !== '') {
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
-
-// Redirect to Stripe checkout page with the selected amount
-stripe.redirectToCheckout({
-lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
-mode: 'payment',
-successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
-cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
-}).then(function (result) {
-if (result.error) {
-// If `redirectToCheckout` fails due to a browser or network
-// error, display the localized error message to your customer.
-alert(result.error.message);
-}
-});
-} else {
-// If no amount is selected, alert the user and do not proceed to checkout
-alert('Please select an amount to donate.');
-}
-});
 </script>
 <!-- Existing content... -->
 </body>
