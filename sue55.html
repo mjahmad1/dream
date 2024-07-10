@@ -3,14 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donation Page</title>
-<style>
-/* এখানে আপনার CSS স্টাইলগুলি যুক্ত করুন */
-.button1 {
-/* বাটনের জন্য স্টাইল যুক্ত করুন */
-}
-/* অন্যান্য স্টাইলগুলি */
-</style>
+<title>Donation Page with Validation and Data Retrieval</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- অন্যান্য স্ক্রিপ্ট এবং CSS লিঙ্কগুলি এখানে যুক্ত করুন -->
 </head>
 <body>
 <div style="display: flex; flex-wrap: wrap; min-height: 50%; background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Donation-3.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;" class="row sectionBlockLayout" data-component-theme="portalThemeColor8">
@@ -52,15 +47,133 @@
 <div style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px;" class="col-md-6 columnBlockLayout"><img src="/Donation-2.jpg" alt="Image showing impact" style="width: 100%; height: auto; border-radius: 8px;"></div>
 </div>
 </div>
-<div style="display: flex; flex-wrap: wrap; min-height: 50%; background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Donation-3.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;" class="row sectionBlockLayout" data-component-theme="portalThemeColor8">
-<!-- বাকি কন্টেন্ট -->
-</div>
-
-<!-- অন্যান্য সেকশনগুলি এখানে যুক্ত করুন -->
-
 <script>
-// যদি কোনো জাভাস্ক্রিপ্ট কোড থাকে, তা এখানে যুক্ত করুন
+// আপনার প্রদান করা জাভাস্ক্রিপ্ট কোডগুলি এখানে যুক্ত করুন
+if (window.jQuery) {
+   (function ($)
+ {
+      $(document).ready(function () {
+         if (typeof (Page_Validators) == 'undefined') return;
+         // Create new validator
+         var newValidator = document.createElement('span');
+         newValidator.style.display = "none";
+         newValidator.id = "phoneValidator";
+         newValidator.controltovalidate = "phone";
+         newValidator.errormessage = "Phone number is not in valid format.";
+         newValidator.validationGroup = ""; // Set this if you have set ValidationGroup on the form
+         newValidator.initialvalue = "";
+         newValidator.evaluationfunction = function () {
+            // check if phone number is in valid format
+            var value = $("#phone").val();
+            var phonePattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if (value == null || value == "" || !phonePattern.test(value)) {
+            return false;
+            } else {
+               return true;
+            }
+         };
+// আপনার প্রথম কোড ব্লক
+}
+
+if (window.jQuery) {
+   (function ($)
+ {
+      $(document).ready(function () {
+         if (typeof (Page_Validators) == 'undefined') return;
+         // Create new validator
+         var newValidator = document.createElement('span');
+         newValidator.style.display = "none";
+         newValidator.id = "phoneValidator";
+         newValidator.controltovalidate = "phone";
+         newValidator.errormessage = "Phone number is not in valid format.";
+         newValidator.validationGroup = ""; // Set this if you have set ValidationGroup on the form
+         newValidator.initialvalue = "";
+         newValidator.evaluationfunction = function () {
+            // check if phone number is in valid format
+            var value = $("#phone").val();
+            var phonePattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if (value == null || value == "" || !phonePattern.test(value)) {
+            return false;
+            } else {
+               return true;
+            }
+         };
+
+         // Add the new validator to the page validators array:
+         Page_Validators.push(newValidator);
+
+      });
+   }(window.jQuery));
+}
+
+$(() => {
+    let htmlElement = '#table-container';
+    $(htmlElement).html('Loading...');
+    webapi.safeAjax({
+        type: "GET",
+        url: "/_api/contacts?$filter=statuscode eq 1",
+        contentType: "application/json",
+        success: (res) => ($(htmlElement).html(generateHTMLTable(res.value)))
+    }).fail(res => errorHandler(res))
+});
+
+unction generateHTMLTable(data) {
+    let table = '<table style="width: 100%; border-collapse: collapse;">';
+    const excludedKey = '@odata.etag';
+    // Generate table headers
+    table += `<thead><tr>${Object.keys(data[0])
+        .filter(key => key !== excludedKey)
+        .map(key => `<th style="padding: 8px; border: 1px solid #ccc; background-color: #f2f2f2; color: #333;">${key}</th>`)
+        .join('')}</tr></thead>`;
+    // Generate table rows
+    table += '<tbody>';
+    for (let i = 0; i < data.length; i++) {
+        table += '<tr>';
+        table += Object.entries(data[i])
+            .filter(([key]) => key !== excludedKey)
+            .map(([key, value]) => `<td style="padding: 8px; border: 1px solid #ccc;">${value || ''}</td>`)
+            .join('');
+        table += '</tr>';
+    }
+    table += '</tbody>';
+    table += '</table>';
+    return table;
+}
+
+
+function errorHandler(response) {
+    if (response.responseJSON) {
+        var error = response.responseJSON.error.code;
+        switch (error) {
+            case "9004010C":
+                alert("Error: Site settings missing for entity.");
+                break;
+            case "90040101":
+                alert("Error: Site settings missing for entity fields.");
+                break;
+            case "90040120":
+                alert("Error: Table permissions missing for entity.");
+                break;
+            default:
+                alert("Error: " + response.responseJSON.error.message);
+        }
+    } else {
+        alert("Error: Web API is not available... ");
+    }
+}
+
+((webapi, $) => {
+    webapi.safeAjax = (opts) => {
+        const deferredAjax = $.Deferred();
+        shell.getTokenDeferred().done(token => $.ajax({ ...opts, headers: { ...opts.headers, '__RequestVerificationToken': token } })
+            .done((data, textStatus, jqXHR) => validateLoginSession(data, textStatus, jqXHR, deferredAjax.resolve))
+            .fail(deferredAjax.reject)).fail(() => deferredAjax.rejectWith(this, arguments));
+        return deferredAjax.promise();
+    };
+})(window.webapi = window.webapi || {}, jQuery);
 </script>
 
 </body>
 </html>
+
+
