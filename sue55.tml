@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donation Page</title>
+<style>
+/* এখানে আপনার CSS স্টাইলগুলি যুক্ত করুন */
+.button1 {
+/* বাটনের জন্য স্টাইল যুক্ত করুন */
+}
+/* অন্যান্য স্টাইলগুলি */
+</style>
+</head>
+<body>
+<div style="display: flex; flex-wrap: wrap; min-height: 50%; background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Donation-3.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;" class="row sectionBlockLayout" data-component-theme="portalThemeColor8">
+<div class="container">
+<div style="flex-grow: 1; display: flex; flex-direction: column; margin: 240px 0px;" class="col-md-12 columnBlockLayout">
+<h1 style="text-align: center;">Support Our Cause</h1>
+<h4 style="text-align: center;">Make a Donation Today</h4>
+<button style="text-align: center; margin-left: auto; margin-right: auto;" class="button1">Donate Now</button>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;" class="row sectionBlockLayout text-left" data-component-theme="portalThemeColor">
+<div style="padding: 0px; display: flex; flex-wrap: wrap;" class="container">
+<div style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px;" class="col-md-12 columnBlockLayout">
+<h2 style="text-align: center;">Why Donate?</h2>
+<p style="text-align: center;">Your generous donation will help us continue our mission to make a positive impact in the community. With your support, we can create a better future for those in need.</p>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; margin: 0px; min-height: 451.25px; padding: 8px;" class="row sectionBlockLayout text-left" data-component-theme="portalThemeColor">
+<div style="padding: 0px; display: flex; flex-wrap: wrap; column-gap: 0px;" class="container">
+<div style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px; margin: 60px 0px; padding: 16px; width: calc(50% - 0px);" class="col-md-6 columnBlockLayout"><img style="width: 100%; height: auto; max-width: 100%;" name="Donation" alt="Image showing people donating" src="/Donation.jpg"></div>
+<div style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px; margin: 60px 0px; padding: 16px; width: calc(50% - 0px);" class="col-md-6 columnBlockLayout">
+<h2>How to Donate</h2>
+<p>Donating is quick and easy. Simply click the button below to make a secure online donation. Your contribution will go directly towards supporting our programs and initiatives.</p>
+<button class="button1" value="/" type="button">Donate Now</button>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;" class="row sectionBlockLayout text-left" data-component-theme="portalThemeColor">
+<div style="padding: 0px; display: flex; flex-wrap: wrap;" class="container">
+<div style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px;" class="col-md-6 columnBlockLayout">
+<h2>Our Impact</h2>
+<p>With the support of generous donors like you, we have been able to make a significant impact in the lives of individuals and communities. Together, we can create positive change and build a brighter future.</p>
+</div>
+<div style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px;" class="col-md-6 columnBlockLayout"><img src="/Donation-2.jpg" alt="Image showing impact" style="width: 100%; height: auto; border-radius: 8px;"></div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; min-height: 50%; background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Donation-3.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;" class="row sectionBlockLayout" data-component-theme="portalThemeColor8">
+<!-- বাকি কন্টেন্ট -->
+</div>
+
+<!-- অন্যান্য সেকশনগুলি এখানে যুক্ত করুন -->
+
+<script>
+// যদি কোনো জাভাস্ক্রিপ্ট কোড থাকে, তা এখানে যুক্ত করুন
+</script>
+
+</body>
+</html>
