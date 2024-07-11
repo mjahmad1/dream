@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&display=swap" rel="stylesheet"> <!-- Tiro Bangla ফন্ট ইমপোর্ট -->
+<style>
+body, h1, h2, p, footer {
+margin: 0;
+padding: 0;
+}
+
+header {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+header h1 {
+font-family: 'Galada', cursive;
+margin-bottom: 10px;
+}
+
+header h2 {
+font-family: 'Galada', cursive;
+}
+header h3 {
+font-family: 'Galada', cursive;
+}
+	header p {
+font-family: 'Galada', cursive;
+}
+section {
+background-color: white;
+color: black;
+text-align: left;
+padding: 20px;
+}
+section-1 {
+background-color: black;
+color: white;
+text-align: left;
+padding: 20px;
+}
+
+section-1 h1 {
+font-family: 'Galada', cursive;
+margin-bottom: 10px;
+}
+
+section-1 h2 {
+font-family: 'Galada', cursive;
+}
+section-1 h3 {
+font-family: 'Galada', cursive;
+}
+section-1 p {
+font-family: 'Galada', cursive;
+}
+section-2 {
+background-color: white;
+color: black;
+text-align: left;
+padding: 20px;
+}
+
+section-2 h1 {
+font-family: 'Galada', cursive;
+margin-bottom: 10px;
+}
+
+section-2 h2 {
+font-family: 'Galada', cursive;
+}
+section-2 h3 {
+font-family: 'Galada', cursive;
+}
+section-2 p {
+font-family: 'Galada', cursive;
+}
+
+
+footer {
+background-color: white;
+color: black;
+text-align: left;
+padding: 20px;
+font-family: 'Tiro Bangla', sans-serif; /* Tiro Bangla ফন্ট ব্যবহার */
+}
+</style>
+</head>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+		<style>
+			.new-section p {
+				font-family: 'Galada', cursive;
+				padding: 0 15px;
+			}
+						.new-section h1 {
+				font-family: 'Galada', cursive;
+				padding: 0 15px;
+			}
+						.new-section h2 {
+				font-family: 'Galada', cursive;
+				padding: 0 15px;
+			}
+			.new-section h3 {
+				font-family: 'Galada', cursive;
+				padding: 0 15px;
+			}
+						.new-section h4 {
+				font-family: 'Galada', cursive;
+				padding: 0 15px;
+			}
+			a {
+				color: #FFA500; /* এই হেক্স কোডটি কমলালেবু রঙের জন্য */
+			}
+		</style>
+	</head>
+		<header>
+			<h1>এম জে আহমদ</h1>
+			<p>জ্ঞান ও বিশ্বাসের সমন্বয়ে এক উজ্জ্বল প্রজন্মের প্রত্যাশায়</p>
+		</header>
+	<body>
+	<img src="mjsteker.jpg" style="width:100%">
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* এই স্টাইলটি শুধুমাত্র unique-section ক্লাসের জন্য প্রযোজ্য হবে */
+.unique-section {
+display: flex;
+justify-content: center;
+background-color: white;
+min-height: 3vh;
+}
+
+.unique-section .centered-column {
+background-color: black;
+color: #FFA500; /* কমলালেবু রঙের জন্য হেক্স কোড */
+text-decoration: none; /* লিংকের নিচে দাগ থাকবে না */
+padding: 10px;
+margin: 10px; /* শব্দ দুটির মাঝখানে ফাকা থাকবে */
+display: inline-block; /* শব্দ দুটি আলাদা বুঝা যাবে */
+}
+
+/* অন্যান্য সেকশনের উপর প্রভাব না ফেলার জন্য স্পেসিফিক সেলেক্টর ব্যবহার করা হয়েছে */
+.unique-section a {
+background-color: black;
+color: #FFA500;
+text-decoration: none;
+padding: 10px;
+margin: 10px;
+display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<div class="unique-section">
+<div class="centered-column">
+<a href="lt11.html"> العربية</a>
+<a href="index.html">English</a>
+</div>
+</div>
+</body>
+</html>
+<html>
+	<head>
+		<body>
+			<header>
+				<h2>উইন্ডোজ ইনসাইডার কমিউনিটির একজন গর্বিত সদস্য</h2>
+			</header>
+		</body>
+	</head>
+</html>
+<html>
+<html>
+    <head>
+        <body>
+            <div class="new-section">
+                <h3>HTML, CSS, এবং JavaScript কোডিং, মাইক্রোসফট ৩৬৫, মাইক্রোসফট আজর এবং ক্লাউড সলিউশনসে গভীর অভিজ্ঞতা সম্পন্ন,</h3>
+                <img src="emojij1.png" style="width:100%">
+                <p>যুক্তরাজ্যের কোম্পানি ডেভেলপার ফোরামে একজন ডেভেলপার হিসেবে এম-জে আহমদের ভূমিকা পেশাগত দক্ষতা এবং উদ্ভাবনের প্রতি অঙ্গীকারকে প্রতিফলিত করে,</p>
+                <h3>একজন মাইক্রোসফট ইন্ট্রা আইডি P2 ব্যবহারকারী হিসেবে, মাইক্রোসফটের অভ্যন্তরীণ প্ল্যাটফর্মগুলো সর্বোত্তম পারফরম্যান্সের জন্য দক্ষতার সাথে ব্যবহারকারি,</h3>
+                <p>সাইবার সিকিউরিটি, অ্যাপ রেজিস্ট্রেশন, এবং ক্লাউড কম্পিউটিং সহ বিস্তৃত পরিসরের সফটওয়্যার এবং ডিজিটাল প্রযুক্তি অ্যাপ্লিকেশনে সহায়তা প্রদান করার বৈধ সক্ষমতা</p>
+                <img src="emoji102.png" style="width:100%">
+            </div>
+        </body>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+		<header h3>
+                <h3>সচ্ছ জ্ঞান সাধনা এবং উদ্ভাবনের পথে অবিচল</h32>
+	    </header>
+		<div class="new-section">
+                <h3>আমি, মোঃ জাফর আহমদ,</h3> 
+            <ul>
+                <li><p>জীবনের বাধা-বিপত্তি সত্ত্বেও, আমি আমার জ্ঞান সাধনার পথে অবিচল থেকেছি। আমি বিশ্বাস করি কোনো বাধাই আমাকে এই পথ থেকে সরাতে পারবে না,ইনশাআল্লাহ।</p></li>
+                <li><p>উইন্ডোজ কমিউনিটির একজন গর্বিত সদস্য হিসেবে, আমি আমার ডিভাইসগুলোতে সর্বোচ্চ সিকিউরিটি এবং ডিজিটাল বিশ্বের সর্বশেষ আবিষ্কারগুলো প্রিভিউ হিসেবে পেয়ে থাকি।</p></li>
+            </ul>
+        </div>
+        </body>
+    </head>
+    <head>
+        <body>
+            <div class="new-section">
+               <h3>সম্প্রতি, আমি শারীরিকভাবে অসুস্থ হয়ে পড়ায় স্বাভাবিক চলাফেরা করতে অক্ষম হয়ে পড়েছি, যা আমার অধ্যায়ন এবং কোডিং দক্ষতা, মাইক্রোসফট আজর ডাটা স্টুডিও, এআই প্রযুক্তি, এবং মেশিন লার্নিং এর উপর গভীর প্র্যাকটিসের সাথে সংগতি রাখাকে কঠিন করে তুলেছে।</h3>
+            </div>
+            <img src="emoji103.png" style="width:100%">
+                <header>
+			<h3>যারা বিভিন্ন ধরনের সন্দেহজনক টুলস ব্যবহার করে আমাকে এই পথ থেকে সরানোর চেষ্টা করছে,আমি এবং আমার কমিউনিটি  তাদের প্রতি সচেতন ও সতর্ক রয়েছি।</h3>
+                    <p>লেনদেন সম্পর্কিত বিষয়ে জানতে<a href="hbhl1.html"> এই লিংকে</a> প্রবেশ করুন </p>
+                 </header>
+        </div>
+		</body>
+	</head>
+</html>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>জ্ঞান ও বিশ্বাসের সমন্বয়ে এক উজ্জ্বল প্রজন্মের প্রত্যাশায়</title>
+<style>
+.slideshow-container {
+width: 100%;
+position: relative;
+margin: auto;
+}
+
+.mySlides {
+display: none;
+width: 100%;
+height: auto;
+}
+
+.active {
+display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides active">
+<img src="emojib4.png" style="width:100%">
+</div>
+
+<div class="mySlides">
+<img src="emojib3.png" style="width:100%">
+</div>
+
+<div class="mySlides">
+<img src="emojib2.png" style="width:100%">
+</div>
+
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+var i;
+var slides = document.getElementsByClassName("mySlides");
+for (i = 0; i < slides.length; i++) {
+slides[i].style.display = "none";  
+}
+slideIndex++;
+if (slideIndex > slides.length) {slideIndex = 1}    
+slides[slideIndex-1].style.display = "block";  
+setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>
+<html>
+	<head>
+		<body>
+			<header>
+							<p>আমি বিশ্বাস করি, প্রযুক্তির উন্নতি এবং ডিজিটাল বাংলাদেশের স্বপ্ন পূরণে আমার অবদান আমাকে একজন যোগ্য, দক্ষ এবং আদর্শ নাগরিক হিসেবে গড়ে তুলবে,ইনশাআল্লাহ।</p>
+			</header>
+            </div>
+        </body>
+    </head>
+</html>
+<html>
+	<head>
+		<body>
+			<header h3>
+				<h3>"আমাদের ভিক্ষুক জাতি না হয়ে উৎপাদনশীল জাতি হওয়া উচিত"</h3>
+				<img src="shekh2.jpg" style="width:100%">
+				<p>বঙ্গবন্ধু শেখ মুজিবুর রহমান</p>
+			</header>
+		</body>
+	</head>
+</html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Tiro+Bangla" rel="stylesheet">
+<style>
+.centered-section {
+font-family: 'Tiro Bangla', serif;
+text-align: center;
+background-color: white;
+color: black;
+}
+.centered-section-1 {
+font-family: 'Tiro Bangla', serif;
+text-align: left;
+background-color: white;
+color: black;
+padding: 0 15px;
+}
+</style>
+</head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="centered-section">
+                <h4>"আমি চাই বাংলার মানুষের মুক্তি। শোষণের মুক্তি। বাংলার মানুষের মুখে হাসি ফোটানোর জন্য বঙ্গবন্ধু সংগ্রাম করেছিলেন"</h4>
+            </div>
+            <header>
+                <h3>আজকের প্রজন্ম ভবিষ্যতে বাংলাদেশের নেতৃত্ব দেবে ইনশাআল্লাহ</h3>
+		    <p>প্রধানমন্ত্রী শেখ হাসিনা</p>
+                <img src="emojib4.png" style="width:100%">
+            </header>
+	</body>
+    </head>
+</html>
+
+
+
+
+<html>
+	<head>
+		<body>
+			<div>
+				<img src="crmsl3.jpg" style="width:100%">
+			</div>
+		</body>
+	</head>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+	<style>
+		.body, h1, h2 {
+		margin: 0;
+		padding: 0;
+		}
+		.header {
+			background-color: white; /* ব্যাকগ্রাউন্ড সাদা করা হয়েছে */
+			color: black; /* লিখা কালো করা হয়েছে */
+			text-align: center;
+			padding: 20px;
+		}
+		.header h1 {
+			font-family: 'Galada', cursive;
+			margin-bottom: 10px;
+		}
+		.header h2 {
+			font-family: 'Galada', cursive;
+		}
+	</style>
+</head>
+</html>
+<html>
+	<head>
+		<img src="ai501.jpg" style="width:100%">
+	</head>
+</html>
+<html>
+	<head>
+		<body>
+			<div>
+				<div class="header h1">
+			<h1>এম জে আহমদ</h1>
+			<header h3>
+                <h3> HTML, CSS, JavaScript, SQL, মাইক্রোসফট ৩৬৫, আজর ডাটা স্টুডিও, এবং ক্লাউড কম্পিউটিং সহ প্রযুক্তির সর্বশেষ উন্নতিগুলির সাথে নিয়মিত অধ্যয়ন</h3>
+			</header>
+		</div>
+	</div>
+</body>
+</html>
+<html>
+    <head>
+        <body>
+            <header>
+                <h3>অনেকে জিজ্ঞেস করে,</h3>
+		    <div class="header">
+			    <h2>পড়াশোনা ও প্র্যাকটিস কবে শেষ হবে?</h2>
+                <img src="emojigo.png" style="width:100%">
+		    </div>
+            <div class="header h3">
+                <h3>"যেদিন গুগল বলবে আর কিছু জানার নেই, সেদিন"</h3>
+            </div>
+        </body>
+    </header>
+	    <body>
+		    <header>
+			    <h1>"জ্ঞানের সাগরে ডুব দিয়েছি, তীরে ফেরার কথা ভাবিনি"</h1>
+                <img src="emojisa.png" style="width:100%">
+		    </header>
+	    </body>
+    </head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<style>
+		* { box-sizing: border-box; }
+		body { font-family: Arial, sans-serif; }
+		.slideshow-container {
+			width: 100%;
+			position: relative;
+			margin: auto;
+		}
+		.slide {
+			display: none;
+			padding: 20px;
+			text-align: center;
+		}
+		.active {
+			display: block;
+		}
+		.quote { font-style: italic; }
+		.author { margin-top: 20px; font-weight: bold; }
+	</style>
+</head>
+	<body>
+		<div class="slideshow-container">
+			<div class="slide active">
+				<p class="quote">"যা কিছু আমি জানি, তা কেবল এক ফোঁটা; যা আমি জানি না, তা এক মহাসাগর।"</p>
+				<p class="author">-আইজ্যাক নিউটন</p>
+			</div>
+			<div class="slide">
+				<p class="quote">"জীবন সাইকেল চালানোর মতো, ভারসাম্য রাখতে হলে আপনাকে চলতে থাকতে হবে।"</p>
+				<p class="author">-আলবার্ট আইনস্টাইন</p>
+			</div>
+			<div class="slide">
+				<p class="quote">"আমি আমার জীবনে কোনো বিশেষ প্রতিভা দেখতে পাই না। আমি কেবল অত্যন্ত কৌতূহলী।"</p>
+				<p class="author">-মারি কুরি</p>
+			</div>
+			<div class="slide">
+				<p class="quote">"সবচেয়ে বড় ভুল হলো সব ভুল থেকে শিক্ষা না নেওয়া।"</p>
+				<p class="author">-চার্লস ডারউইন</p>
+			</div>
+			<div class="slide">
+				<p class="quote">"জীবনের সময় খুব ছোট, তাই কিছু নতুন করার জন্য বড় সাহস দেখান।"</p>
+				<p class="author">-স্টিফেন হকিং</p>
+			</div>
+		</div>
+		<script>
+			var slideIndex = 0;
+			showSlides();
+			function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("slide");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1}    
+				slides[slideIndex-1].style.display = "block";  //
+				setTimeout(showSlides, 3000); // Change image every 4 seconds
+			}
+		</script>
+	</body>
+</header>
+</header>
+</html>
+
+<html>
+	<head>
+		<body>
+			<img src="ai500.jpg" style="width:100%">
+		</body>
+	</head>
+</html>
+
+
+
+    <!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>এম-জে আহমদ</title>
+<style>
+/* Existing styles... */
+/* Footer Styles */
+.footer {
+background-color: black; /* Black background for the footer */
+color: white; /* White text for contrast */
+padding: 20px; /* Padding around the text */
+font-family: 'Amiri Quran', serif; /* Amiri Quran font */
+}
+.footer h2 {
+font-size: 1.5em; /* Larger font size for titles */
+margin-bottom: 10px; /* Space below the title */
+}
+.footer ul {
+list-style-type: none; /* No bullets for the list */
+padding: 0; /* No padding for the list */
+}
+.footer li {
+margin-bottom: 5px; /* Space below each list item */
+}
+.footer a {
+color: white; /* White text for the links */
+text-decoration: none; /* No underline for the links */
+font-size: 1.2em; /* Slightly larger font size for links */
+}
+.footer p {
+font-size: 1em; /* Standard font size for text */
+margin-top: 20px; /* Space above the paragraph */
+}
+/* Responsive styles... */
+/* Emoji styles */
+.emoji-img {
+width: 50px; /* Set a fixed width for emojis */
+height: auto; /* Maintain aspect ratio */
+margin: 0 5px; /* Add some space around each emoji */
+}
+@media (max-width: 480px) {
+.emoji-img {
+width: 30px; /* Smaller size for mobile devices */
+}
+}
+</style>
+</head>
+<body>
+<!-- Existing content... -->
+<!-- Footer -->
+<div class="footer">
