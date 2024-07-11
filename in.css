@@ -202,3 +202,10 @@ margin: 0 5px; /* Add some space around each emoji */
 .emoji-img {
 width: 30px; /* Smaller size for mobile devices */
 }
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2em;
+}
+.header p {
+font-size: 1.2em;
+}
