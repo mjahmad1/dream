@@ -74,8 +74,8 @@ section-2 p {
 font-family: 'Galada', cursive;
 }
 footer {
-background-color: white;
-color: black;
+background-color: black;
+color: white;
 text-align: left;
 padding: 20px;
 font-family: 'Tiro Bangla', sans-serif; /* Tiro Bangla ফন্ট ব্যবহার */
@@ -167,15 +167,17 @@ background-color: white;
 color: black;
 padding: 0 15px;
 }
-.footer {
-background-color: black; /* Black background for the footer */
-color: white; /* White text for contrast */
-padding: 20px; /* Padding around the text */
-font-family: 'Amiri Quran', serif; /* Amiri Quran font */
+.footer h1 {
+font-size: 1.5em; /* Larger font size for titles */
+margin-bottom: 10px; /* Space below the title */
 }
 .footer h2 {
 font-size: 1.5em; /* Larger font size for titles */
 margin-bottom: 10px; /* Space below the title */
+}
+.footer p {
+font-family: 'Tiro Bangla', cursive;
+padding: 0 15px;
 }
 .footer ul {
 list-style-type: none; /* No bullets for the list */
@@ -189,16 +191,12 @@ color: white; /* White text for the links */
 text-decoration: none; /* No underline for the links */
 font-size: 1.2em; /* Slightly larger font size for links */
 }
-.footer p {
-font-size: 1em; /* Standard font size for text */
-margin-top: 20px; /* Space above the paragraph */
-}
 .emoji-img {
 width: 50px; /* Set a fixed width for emojis */
 height: auto; /* Maintain aspect ratio */
 margin: 0 5px; /* Add some space around each emoji */
 }
 @media (max-width: 480px) {
-.emoji-img-1 {
+.emoji-img {
 width: 30px; /* Smaller size for mobile devices */
 }
