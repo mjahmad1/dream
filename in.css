@@ -100,6 +100,32 @@ padding: 0 15px;
 font-family: 'Galada', cursive;
 padding: 0 15px;
 }
+.new-section-1 {
+background-color: black;
+color: white;
+text-align: left;
+padding: 20px;
+}
+.new-section-1 p {
+font-family: 'Tiro Bangla', cursive;
+padding: 0 15px;
+}
+.new-section-1 h1 {
+font-family: 'Tiro Bangla', cursive;
+padding: 0 15px;
+}
+.new-section-1 h2 {
+font-family: 'Tiro Bangla', cursive;
+padding: 0 15px;
+}
+.new-section-1 h3 {
+font-family: 'Tiro Bangla', cursive;
+padding: 0 15px;
+}
+.new-section-1 h4 {
+font-family: 'Tiro Bangla', cursive;
+padding: 0 15px;
+}
 a {
 color: #FFA500; /* এই হেক্স কোডটি কমলালেবু রঙের জন্য */
 }
