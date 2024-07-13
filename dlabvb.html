@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Billing Records - Doctors Lab and Hospital</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+}
+.header {
+background-color: #4CAF50;
+color: white;
+padding: 15px;
+text-align: center;
+}
+.container {
+padding: 20px;
+}
+.table-section {
+background-color: white;
+margin: 20px auto;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 1000px;
+}
+.table-section h2 {
+margin-top: 0;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+table, th, td {
+border: 1px solid #ddd;
+}
+th, td {
+padding: 10px;
+text-align: left;
+}
+th {
+background-color: #f2f2f2;
+}
+.button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.button:hover {
+background-color: #45a049;
+}
+.contact-info {
+text-align: center;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Doctors Lab and Hospital</h1>
+<p>943, Kazlar Par. Kazla Bridge Demra Road. Jatrabari, Dhaka-1236</p>
+<p>Phone: 01855 330 703 | Email: <a href="mailto:doctorslabh@gmail.com">doctorslabh@gmail.com</a></p>
+</div>
+<div class="container">
+<div class="table-section">
+<h2>View Billing Records</h2>
+<table>
+<thead>
+<tr>
+<th>Billing ID</th>
+<th>Patient ID</th>
+<th>Patient Name</th>
+<th>Service Provided</th>
+<th>Amount</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<!-- Example billing records -->
+<tr>
+<td>1</td>
+<td>101</td>
+<td>John Doe</td>
+<td>Consultation</td>
+<td>$100</td>
+<td>2024-07-10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>102</td>
+<td>Jane Smith</td>
+<td>Lab Test</td>
+<td>$50</td>
+<td>2024-07-11</td>
+</tr>
+<!-- Add more billing records as needed -->
+</tbody>
+</table>
+<button class="button">Generate New Bill</button>
+</div>
+</div>
+</body>
+</html>
