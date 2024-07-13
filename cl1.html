@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <style>
+        /* Add your CSS here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Donation Page</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Your Donation</h2>
+            <p id="subtotal"><!-- Subtotal will be inserted here --></p>
+        </section>
+        
+        <section>
+            <h2>Donate Now</h2>
+            <button id="donateBtn">Send Your Donation</button>
+            <button id="payBtn">Pay Now</button>
+        </section>
+    </main>
+    
+    <script>
+        document.getElementById('donateBtn').addEventListener('click', function() {
+            // Handle donation submission here
+            alert('Donation submitted. Please check your email for payment options.');
+        });
+        
+        document.getElementById('payBtn').addEventListener('click', function() {
+            // Handle payment here
+            window.location.href = "/payment-options";  // Redirect to payment options page
+        });
+    </script>
+</body>
+</html>
