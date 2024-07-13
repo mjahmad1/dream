@@ -1,0 +1,508 @@
+Example Integration with Stripe
+Here's an example of how you might integrate Stripe into your crowdfunding website:
+
+HTML
+Add a form for payment details:
+
+<form id="payment-form">
+<div id="card-element">
+<!-- A Stripe Element will be inserted here. -->
+</div>
+<button id="submit">Submit Payment</button>
+</form>
+<div id="card-errors" role="alert"></div>
+
+JavaScript
+Include Stripe's JavaScript library and handle the payment process:
+
+// Include Stripe.js
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+const stripe = Stripe('your-publishable-key-here');
+const elements = stripe.elements();
+const card = elements.create('card');
+card.mount('#card-element');
+
+const form = document.getElementById('payment-form');
+form.addEventListener('submit', async (event) => {
+event.preventDefault();
+const {token, error} = await stripe.createToken(card);
+if (error) {
+// Display error.message in #card-errors
+document.getElementById('card-errors').textContent = error.message;
+} else {
+// Send the token to your server
+handleToken(token);
+}
+});
+
+function handleToken(token) {
+// Send token to server for processing payment
+fetch('/charge', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify({token: token.id}),
+}).then(response => {
+return response.json();
+}).then(data => {
+console.log(data);
+});
+}
+</script>
+
+CSS
+Style the payment form:
+
+#card-element {
+border: 1px solid #ccc;
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+#submit {
+background-color: #28a745;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+#submit:hover {
+background-color: #218838;
+}
+
+#card-errors {
+color: red;
+margin-top: 10px;
+}
+
+
+
+
+HTML
+Add options for recurring donations:
+
+<form id="payment-form">
+<div id="card-element">
+<!-- A Stripe Element will be inserted here. -->
+</div>
+<label>
+<input type="radio" name="recurring" value="one-time" checked> One-time
+</label>
+<label>
+<input type="radio" name="recurring" value="monthly"> Monthly
+</label>
+<button id="submit">Submit Payment</button>
+</form>
+<div id="card-errors" role="alert"></div>
+
+JavaScript
+Handle the recurring donation logic:
+
+// Include Stripe.js
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+const stripe = Stripe('your-publishable-key-here');
+const elements = stripe.elements();
+const card = elements.create('card');
+card.mount('#card-element');
+
+const form = document.getElementById('payment-form');
+form.addEventListener('submit', async (event) => {
+event.preventDefault();
+const {token, error} = await stripe.createToken(card);
+if (error) {
+document.getElementById('card-errors').textContent = error.message;
+} else {
+handleToken(token);
+}
+});
+
+function handleToken(token) {
+const recurring = document.querySelector('input[name="recurring"]:checked').value;
+fetch('/charge', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify({token: token.id, recurring: recurring}),
+}).then(response => {
+return response.json();
+}).then(data => {
+console.log(data);
+});
+}
+</script>
+
+Server-Side Code
+Handle the recurring payment on the server (example in Node.js):
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const stripe = require('stripe')('your-secret-key-here');
+
+const app = express();
+app.use(bodyParser.json());
+
+app.post('/charge', async (req, res) => {
+const { token, recurring } = req.body;
+try {
+if (recurring === 'monthly') {
+const customer = await stripe.customers.create({
+source: token,
+email: 'customer@example.com',
+});
+await stripe.subscriptions.create({
+customer: customer.id,
+items: [{ plan: 'your-plan-id-here' }],
+});
+} else {
+await stripe.charges.create({
+amount: 5000, // Amount in cents
+currency: 'usd',
+source: token,
+description: 'One-time donation',
+});
+}
+res.send({ success: true });
+} catch (error) {
+res.status(500).send({ error: error.message });
+}
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+
+CSS
+Style the payment form:
+
+#card-element {
+border: 1px solid #ccc;
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+#submit {
+background-color: #28a745;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+#submit:hover {
+background-color: #218838;
+}
+
+#card-errors {
+color: red;
+margin-top: 10px;
+}
+
+
+
+
+Example Integration
+HTML
+Add the PayPal script and create a button:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crowdfunding Website</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>Welcome to Our Crowdfunding Campaign</h1>
+</header>
+<main>
+<section class="campaign">
+<h2>Campaign Title</h2>
+<p>Campaign description goes here...</p>
+<div class="donation-form">
+<label for="donation-amount">Enter Donation Amount:</label>
+<input type="number" id="donation-amount" min="1" step="any">
+<button onclick="addDonation()">Donate</button>
+</div>
+<div class="subtotal">
+<h3>Subtotal: $<span id="subtotal">0.00</span></h3>
+</div>
+<div class="progress-bar">
+<div class="progress" id="progress"></div>
+</div>
+<p>Goal: $<span id="goal">1000</span></p>
+<div id="paypal-button-container"></div>
+</section>
+</main>
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
+
+JavaScript
+Handle the PayPal button and payment process:
+
+let subtotal = 0;
+const goal = 1000;
+
+function addDonation() {
+const donationAmount = parseFloat(document.getElementById('donation-amount').value);
+if (!isNaN(donationAmount) && donationAmount > 0) {
+subtotal += donationAmount;
+document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+document.getElementById('donation-amount').value = '';
+updateProgressBar();
+} else {
+alert('Please enter a valid donation amount.');
+}
+}
+
+function updateProgressBar() {
+const progress = (subtotal / goal) * 100;
+document.getElementById('progress').style.width = progress + '%';
+}
+
+paypal.Buttons({
+createOrder: function(data, actions) {
+return actions.order.create({
+purchase_units: [{
+amount: {
+value: subtotal.toFixed(2)
+}
+}]
+});
+},
+onApprove: function(data, actions) {
+return actions.order.capture().then(function(details) {
+alert('Donation completed by ' + details.payer.name.given_name);
+subtotal = 0;
+document.getElementById('subtotal').textContent = '0.00';
+updateProgressBar();
+});
+}
+}).render('#paypal-button-container');
+
+CSS
+Style the payment form and progress bar:
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+}
+
+header {
+background-color: #333;
+color: white;
+padding: 1em 0;
+text-align: center;
+}
+
+main {
+padding: 2em;
+}
+
+.campaign {
+background-color: white;
+padding: 2em;
+margin: 2em auto;
+max-width: 600px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.donation-form {
+margin-top: 1em;
+}
+
+.donation-form label {
+display: block;
+margin-bottom: 0.5em;
+}
+
+.donation-form input {
+width: 100%;
+padding: 0.5em;
+margin-bottom: 1em;
+}
+
+.donation-form button {
+background-color: #28a745;
+color: white;
+border: none;
+padding: 0.5em 1em;
+cursor: pointer;
+}
+
+.donation-form button:hover {
+background-color: #218838;
+}
+
+.subtotal {
+margin-top: 1em;
+font-size: 1.2em;
+}
+
+.progress-bar {
+width: 100%;
+background-color: #e0e0e0;
+border-radius: 5px;
+overflow: hidden;
+margin-top: 1em;
+}
+
+.progress {
+height: 20px;
+background-color: #28a745;
+width: 0;
+}
+
+This example demonstrates how to integrate PayPal into your crowdfunding website to handle donations. Be sure to replace YOUR_CLIENT_ID with your actual PayPal client ID.
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crowdfunding Website</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>Welcome to Our Crowdfunding Campaign</h1>
+</header>
+<main>
+<section class="campaign">
+<h2>Campaign Title</h2>
+<p>Campaign description goes here...</p>
+<div class="donation-form">
+<label for="donation-amount">Enter Donation Amount:</label>
+<input type="number" id="donation-amount" min="1" step="any">
+<button onclick="addDonation()">Donate</button>
+</div>
+<div class="subtotal">
+<h3>Subtotal: $<span id="subtotal">0.00</span></h3>
+</div>
+<div class="progress-bar">
+<div class="progress" id="progress"></div>
+</div>
+<p>Goal: $<span id="goal">1000</span></p>
+<form id="payment-form">
+<div id="card-element">
+<!-- A Stripe Element will be inserted here. -->
+</div>
+<button id="submit">Submit Payment</button>
+</form>
+<div id="card-errors" role="alert"></div>
+</section>
+</main>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
+
+JavaScript
+Include Stripe's JavaScript library and handle the payment process:
+
+// Include Stripe.js
+const stripe = Stripe('your-publishable-key-here');
+const elements = stripe.elements();
+const card = elements.create('card');
+card.mount('#card-element');
+
+const form = document.getElementById('payment-form');
+form.addEventListener('submit', async (event) => {
+event.preventDefault();
+const {token, error} = await stripe.createToken(card);
+if (error) {
+document.getElementById('card-errors').textContent = error.message;
+} else {
+handleToken(token);
+}
+});
+
+function handleToken(token) {
+fetch('/charge', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify({token: token.id}),
+}).then(response => {
+return response.json();
+}).then(data => {
+console.log(data);
+});
+}
+
+Server-Side Code
+Handle the payment on the server (example in Node.js):
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const stripe = require('stripe')('your-secret-key-here');
+
+const app = express();
+app.use(bodyParser.json());
+
+app.post('/charge', async (req, res) => {
+const { token } = req.body;
+try {
+const charge = await stripe.charges.create({
+amount: 5000, // Amount in cents
+currency: 'usd',
+source: token,
+description: 'Donation',
+});
+res.send({ success: true });
+} catch (error) {
+res.status(500).send({ error: error.message });
+}
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+
+CSS
+Style the payment form:
+
+#card-element {
+border: 1px solid #ccc;
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+#submit {
+background-color: #28a745;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+#submit:hover {
+background-color: #218838;
+}
+
+#card-errors {
+color: red;
+margin-top: 10px;
+}
+
+This example demonstrates how to integrate Stripe into your crowdfunding website to handle donations. Be sure to replace your-publishable-key-here and your-secret-key-here with your actual Stripe API keys.
+
+
+
+
