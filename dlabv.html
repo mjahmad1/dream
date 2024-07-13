@@ -1,0 +1,118 @@
+HTML File for View Patient Records
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Patient Records - Doctors Lab and Hospital</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+}
+.header {
+background-color: #4CAF50;
+color: white;
+padding: 15px;
+text-align: center;
+}
+.container {
+padding: 20px;
+}
+.table-section {
+background-color: white;
+margin: 20px auto;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 1000px;
+}
+.table-section h2 {
+margin-top: 0;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+table, th, td {
+border: 1px solid #ddd;
+}
+th, td {
+padding: 10px;
+text-align: left;
+}
+th {
+background-color: #f2f2f2;
+}
+.button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.button:hover {
+background-color: #45a049;
+}
+.contact-info {
+text-align: center;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Doctors Lab and Hospital</h1>
+<p>943, Kazlar Par. Kazla Bridge Demra Road. Jatrabari, Dhaka-1236</p>
+<p>Phone: 01855 330 703 | Email: <a href="mailto:doctorslabh@gmail.com">doctorslabh@gmail.com</a></p>
+</div>
+<div class="container">
+<div class="table-section">
+<h2>View Patient Records</h2>
+<table>
+<thead>
+<tr>
+<th>Patient ID</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Date of Birth</th>
+<th>Gender</th>
+<th>Contact Number</th>
+<th>Address</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<!-- Example patient records -->
+<tr>
+<td>1</td>
+<td>John</td>
+<td>Doe</td>
+<td>1990-01-01</td>
+<td>Male</td>
+<td>0123456789</td>
+<td>123 Main St</td>
+<td>john.doe@example.com</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Jane</td>
+<td>Smith</td>
+<td>1985-05-15</td>
+<td>Female</td>
+<td>9876543210</td>
+<td>456 Elm St</td>
+<td>jane.smith@example.com</td>
+</tr>
+<!-- Add more patient records as needed -->
+</tbody>
+</table>
+<button class="button">Add New Patient</button>
+</div>
+</div>
+</body>
+</html>
