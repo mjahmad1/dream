@@ -1,0 +1,154 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crowdfunding Website</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>Welcome to Our Crowdfunding Campaign</h1>
+</header>
+<main>
+<!-- Section 1: Donate Now Button -->
+<section id="section1">
+<button onclick="showSection2()">ডোনেট নাও</button>
+</section>
+
+<!-- Section 2: Donation Options -->
+<section id="section2" style="display:none;">
+<h2>ডোনেশন অপশন</h2>
+<div>
+<label>
+<input type="radio" name="donation" value="100" onclick="updateSubtotal(100)"> $100
+</label>
+<label>
+<input type="radio" name="donation" value="200" onclick="updateSubtotal(200)"> $200
+</label>
+<label>
+<input type="radio" name="donation" value="500" onclick="updateSubtotal(500)"> $500
+</label>
+</div>
+<div>
+<h3>ডোনেশন টার্গেট</h3>
+<p>মোট প্রয়োজন: $<span id="total-needed">1000</span></p>
+<p>মোট কালেক্ট হয়েছে: $<span id="total-collected">0</span></p>
+<p>বাকি আছে: $<span id="total-remaining">1000</span></p>
+<p>ডোনেট করেছেন: <span id="donor-count">0</span> জন</p>
+</div>
+<div>
+<h3>Subtotal: $<span id="subtotal">0.00</span></h3>
+</div>
+<button onclick="showSection3()">ডোনেট নাও</button>
+</section>
+
+<!-- Section 3: Billing Form -->
+<section id="section3" style="display:none;">
+<h2>Billing Information</h2>
+<form id="billing-form">
+<label for="name">Name:</label>
+<input type="text" id="name" required>
+<label for="email">Email:</label>
+<input type="email" id="email" required>
+<label for="address">Address:</label>
+<input type="text" id="address" required>
+<button type="button" onclick="submitDonation()">আপনার ডোনেশন জমা করুন</button>
+<button type="button" onclick="showSection4()">পে নাও</button>
+</form>
+</section>
+
+<!-- Section 4: Payment Options -->
+<section id="section4" style="display:none;">
+<h2>আপনার পেমেন্ট পদ্ধতি নির্বাচন করুন</h2>
+<button onclick="payWith('Card')">কার্ড</button>
+<button onclick="payWith('PayPal')">পেপাল</button>
+<button onclick="payWith('Google Pay')">গুগল পে</button>
+<button onclick="payWith('Bank Transfer')">ব্যংক ট্রান্সফার</button>
+<button onclick="payWith('Mobile Banking')">মোবাইল ব্যাংকিং</button>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>
+
+CSS (styles.css)
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+}
+
+header {
+background-color: #333;
+color: white;
+padding: 1em 0;
+text-align: center;
+}
+
+main {
+padding: 2em;
+}
+
+section {
+background-color: white;
+padding: 2em;
+margin: 2em auto;
+max-width: 600px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+background-color: #28a745;
+color: white;
+border: none;
+padding: 0.5em 1em;
+cursor: pointer;
+margin-top: 1em;
+}
+
+button:hover {
+background-color: #218838;
+}
+
+JavaScript (scripts.js)
+let subtotal = 0;
+let totalCollected = 0;
+let donorCount = 0;
+const totalNeeded = 1000;
+
+function showSection2() {
+document.getElementById('section1').style.display = 'none';
+document.getElementById('section2').style.display = 'block';
+}
+
+function updateSubtotal(amount) {
+subtotal = amount;
+document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+}
+
+function showSection3() {
+totalCollected += subtotal;
+donorCount++;
+document.getElementById('total-collected').textContent = totalCollected.toFixed(2);
+document.getElementById('total-remaining').textContent = (totalNeeded - totalCollected).toFixed(2);
+document.getElementById('donor-count').textContent = donorCount;
+
+document.getElementById('section2').style.display = 'none';
+document.getElementById('section3').style.display = 'block';
+}
+
+function submitDonation() {
+alert('আপনার ডোনেশন জমা হয়েছে। পেমেন্ট গেটওয়ে লিংক: [Payment Gateway Link]');
+}
+
+function showSection4() {
+document.getElementById('section3').style.display = 'none';
+document.getElementById('section4').style.display = 'block';
+}
+
+function payWith(method) {
+alert('আপনি ' + method + ' দিয়ে পেমেন্ট করতে যাচ্ছেন।');
+}
