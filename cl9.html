@@ -1,0 +1,102 @@
+HTML
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+<!-- Existing styles... -->
+<style>
+/* Donation Section Styles */
+.donation-section {
+background-color: #f7f7f7; /* Light grey background */
+padding: 40px; /* Padding around the donation section */
+text-align: center; /* Center align the content */
+}
+
+.donation-options {
+margin: 20px auto; /* Center the options */
+display: flex; /* Use flexbox for layout */
+justify-content: center; /* Center the items horizontally */
+gap: 20px; /* Space between the items */
+}
+
+.donation-button {
+padding: 10px 20px; /* Padding inside the button */
+font-size: 1em; /* Font size for the button text */
+cursor: pointer; /* Cursor style when hovering over the button */
+border: none; /* No border for the button */
+background-color: #008CBA; /* Blue background for the button */
+color: white; /* White text for the button */
+}
+
+.custom-amount-input {
+margin: 10px auto;
+padding: 10px;
+width: 80%;
+font-size: 1em;
+}
+</style>
+</head>
+<body>
+<!-- Existing content... -->
+<!-- Donation Section -->
+<div class="donation-section">
+<h2>تبرع الآن</h2>
+<div class="donation-options">
+<button class="donation-button" data-amount="200">200 Tk</button>
+<button class="donation-button" data-amount="500">500 Tk</button>
+<button class="donation-button" data-amount="1000">1000 Tk</button>
+<input type="text" id="customAmount" class="custom-amount-input" placeholder="Enter custom amount" />
+</div>
+<button id="donateNow" class="donation-button">Donate Now</button>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// Initialize Stripe with your publishable key
+var stripe = Stripe('pk_test_51NSjLzHI6KpMDN4wCyCp6BsIXUIppX284VFnQmyln0GP8GxR0isD6uzBZVGCCl14l6rpud2QVffXQZMuZe6aYJ7F00hfCpDvBk');
+
+// Function to update the displayed amount
+function updateDisplayedAmount(amount) {
+document.getElementById('donateNow').innerText = 'Donate ' + amount + ' Tk';
+}
+
+// Event listeners for the donation buttons
+var donationButtons = document.querySelectorAll('.donation-button');
+donationButtons.forEach(function(button) {
+button.addEventListener('click', function() {
+var amount = this.getAttribute('data-amount');
+updateDisplayedAmount(amount);
+donationButtons.forEach(function(btn) {
+btn.classList.remove('selected');
+});
+this.classList.add('selected');
+});
+});
+
+// Event listener for the custom amount input
+document.getElementById('customAmount').addEventListener('input', function() {
+var amount = this.value;
+updateDisplayedAmount(amount);
+});
+
+// Handle the donation button click
+document.getElementById('donateNow').addEventListener('click', function() {
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
+
+// Check if the selected amount is not empty or null
+if (selectedAmount && selectedAmount.trim() !== '') {
+console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+
+// Redirect to the provided link with the selected amount
+var donationLink = `https://pay.whydonate.com/c/pay/cs_live_a16evgdiIt8U97jZOSLHoU0NnnYjwCbLIXHErp4FnekZ7SQKEHXXmsDcV9#fid1d2BpamRhQ2prcSc%2FJ1dqZ2pxaicpJ2lqZmRpYCc%2FJ2BrJyknZHVsTmB8Jz8ndW5aaWxzYFpjVTRPfF9Wf0hzVnNmMl93b3NJS1VpMGonKSdjd2poVmB3c2B3Jz9xd3BgKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSdga2RnaWBVaWRmYG1qaWFgd3YnP3F3cGB4JSUl&amount=${selectedAmount}`;
+window.location.href = donationLink;
+} else {
+// If no amount is selected, alert the user and do not proceed to checkout
+alert('Please select an amount to donate.');
+}
+});
+</script>
+</body>
+</html>
