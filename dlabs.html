@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule Appointment - Doctors Lab and Hospital</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+}
+.header {
+background-color: #4CAF50;
+color: white;
+padding: 15px;
+text-align: center;
+}
+.container {
+padding: 20px;
+}
+.form-section {
+background-color: white;
+margin: 20px auto;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 600px;
+}
+.form-section h2 {
+margin-top: 0;
+}
+.form-group {
+margin-bottom: 15px;
+}
+.form-group label {
+display: block;
+margin-bottom: 5px;
+}
+.form-group input, .form-group select {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.button:hover {
+background-color: #45a049;
+}
+.contact-info {
+text-align: center;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Doctors Lab and Hospital</h1>
+<p>943, Kazlar Par. Kazla Bridge Demra Road. Jatrabari, Dhaka-1236</p>
+<p>Phone: 01855 330 703 | Email: <a href="mailto:doctorslabh@gmail.com">doctorslabh@gmail.com</a></p>
+</div>
+<div class="container">
+<div class="form-section">
+<h2>Schedule Appointment</h2>
+<form action="/submit_appointment" method="post">
+<div class="form-group">
+<label for="patientName">Patient Name</label>
+<input type="text" id="patientName" name="patientName" required>
+</div>
+<div class="form-group">
+<label for="contactNumber">Contact Number</label>
+<input type="tel" id="contactNumber" name="contactNumber" required>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email">
+</div>
+<div class="form-group">
+<label for="appointmentDate">Appointment Date</label>
+<input type="date" id="appointmentDate" name="appointmentDate" required>
+</div>
+<div class="form-group">
+<label for="appointmentTime">Appointment Time</label>
+<input type="time" id="appointmentTime" name="appointmentTime" required>
+</div>
+<div class="form-group">
+<label for="doctor">Select Doctor</label>
+<select id="doctor" name="doctor" required>
+<option value="">Select Doctor</option>
+<option value="dr_john_doe">Dr. John Doe</option>
+<option value="dr_jane_smith">Dr. Jane Smith</option>
+<!-- Add more doctors as needed -->
+</select>
+</div>
+<button type="submit" class="button">Schedule Appointment</button>
+</form>
+</div>
+</div>
+</body>
+</html>
