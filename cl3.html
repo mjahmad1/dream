@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <style>
+        /* Add your CSS here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Your Order</h2>
+            <!-- Add your order summary here -->
+        </section>
+        
+        <section>
+            <h2>Payment Details</h2>
+            <form action="/submit-order" method="post">
+                <label for="name">Name on Card</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+                
+                <label for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" name="expiry" required>
+                
+                <label for="cvc">CVC</label>
+                <input type="text" id="cvc" name="cvc" required>
+                
+                <button type="submit">Pay Now</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
