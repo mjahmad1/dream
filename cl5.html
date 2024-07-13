@@ -1,0 +1,106 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crowdfunding Website</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>Welcome to Our Crowdfunding Campaign</h1>
+</header>
+<main>
+<section class="campaign">
+<h2>Campaign Title</h2>
+<p>Campaign description goes here...</p>
+<div class="donation-form">
+<label for="donation-amount">Enter Donation Amount:</label>
+<input type="number" id="donation-amount" min="1" step="any">
+<button onclick="addDonation()">Donate</button>
+</div>
+<div class="subtotal">
+<h3>Subtotal: $<span id="subtotal">0.00</span></h3>
+</div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>
+
+CSS (styles.css)
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+}
+
+header {
+background-color: #333;
+color: white;
+padding: 1em 0;
+text-align: center;
+}
+
+main {
+padding: 2em;
+}
+
+.campaign {
+background-color: white;
+padding: 2em;
+margin: 2em auto;
+max-width: 600px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.donation-form {
+margin-top: 1em;
+}
+
+.donation-form label {
+display: block;
+margin-bottom: 0.5em;
+}
+
+.donation-form input {
+width: 100%;
+padding: 0.5em;
+margin-bottom: 1em;
+}
+
+.donation-form button {
+background-color: #28a745;
+color: white;
+border: none;
+padding: 0.5em 1em;
+cursor: pointer;
+}
+
+.donation-form button:hover {
+background-color: #218838;
+}
+
+.subtotal {
+margin-top: 1em;
+font-size: 1.2em;
+}
+
+JavaScript (scripts.js)
+let subtotal = 0;
+
+function addDonation() {
+const donationAmount = parseFloat(document.getElementById('donation-amount').value);
+if (!isNaN(donationAmount) && donationAmount > 0) {
+subtotal += donationAmount;
+document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+document.getElementById('donation-amount').value = '';
+} else {
+alert('Please enter a valid donation amount.');
+}
+}
+
+
+
