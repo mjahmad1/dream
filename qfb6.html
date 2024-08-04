@@ -46,9 +46,6 @@ cursor: pointer;
 .donation-form button:hover {
 background-color: #218838;
 }
-</style>
-
-<style>
 body {
 font-family: 'Arial', sans-serif;
 background-color: #f7f7f7;
@@ -364,37 +361,6 @@ progressBar.style.width = value + '%';
 
 
 
-<script>    
-// Modify your existing donateNow click event handler
-document.getElementById('donateNow').addEventListener('click', function() {
-// Get the selected amount from the selected donation button or the custom amount input
-var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
-
-// Check if the selected amount is not empty or null
-if (selectedAmount && selectedAmount.trim() !== '') {
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
-
-// Redirect to Stripe checkout page with the selected amount
-stripe.redirectToCheckout({
-lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
-mode: 'payment',
-successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
-cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
-}).then(function (result) {
-if (result.error) {
-// If `redirectToCheckout` fails due to a browser or network
-// error, display the localized error message to your customer.
-alert(result.error.message);
-}
-});
-} else {
-// If no amount is selected, alert the user and do not proceed to checkout
-alert('Please select an amount to donate.');
-}
-});
-</script>
-
-
 <div class="new-section">
 <h1>
 আর্থিক সংকটের মুখে, কোরআন মাজিদের প্রচুর চাহিদা থাকা সত্ত্বেও, মুদ্রণ প্রক্রিয়া জটিল ও ব্যয়বহুল হয়ে উঠেছে।</h1>
@@ -440,4 +406,3 @@ alert('Please select an amount to donate.');
           </body>
       </head>
   </html>
-  <script src="https://js.stripe.com/v3/"></script>
