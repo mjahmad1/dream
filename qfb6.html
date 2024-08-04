@@ -289,44 +289,6 @@ color: white; /* White text for the button */
 <h1>কোরআন মাজিদের মুদ্রণ ও বিতরণ কার্যক্রমে সহযোগী হোন </h1>
 </header>
 
-
-<script>    
-// Modify your existing donateNow click event handler
-document.getElementById('donateNow').addEventListener('click', function() {
-// Get the selected amount from the selected donation button or the custom amount input
-var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
-
-// Check if the selected amount is not empty or null
-if (selectedAmount && selectedAmount.trim() !== '') {
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
-
-// Redirect to Stripe checkout page with the selected amount
-stripe.redirectToCheckout({
-lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
-mode: 'payment',
-successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
-cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
-}).then(function (result) {
-if (result.error) {
-// If `redirectToCheckout` fails due to a browser or network
-// error, display the localized error message to your customer.
-alert(result.error.message);
-}
-});
-} else {
-// If no amount is selected, alert the user and do not proceed to checkout
-alert('Please select an amount to donate.');
-}
-});
-
-function updateProgressBar(value) {
-var progressBar = document.querySelector('.progress-bar-value');
-progressBar.style.width = value + '%';
-}
-</script>
-  
-<div class="container">
-<header>
 <h1>কোরআন কালেক্ট ক্যাম্পেইন</h1>
 <p>আমাদের লক্ষ্য: ১০,০০০ পিস কোরআন কালেক্ট করা</p>
 </header>
