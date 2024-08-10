@@ -563,8 +563,15 @@ font-size: 1.2em;
 
         </body> 
     </head>
-</html>
-
+<div class="donation-section">
+<h2>تبرع الآن</h2>
+<div class="donation-options">
+<button class="donation-button" data-amount="200">200 Tk</button>
+<button class="donation-button" data-amount="500">500 Tk</button>
+<button class="donation-button" data-amount="1000">1000 Tk</button>
+</div>
+<button id="donateNow" class="donation-button">Donate Now</button>
+</div>
 
 <style>
 body { font-family: Arial, sans-serif; line-height: 1.6; }
@@ -655,20 +662,23 @@ progressBar.style.width = value + '%';
         <p>  تم جمعها</p>
         <p> $ 2500 </p>
 </div>
-      <div class="donation-section">
+<div class="donation-section">
 <h2>تبرع الآن</h2>
 <div class="donation-options">
 <button class="donation-button" data-amount="200">200 Tk</button>
 <button class="donation-button" data-amount="500">500 Tk</button>
-<button class="donation-button" data-amount="1000">1000 Tk</button></div>
+<button class="donation-button" data-amount="1000">1000 Tk</button>
+</div>
+<button class="donate-button" <a href="https://buy.stripe.com/bIY7w5gTW80wgyAcMM">
+        <h2>تبرع الآن</h2>
+</a></button>
+</div>
 
     <input type="text" id="customAmount" class="custom-amount-input" placeholder="أدخل اخرى " />
 <button id="donateNow" <a href="https://buy.stripe.com/bIY7w5gTW80wgyAcMM"><h4>المبلغ </h4></a></button>
 </div>
 </div>
-<button class="donate-button" <a href="https://buy.stripe.com/bIY7w5gTW80wgyAcMM">
-        <h2>تبرع الآن</h2>
-</a></button>
+
 </section>
 
   <script src="https://js.stripe.com/v3/"></script>
