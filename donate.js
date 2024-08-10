@@ -4,7 +4,7 @@ var stripe = Stripe('pk_live_51PZzciCyC8OWGlHKxmnWEFHf35h9eqQdLfXkQy4coHfiKFfs4Q
 
 // Function to update the displayed amount and handle the selected class
 function updateDisplayedAmount(amount, button) {
-document.getElementById('donateNow').innerText = 'Donate ' + amount + ' Tk';
+document.getElementById('donateNow').innerText = 'Donate ' + amount + ' USD';
 // Remove selected class from all buttons
 var donationButtons = document.querySelectorAll('.donation-button');
 donationButtons.forEach(function(btn) {
@@ -38,7 +38,7 @@ var selectedAmount = document.querySelector('.donation-button.selected')?.getAtt
 
 // Check if the selected amount is not empty or null
 if (selectedAmount && selectedAmount.trim() !== '') {
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+console.log('Selected donation amount: ' + selectedAmount + ' USD');
 
 // Redirect to Stripe checkout page with the selected amount
 stripe.redirectToCheckout({
