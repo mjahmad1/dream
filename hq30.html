@@ -564,18 +564,20 @@ font-size: 1.2em;
         </body> 
     </head>
 <div class="donation-section">
-                            <div class="new-section-7">
                  <p>فضلا'</p>
                          <h5>تبرّع الآن عاجلة </h5>
 <div class="donation-options">
-<button class="donation-button" data-amount="10">10 USD</button>
-<button class="donation-button" data-amount="25">25 USD</button>
-<button class="donation-button" data-amount="50">50 USD</button>
-    <button class="donation-button" data-amount="100">100 USD </button>
+<button class="donation-button" data-amount="10">10 $</button>
+<button class="donation-button" data-amount="25">25 $</button>
+<button class="donation-button" data-amount="50">50 $</button>
+</div>
+	<div class="donation-options">
+    <button class="donation-button" data-amount="100">100 $ </button>
+		<button class="donation-button" data-amount="10">10 $</button>
+<button class="donation-button" data-amount="25">25 $</button>
 </div>
 <button id="donateNow" class="donation-button">تبرّع الآن</button>
 </div>
-                        </div>
    
 
 <style>
@@ -858,7 +860,7 @@ updateDisplayedAmount(amount); // Update the display
 // Modify the existing donateNow click event handler
 document.getElementById('donateNow').addEventListener('click', function() {
 var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value || '200';
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+console.log('Selected donation amount: ' + selectedAmount + ' USD');
 // Redirect to Stripe checkout page
 // stripe.redirectToCheckout({ ... });
 });
@@ -1137,7 +1139,7 @@ var selectedAmount = document.querySelector('.donation-button.selected')?.getAtt
 
 // Check if the selected amount is not empty or null
 if (selectedAmount && selectedAmount.trim() !== '') {
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+console.log('Selected donation amount: ' + selectedAmount + ' USD');
 
 // Redirect to Stripe checkout page with the selected amount
 stripe.redirectToCheckout({
@@ -1183,7 +1185,7 @@ var stripe = Stripe('pk_test_51NSjLzHI6KpMDN4wCyCp6BsIXUIppX284VFnQmyln0GP8GxR0i
 document.getElementById('donateNow').addEventListener('click', function() {
     // Function to update the displayed amount and handle the selected class
 function updateDisplayedAmount(amount, button) {
-document.getElementById('donateNow').innerText = 'Donate ' + amount + ' Tk';
+document.getElementById('donateNow').innerText = 'Donate ' + amount + ' USD';
 // Remove selected class from all buttons
 var donationButtons = document.querySelectorAll('.donation-button');
 donationButtons.forEach(function(btn) {
@@ -1215,7 +1217,7 @@ var selectedAmount = document.querySelector('.donation-button.selected')?.getAtt
 
 // Check if the selected amount is not empty or null
 if (selectedAmount && selectedAmount.trim() !== '') {
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+console.log('Selected donation amount: ' + selectedAmount + ' USD');
 
 // Redirect to Stripe checkout page with the selected amount
 stripe.redirectToCheckout({
@@ -1238,7 +1240,7 @@ alert('Please select an amount to donate.');
 // You can customize this part to redirect to your Stripe checkout page
 // For now, it just logs the selected amount to the console
 var selectedAmount = document.querySelector('.donation-button[data-amount].selected')?.getAttribute('data-amount') || '200';
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+console.log('Selected donation amount: ' + selectedAmount + ' USD');
 // Redirect to Stripe checkout page
 // stripe.redirectToCheckout({ ... });
 });
@@ -1278,7 +1280,7 @@ font-size: 1em;
 
 // Function to update the displayed amount
 function updateDisplayedAmount(amount) {
-document.getElementById('donateNow').innerText = 'Donate ' + amount + ' Tk';
+document.getElementById('donateNow').innerText = 'Donate ' + amount + ' USD';
 }
 
 // Event listeners for the donation buttons
@@ -1300,7 +1302,7 @@ updateDisplayedAmount(amount); // Update the display
 // Modify the existing donateNow click event handler
 document.getElementById('donateNow').addEventListener('click', function() {
 var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value || '200';
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+console.log('Selected donation amount: ' + selectedAmount + ' USD');
 // Redirect to Stripe checkout page
 // stripe.redirectToCheckout({ ... });
 });
