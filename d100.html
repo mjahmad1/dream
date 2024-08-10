@@ -1,50 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donation Collection</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-background-color: #f4f4f4;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-margin: 0;
-}
-.donation-form {
-background: #fff;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.donation-form h2 {
-margin-bottom: 20px;
-}
-.donation-form label {
-display: block;
-margin-bottom: 5px;
-}
-.donation-form input, .donation-form button {
-width: 100%;
-padding: 10px;
-margin-bottom: 10px;
-border: 1px solid #ccc;
-border-radius: 4px;
-}
-.donation-form button {
-background-color: #28a745;
-color: #fff;
-border: none;
-cursor: pointer;
-}
-.donation-form button:hover {
-background-color: #218838;
-}
-</style>
+<!doctype html>
 
+
+<html lang="en" dir="rtl">
+
+<!--<html lang="ar" dir="ltr">-->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="نظام أهل القرآن نظام سحابي لإدارة المدارس القرآنية وجمعيات تحفيظ القرآن الكريم.">
+    <meta name="keywords"
+          content="نظام ادارة مدرسة, مدرسة قرآنية, نظام تسيير جمعية تحفيظ, جمعيات التحفيظ, نظام تسيير مدرسة قرانية, متابعة الحفظ والمراجعة">
+    <meta name="author" content="البدري للبرمجة">
+
+    <title>تبرع لأهل القرآن | نظام أهل القرآن</title>
+
+    <link rel="icon" type="image/png" href="https://ehlquran.com/introductory_website_assets/img/logo_icon.png">
+    <link rel="icon" href="https://ehlquran.com/introductory_website_assets/img/logo_share.png" type="image/x-icon">
+
+    
+        <meta property="og:title" content="تبرع لأهل القرآن | نظام أهل القرآن"/>
+
+        <meta property="og:description"
+              content="نظام أهل القرآن نظام سحابي لإدارة المدارس القرآنية وجمعيات تحفيظ القرآن الكريم"/>
+
+
+        <meta property="og:image" content="https://ehlquran.com/introductory_website_assets/img/logo_share.png">
+
+        <meta property="og:image:secure_url"
+              content="https://ehlquran.com/introductory_website_assets/img/logo_share.png">
+
+        <meta name="twitter:image" content="https://ehlquran.com/introductory_website_assets/img/logo_share.png">
+
+        <link rel="shortcut icon" href="https://ehlquran.com/introductory_website_assets/img/logo_share.png"
+              type="image/x-icon">
+
+    
+    <!-- Bootstrap Min CSS -->
     <link rel="stylesheet" href="https://ehlquran.com/introductory_website_assets/css/bootstrap.rtl.min.css">
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://ehlquran.com/introductory_website_assets/css/animate.min.css">
@@ -124,7 +117,443 @@ background-color: #218838;
         /></noscript>
     <!-- End Meta Pixel Code -->
 
+</head>
 
+<body>
+<!-- Start Preloader Area -->
+<div class="preloader-area">
+    <div class="lds-hourglass"></div>
+</div>
+<!-- End Preloader Area -->
+
+<style>
+
+    @media (min-width: 768px) {
+
+        .navbar-expand-md {
+            justify-content: space-between !important;
+        }
+    }
+
+    .navbar-expand-md {
+        /* flex-wrap: nowrap; */
+        justify-content: space-between !important;
+        /*justify-content: flex-start;*/
+    }
+
+    .navbar-collapse {
+        flex-grow: unset !important;
+    }
+
+    #topbar {
+        pos-top: fixed;
+        z-index: 1000;
+        width: 100%;
+        padding: 0 30px;
+        overflow: hidden;
+        top: 0;
+        color: white;
+        text-align: center;
+        padding: 10px;
+
+        background: #1d796b;
+    }
+
+    .cart-icon {
+        line-height: 28px;
+        font-size: 25px;
+    }
+
+    .login_btn {
+        background: white;
+        color: #169b88 !important;
+        color: #169b88 !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        border-radius: 20px;
+    }
+
+    .crake-nav nav .navbar-nav li a {
+        margin: 0 7px !important;
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+.donation-form {
+background: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.donation-form h2 {
+margin-bottom: 20px;
+}
+.donation-form label {
+display: block;
+margin-bottom: 5px;
+}
+.donation-form input, .donation-form button {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+.donation-form button {
+background-color: #28a745;
+color: #fff;
+border: none;
+cursor: pointer;
+}
+.donation-form button:hover {
+background-color: #218838;
+}
+</style>
+
+<!-- page content -->
+<link rel="stylesheet" href="https://ehlquran.com/assets_web_portal/css/donate.css">
+
+    
+
+
+    <body>
+<div class="main-banner software-home">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-content" style="text-align: center;color: white">
+                            <h1>تبرع لأهل القرآن</h1>
+<!--                            <h3>التجارة الرابحة</h3>-->
+
+                            <p style="font-size: 24px">
+
+                                ساهم في تطوير مشروع أهل القرآن من خلال تبرعك للمدارس القرآنية التي ترغب باستخدام النظام
+                                ، واكسب من
+                                الأجور بقدر ما يُتلى ويُحفظ ويُتعلم فيه من كتاب
+                                الله تعالى على مدار الساعة
+
+
+                            </p>
+                            <a href="#donate" class="btn btn-primary">تبرع الآن</a>
+                            <a href="https://www.youtube.com/watch?v=x6jeJeNImXk" class="video-btn popup-youtube"> تعرف
+                                على النظام <i class="icofont-play-alt-3"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+
+                        <img class="lazy" data-src="https://ehlquran.com/assets_web_portal/images/ahlquran.donate2.png"
+                             alt="أهل القرآن">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="main-banner software-home">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="row h-100 justify-content-center align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-content" style="text-align: center;color: white">
+                            <h1>تبرع لأهل القرآن</h1>
+<!--                            <h3>التجارة الرابحة</h3>-->
+
+                            <p style="font-size: 24px">
+
+                                ساهم في تطوير مشروع أهل القرآن من خلال تبرعك للمدارس القرآنية التي ترغب باستخدام النظام
+                                ، واكسب من
+                                الأجور بقدر ما يُتلى ويُحفظ ويُتعلم فيه من كتاب
+                                الله تعالى على مدار الساعة
+
+   
+    
+
+
+                            </p>
+                            <a href="https://whydonate.com/en/fundraising/support-the-largest-quran-printing-company" class="btn btn-primary">تبرع الآن</a>
+                            <a href="https://www.youtube.com/watch?v=x6jeJeNImXk" class="video-btn popup-youtube"> تعرف
+                                على النظام <i class="icofont-play-alt-3"></i></a>
+                                                        <a href="https://whydonate.com/en/donate/support-the-largest-quran-printing-company
+" class="btn btn-primary">تبرع الآن</a>
+                            <a href="https://www.youtube.com/watch?v=x6jeJeNImXk" class="video-btn popup-youtube"> تعرف
+                                على النظام <i class="icofont-play-alt-3"></i></a>
+                            <a href="https://whydonate.com/en/donate/support-the-largest-quran-printing-company?amount=10&currency=eur" class="btn btn-primary">تبرع الآن</a>
+                            <a href="https://www.youtube.com/watch?v=x6jeJeNImXk" class="video-btn popup-youtube"> تعرف
+                                على النظام <i class="icofont-play-alt-3"></i></a>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+
+                        <img class="lazy" data-src="https://ehlquran.com/assets_web_portal/images/ahlquran.donate2.png"
+                             alt="أهل القرآن">
+                    </div>
+<div class="donation-form">
+<h2>Donate Now</h2>
+<form action="http://localhost/new2.php" method="post">
+<label for="name">Name</label>
+<input type="text" id="name" name="name" required>
+
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required>
+
+<label for="amount">Donation Amount</label>
+<input type="number" id="amount" name="amount" required>
+
+<button type="submit">Donate</button>
+</form>
+</div> 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="creative-shape"><img src="https://ehlquran.com/introductory_website_assets/img/bg5.png" alt="bg"></div>
+    <div class="bg-gray shape-1"></div>
+    <div class="shape1"><img src="https://ehlquran.com/introductory_website_assets/img/shape1.png" alt="img"></div>
+    <div class="shape8 rotateme"><img src="https://ehlquran.com/introductory_website_assets/img/shape8.svg" alt="shape"></div>
+    <div class="shape9"><img src="https://ehlquran.com/introductory_website_assets/img/shape9.svg" alt="shape"></div>
+
+    <!-- Bubble Animte -->
+    <div class="bubble-animate">
+        <div class="circle small square1"></div>
+        <div class="circle small square2"></div>
+        <div class="circle small square3"></div>
+        <div class="circle small square4"></div>
+        <div class="circle small square5"></div>
+        <div class="circle medium square1"></div>
+        <div class="circle medium square2"></div>
+        <div class="circle medium square3"></div>
+        <div class="circle medium square4"></div>
+        <div class="circle medium square5"></div>
+        <div class="circle large square1"></div>
+        <div class="circle large square2"></div>
+        <div class="circle large square3"></div>
+        <div class="circle large square4"></div>
+    </div>
+
+</div>
+
+
+
+<section id="donate" class="text-center" style="direction: rtl">
+    <div class="container">
+        <div class="row text-center mb-3">
+            <div class="col">
+                <h5 style="margin-bottom:0px" class="text-primary mb-3">مدارس قرآنية تبحث عن متبرعين لاقتناء
+                    النظام</h5>
+                <h5 style="font-size: 18px;color: #c29245" class="mt-1">قيمة النظام حسب عدد الطلاب ، مع احتساب 1
+                    دولار عن كل طالب</h5>
+            </div>
+        </div>
+
+        <div class="row mb-4 cards-wrapper">
+
+            
+                <div class="col-md-6 col-xl-4 col-12 mb-3 mb-xl-0 pb-3">
+
+                    <div class="card card-shadow pt-2 pb-3 pr-3 pl-3">
+                        <div class="custom-card-header d-flex justify-content-between align-items-center">
+                            <div class="replaced-link"
+                                 onclick=""
+                                 role="link" tabindex="0">
+
+                                <a href="https://ehlquran.com/school/197">
+                                    <h6 style="margin: 5px" class="title text-truncate" aria-level="4">
+
+
+                                        مركز تعليم القران الكريم - مسجد عمار بن ياسر                                    </h6>
+                                </a>
+
+                                <p style="margin: 5px" class="title text-truncate" aria-level="4">
+                                    فلسطين                                </p>
+
+                                <p style="margin: 5px" class="title text-truncate" aria-level="4">
+                                    عدد الطلاب : 1000                                </p>
+                                <hr>
+                            </div>
+
+                        </div>
+
+                        <div class="my-2 project-item-details">
+                            <div class="replaced-link"
+                                 onclick="">
+                                                                <div class="project-img">
+                                    <img loading="lazy" class="h-100 w-100"
+                                         src="https://ehlquran.com/assets_web_portal/images/donation/image_ammar.jpg"
+                                         width="316" height="155" alt="">
+                                    <div class="rangeslider1 w-100" id="js-rangeslider-0">
+                                        <div class="rangeslider-fill-lower">
+                                            <div class="rangeslider-thumb" style="width: 0%;"
+                                                 aria-label="تم جمع"
+                                                 role="slider"
+                                            >
+                                                <div class="range-output" style="transform: rotate(0deg);">
+                                                    <output class="output" name="output"
+                                                            for="range">0%
+                                                    </output>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row mt-2">
+                                <div class="col">
+                                    <small class="text-primary-green">المبلغ المتبقي</small>
+                                    <label class="text-primary-blue d-block h6 font-semibold MaxValSpan">1000                                        <small
+                                                class="ml-1 text-nowrap">USD</small></label>
+                                </div>
+
+                                <div class="col">
+                                    <small class="text-primary-green">تم التبرع ب</small>
+                                    <label class="text-primary-blue d-block h6 font-semibold">0                                        <small
+                                                class="ml-1 text-nowrap">USD</small></label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- actions -->
+
+                        
+                            <form class="addToCart" name="addToCart" id="addToCart197">
+
+
+                                <div class="price-details d-flex flex-lg-nowrap flex-wrap justify-content-center justify-content-lg-between">
+
+                                    <button type="button" onclick="press_money(50,'197')"
+                                            class="btn btn-white border px-3 ">
+                                        50<small class="ml-1">USD</small>
+                                    </button>
+
+                                    <button type="button" onclick="press_money(250,'197')"
+                                            class="btn btn-white border px-3 ">
+                                        250<small class="ml-1">USD</small>
+                                    </button>
+
+                                    <button type="button" onclick="press_money(500,'197')"
+                                            class="btn btn-white border px-3 ">
+                                        500<small class="ml-1">USD</small>
+                                    </button>
+
+                                </div>
+
+                                <div class="btnSection">
+
+                                    <input id="price197" type="number"
+                                           max="1000"
+                                           class="form-control float-left cart-amount only-number "
+                                           placeholder="أدخل مبلغ التبرع"
+                                           oninvalid="this.setCustomValidity('مبلغ التبرع يجب أن لا يفوق : 1000')"
+                                           oninput="this.setCustomValidity('')"
+                                           name="cartamount" autocomplete="off" inputmode="numeric"
+                                           pattern="[0-9]*"
+                                           lang="en">
+
+                                </div>
+
+
+                            </form>
+                            <hr>
+
+                            <button id="btn197" class="btn btn-primary-blue   " type="button"
+                                    style="width: 100%;border-radius: 20px;background-color: #169b88"
+                                    onclick="donate_now('197','مركز تعليم القران الكريم - مسجد عمار بن ياسر')">
+                                تبرع الآن
+                            </button>
+                        
+
+                    </div>
+                </div>
+            
+                <div class="col-md-6 col-xl-4 col-12 mb-3 mb-xl-0 pb-3">
+
+                    <div class="card card-shadow pt-2 pb-3 pr-3 pl-3">
+                        <div class="custom-card-header d-flex justify-content-between align-items-center">
+                            <div class="replaced-link"
+                                 onclick=""
+                                 role="link" tabindex="0">
+
+                                <a href="https://ehlquran.com/school/221">
+                                    <h6 style="margin: 5px" class="title text-truncate" aria-level="4">
+
+
+                                        مركز البيان لعلوم القرآن                                    </h6>
+                                </a>
+
+                                <p style="margin: 5px" class="title text-truncate" aria-level="4">
+                                    الصومال                                </p>
+
+                                <p style="margin: 5px" class="title text-truncate" aria-level="4">
+                                    عدد الطلاب : 500                                </p>
+                                <hr>
+                            </div>
+
+                        </div>
+
+                        <div class="my-2 project-item-details">
+                            <div class="replaced-link"
+                                 onclick="">
+                                                                <div class="project-img">
+                                    <img loading="lazy" class="h-100 w-100"
+                                         src="https://ehlquran.com/assets_web_portal/images/donation/image_bayan.jpg"
+                                         width="316" height="155" alt="">
+                                    <div class="rangeslider1 w-100" id="js-rangeslider-0">
+                                        <div class="rangeslider-fill-lower">
+                                            <div class="rangeslider-thumb" style="width: 0%;"
+                                                 aria-label="تم جمع"
+                                                 role="slider"
+                                            >
+                                                <div class="range-output" style="transform: rotate(0deg);">
+                                                    <output class="output" name="output"
+                                                            for="range">0%
+                                                    </output>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row mt-2">
+                                <div class="col">
+                                    <small class="text-primary-green">المبلغ المتبقي</small>
+                                    <label class="text-primary-blue d-block h6 font-semibold MaxValSpan">500                                        <small
+                                                class="ml-1 text-nowrap">USD</small></label>
+                                </div>
+
+                                <div class="col">
+                                    <small class="text-primary-green">تم التبرع ب</small>
+                                    <label class="text-primary-blue d-block h6 font-semibold">0                                        <small
+                                                class="ml-1 text-nowrap">USD</small></label>
+                                </div>
+
+                            </div>
+
+                        </div>
 
 
   
@@ -166,14 +595,7 @@ background-color: #218838;
     </div>
 </div>
 </body>
-</html>
-<html>
-    <body>
-        <div class="main-banner software-home">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="row h-100 justify-content-center align-items-center">
+<body>
                     <div class="col-lg-6 col-md-12">
                         <div class="hero-content" style="text-align: center;color: white">
                             <h1>تبرع لأهل القرآن</h1>
