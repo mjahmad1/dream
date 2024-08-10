@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهلا وسهلا بك في موقعي</title>
+
+<style>
+/* Donation Section Styles */
+.donation-section {
+background-color: #f7f7f7; /* Light grey background */
+padding: 40px; /* Padding around the donation section */
+text-align: center; /* Center align the content */
+}
+
+.donation-options {
+margin: 20px auto; /* Center the options */
+display: flex; /* Use flexbox for layout */
+justify-content: center; /* Center the items horizontally */
+gap: 20px; /* Space between the items */
+}
+
+.donation-button {
+padding: 10px 20px; /* Padding inside the button */
+font-size: 1em; /* Font size for the button text */
+cursor: pointer; /* Cursor style when hovering over the button */
+border: none; /* No border for the button */
+background-color: #008CBA; /* Blue background for the button */
+color: white; /* White text for the button */
+}
+.custom-amount-input {
+padding: 10px 20px; /* Padding inside the button */
+font-size: 1em; /* Font size for the button text */
+text-align: center; /* Center align the content */
+cursor: pointer; /* Cursor style when hovering over the button */
+border: none; /* No border for the button */
+background-color: #008CBA; /* Blue background for the button */
+color: white; /* White text for the button */
+}
+
+
+// Modify your existing donateNow click event handler
+document.getElementById('donateNow').addEventListener('click', function() {
+// Get the selected amount from the selected donation button or the custom amount input
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
+
+// Check if the selected amount is not empty or null
+if (selectedAmount && selectedAmount.trim() !== '') {
+console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+
+// Redirect to Stripe checkout page with the selected amount
+stripe.redirectToCheckout({
+lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
+mode: 'payment',
+successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
+cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
+}).then(function (result) {
+if (result.error) {
+// If `redirectToCheckout` fails due to a browser or network
+// error, display the localized error message to your customer.
+alert(result.error.message);
+}
+});
+} else {
+// If no amount is selected, alert the user and do not proceed to checkout
+alert('Please select an amount to donate.');
+}
+});
+
+/* Responsive styles... */
+</style>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Reem+Kufi+Ink&family=Reem+Kufi+Fun&display=swap');
+body {
+margin: 0;
+padding: 0;
+font-family: 'Reem Kufi Ink', serif; /* Default font for the body */
+background-color: white;
+color: black;
+direction: rtl; /* Right-to-left layout */
+}
+.header {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+.header h1 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+.header h5 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+.header p {
+font-family: 'Reem Kufi Ink', serif; /* Specific font for the subtitle */
+margin: 0;
+font-size: 1.5em;
+white-space: nowrap; /* Ensures the subtitle is on one line */
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.welcome-section {
+width: 100%;
+height: auto;
+text-align: center;
+}
+.welcome-section img {
+max-width: 100%;
+height: auto;
+}
+.profile-section {
+padding: 20px 30px; /* Padding around the text */
+}
+.profile-section p {
+margin: 20px 0; /* Margin between paragraphs */
+font-family: 'Reem Kufi Ink', sans-serif; /* Specific font for the profile section */
+position: relative; /* Added for emoji alignment */
+padding-right: 40px; /* Added space for emoji */
+}
+/* Emoji styles */
+.emoji {
+position: absolute; /* Changed to absolute */
+right: 10px; /* Aligns emoji to the right */
+top: 0; /* Aligns emoji to the top of the paragraph */
+width: 24px; /* Sets the emoji image width */
+height: auto; /* Maintains the aspect ratio of the emoji image */
+}
+/* New Section Styles */
+.new-section {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-1 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-2 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-2 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+.new-section-2 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-2 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-2 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-2 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-2 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-2 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+.new-section-3 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-3 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-3 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-3 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-3 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-3 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-3 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-3 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+.new-section-4 {
+background-color: black; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-4 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-4 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-4 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-4 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-4 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-4 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-4 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+.new-section-5 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-5 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-5 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-5 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-5 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-5 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-5 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-5 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+.new-section-6 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-6 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-6 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-6 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-6 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-6 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-6 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-6 p {
+font-family: 'Amiri', serif;
+margin: 15px;
+font-size: 1.3em;
+}
+.new-section-7 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-7 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+.new-section-7 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-7 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-7 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-7 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-7 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-7 p {
+font-family: 'Amiri', serif;
+margin: 25px;
+font-size: 1.3em;
+}
+.new-section-8 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-8 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-8 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-8 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-8 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-8 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-8 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.4em;
+}
+.new-section-8 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+.new-section-9 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-9 {
+background-color: black;
+color: white;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-9 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-9 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-9 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-9 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-9 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.4em;
+}
+.new-section-9 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+/* Decorative Column Styles */
+.decorative-column {
+border: 2px solid black; /* Black border for the column */
+padding: 10px; /* Padding inside the column */
+margin: 20px 30px; /* Reduced margin from sides to increase width */
+text-align: center; /* Centered text in the column */
+font-family: 'Reem Kufi Fun', sans-serif; /* Reem Kufi Fun font */
+font-size: 28px; /* Increased font size */
+}
+/* Additional styles for the new column */
+.column {
+background-color: black; /* Black background for the column */
+color: white; /* White text for contrast */
+margin: 0 auto; /* Center the column */
+width: 80%; /* Width of the column */
+padding: 20px; /* Padding inside the column */
+font-family: 'Reem Kufi Ink', sans-serif; /* Using the header font for consistency */
+}
+/* Center the text inside the column */
+.column p {
+color: white; /* White text for contrast */
+text-align: center; /* Center the text */
+font-size: 2.5em; /* Larger font size for the title */
+font-weight: bold; /* Bold font weight for the title */
+}
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2em;
+}
+.header p {
+font-size: 1.2em;
+}
+}
+</style>
+    <style>
+        .new-section-2 a {
+            text-decoration: none;
+        }
+        .new-section-3 a {
+            text-decoration: none;
+        }
+        .new-section-4 a {
+            text-decoration: none;
+        }
+        .new-section-5 a {
+            text-decoration: none;
+        }
+        .new-section-6 a {
+            text-decoration: none;
+        }
+        </style>
+
+</head>
+<body>
+   
+
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// Initialize Stripe with your publishable key
+var stripe = Stripe('pk_test_51NSjLzHI6KpMDN4wCyCp6BsIXUIppX284VFnQmyln0GP8GxR0isD6uzBZVGCCl14l6rpud2QVffXQZMuZe6aYJ7F00hfCpDvBk');
+
+// Handle the donation button click
+document.getElementById('donateNow').addEventListener('click', function() {
+    // Function to update the displayed amount and handle the selected class
+function updateDisplayedAmount(amount, button) {
+document.getElementById('donateNow').innerText = 'Donate ' + amount + ' USD';
+// Remove selected class from all buttons
+var donationButtons = document.querySelectorAll('.donation-button');
+donationButtons.forEach(function(btn) {
+btn.classList.remove('selected');
+});
+// Add selected class to the clicked button
+button.classList.add('selected');
+}
+
+// Event listeners for the donation buttons
+var donationButtons = document.querySelectorAll('.donation-button');
+donationButtons.forEach(function(button) {
+button.addEventListener('click', function() {
+var amount = this.getAttribute('data-amount');
+updateDisplayedAmount(amount, this); // Pass the clicked button as well
+});
+});
+
+// Event listener for the custom amount input
+document.getElementById('customAmount').addEventListener('input', function() {
+var amount = this.value;
+updateDisplayedAmount(amount); // Update the display
+});
+
+// Modify the existing donateNow click event handler
+document.getElementById('donateNow').addEventListener('click', function() {
+// Get the selected amount from the selected donation button or the custom amount input
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
+
+// Check if the selected amount is not empty or null
+if (selectedAmount && selectedAmount.trim() !== '') {
+console.log('Selected donation amount: ' + selectedAmount + ' USD');
+
+// Redirect to Stripe checkout page with the selected amount
+stripe.redirectToCheckout({
+lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
+mode: 'payment',
+successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
+cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
+}).then(function (result) {
+if (result.error) {
+// If `redirectToCheckout` fails due to a browser or network
+// error, display the localized error message to your customer.
+alert(result.error.message);
+}
+});
+} else {
+// If no amount is selected, alert the user and do not proceed to checkout
+alert('Please select an amount to donate.');
+}
+});
+// You can customize this part to redirect to your Stripe checkout page
+// For now, it just logs the selected amount to the console
+var selectedAmount = document.querySelector('.donation-button[data-amount].selected')?.getAttribute('data-amount') || '200';
+console.log('Selected donation amount: ' + selectedAmount + ' USD');
+// Redirect to Stripe checkout page
+// stripe.redirectToCheckout({ ... });
+});
+</script>
+
+    <div style="margin-top: 100px">    <div        id="req_jJJRGOMpRp9SRV"        class="widget-here"        data-shortcode="C01Pl"        data-lang="auto"        data-success_url=""        data-fail_url=""        value="donation-widget"    >
+        
+    </div>
+    </div>
+    <link    rel="stylesheet"    href="https://buy.stripe.com/bIY7w5gTW80wgyAcMM"/>
+    <script    src="https://dashboard.stripe.com/
+"    type="text/javascript">
+        
+    </script>
+
+<script>
+// Existing Stripe initialization code...
+
+// Function to update the displayed amount
+function updateDisplayedAmount(amount) {
+document.getElementById('donateNow').innerText = 'Donate ' + amount + ' USD';
+}
+
+// Event listeners for the donation buttons
+var donationButtons = document.querySelectorAll('.donation-button');
+donationButtons.forEach(function(button) {
+button.addEventListener('click', function() {
+var amount = this.getAttribute('data-amount');
+updateDisplayedAmount(amount); // Update the display
+this.classList.add('selected'); // Optional: Highlight the selected button
+});
+});
+
+// Event listener for the custom amount input
+document.getElementById('customAmount').addEventListener('input', function() {
+var amount = this.value;
+updateDisplayedAmount(amount); // Update the display
+});
+
+// Modify the existing donateNow click event handler
+document.getElementById('donateNow').addEventListener('click', function() {
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value || '200';
+console.log('Selected donation amount: ' + selectedAmount + ' USD');
+// Redirect to Stripe checkout page
+// stripe.redirectToCheckout({ ... });
+});
+</script>
+
+
+	
+</head>
+
+
+
+<body>
+<div class="donation-section">
+<h2>تبرع الآن</h2>
+<div class="donation-options">
+<button class="donation-button" data-amount="200">200 Tk</button>
+<button class="donation-button" data-amount="500">500 Tk</button>
+<button class="donation-button" data-amount="1000">1000 Tk</button>
+</div>
+<button id="donateNow" class="donation-button">Donate Now</button>
+</div>
+
+
+
+    <div style="margin-top: 100px">    <div        id="req_jJJRGOMpRp9SRV"        class="widget-here"        data-shortcode="C01Pl"        data-lang="auto"        data-success_url=""        data-fail_url=""        value="donation-widget"    >
+        
+    </div>
+    </div>
+    <link    rel="stylesheet"    href="https://buy.stripe.com/bIY7w5gTW80wgyAcMM"/>
+    <script    src="https://dashboard.stripe.com/
+"    type="text/javascript">
+        
+    </script>
+</body>
+
+<footer>
+        <body>
+            <div class="new-section-7">
+                <p>©2024</p>
+                <p>رحلة القرآن ، جميع الحقوق محفوظة</p>
+            </div>
+        </body>
+    </footer>
+</html>
