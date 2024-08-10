@@ -559,7 +559,29 @@ font-size: 1.2em;
         </style>
 
 </head>
+<body>
 
+
+   
+<!-- Donation Section -->
+<div class="donation-section">
+<h2>تبرع الآن</h2>
+<div class="donation-options">
+<button class="donation-button" data-amount="10">10 $</button>
+<button class="donation-button" data-amount="25">25 $</button>
+<button class="donation-button" data-amount="50">50 $</button>
+</div>
+    <div class="donation-options">
+<button class="donation-button" data-amount="100">100 $</button>
+<button class="donation-button" data-amount="500">500 $</button>
+</div>
+    <div class="donation-options">
+<input type="text" id="customAmount" class="donation-button" placeholder="أدخل اخرى"></input>
+</div>   
+<button id="donateNow" class="donation-button">Donate Now</button>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
 <script>
 // Initialize Stripe with your publishable key
 var stripe = Stripe('pk_test_51NSjLzHI6KpMDN4wCyCp6BsIXUIppX284VFnQmyln0GP8GxR0isD6uzBZVGCCl14l6rpud2QVffXQZMuZe6aYJ7F00hfCpDvBk');
@@ -674,27 +696,6 @@ console.log('Selected donation amount: ' + selectedAmount + ' USD');
 
 </head>
 
-<body>
-<div class="donation-section">
-<h2>تبرع الآن</h2>
-<div class="donation-options">
-<button class="donation-button" data-amount="200">200 Tk</button>
-<button class="donation-button" data-amount="500">500 Tk</button>
-<button class="donation-button" data-amount="1000">1000 Tk</button>
-</div>
-<button id="donateNow" class="donation-button">Donate Now</button>
-</div>
-
-
-
-<div style="margin-top: 100px">    <div        id="req_jJJRGOMpRp9SRV"        class="widget-here"        data-shortcode="C01Pl"        data-lang="auto"        data-success_url=""        data-fail_url=""        value="donation-widget"    > 
-    </div>
-    </div>
-    <link    rel="stylesheet"    href="https://buy.stripe.com/bIY7w5gTW80wgyAcMM"/>
-    <script    src="https://dashboard.stripe.com/
-"    type="text/javascript">
-    </script>
-</body>
 
 <footer>
         <body>
