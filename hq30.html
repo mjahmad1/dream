@@ -29,10 +29,14 @@ background-color: #008CBA; /* Blue background for the button */
 color: white; /* White text for the button */
 }
  .custom-amount-input {
-margin: 10px auto;
-padding: 10px 20px;;
-font-size: 1em;
+         padding: 10px 20px; /* Padding inside the button */
+font-size: 1em; /* Font size for the button text */
+cursor: pointer; /* Cursor style when hovering over the button */
+border: none; /* No border for the button */
+background-color: #008CBA; /* Blue background for the button */
+color: white; /* White text for the button */
 }
+
 
 // Modify your existing donateNow click event handler
 document.getElementById('donateNow').addEventListener('click', function() {
@@ -66,7 +70,30 @@ alert('Please select an amount to donate.');
 </style>
 </head>
 <body>
-<!-- Existing content... -->
+<div class="header">
+	<h1>رحلة القرآن</h1>
+	<p>لخدمة كلام الرحمن</p>
+</div>
+    <div class="new-section-5">
+    <p>بقيادة</p>
+    <h2> محمد جعفر أحمد</h2>
+        <h3> بن معين الدين بن يوسف بن سادت علي</h3>
+    </div>
+</body>
+</head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-5">
+                <p>روح شجاع،</p>
+                <p>مُختبر منذ الطفولة في اختبارات الحياة القاسية</p>
+                <p>محارب لا يعرف الهزيمة أبدًا</p>
+            </div>
+        </body>
+    </head>
+
+   
 <!-- Donation Section -->
 <div class="donation-section">
 <h2>تبرع الآن</h2>
