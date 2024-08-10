@@ -28,7 +28,15 @@ border: none; /* No border for the button */
 background-color: #008CBA; /* Blue background for the button */
 color: white; /* White text for the button */
 }
-    
+ .custom-amount-input {
+margin: 10px auto;
+padding: 10px 20px;;
+font-size: 1em;
+}
+</style>
+
+
+    <script>
 // Modify your existing donateNow click event handler
 document.getElementById('donateNow').addEventListener('click', function() {
 // Get the selected amount from the selected donation button or the custom amount input
@@ -66,10 +74,17 @@ alert('Please select an amount to donate.');
 <div class="donation-section">
 <h2>تبرع الآن</h2>
 <div class="donation-options">
-<button class="donation-button" data-amount="200">200 Tk</button>
-<button class="donation-button" data-amount="500">500 Tk</button>
-<button class="donation-button" data-amount="1000">1000 Tk</button>
+<button class="donation-button" data-amount="10">10 $</button>
+<button class="donation-button" data-amount="25">25 $</button>
+<button class="donation-button" data-amount="50">50 $</button>
 </div>
+    <div class="donation-options">
+<button class="donation-button" data-amount="100">100 $</button>
+<button class="donation-button" data-amount="500">500 $</button>
+</div>
+    <div class="donation-options">
+<input type="text" id="customAmount" class="custom-amount-input" placeholder="أدخل اخرى"/>
+</div>   
 <button id="donateNow" class="donation-button">Donate Now</button>
 </div>
 
