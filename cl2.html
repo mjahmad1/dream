@@ -1,30 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Page</title>
-    <style>
-        /* Add your CSS here */
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Cart</h1>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Your Cart</h2>
-            <!-- Add your cart items here -->
-        </section>
-        
-        <section>
-            <h2>Cart Options</h2>
-            <button>Continue Shopping</button>
-            <button>Update Cart</button>
-            <button>Checkout</button>
-        </section>
-    </main>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>কোরআন মুদ্রন প্রকল্প ফান্ড কালেকশন</title><style>body {font-family: Arial, sans-serif;background-color: #f4f4f4;margin: 0;padding: 0;display: flex;justify-content: center;align-items: center;height: 100vh;}.container {background-color: #fff;padding: 20px;border-radius: 8px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);text-align: center;}.progress-bar {width: 100%;background-color: #e0e0e0;border-radius: 25px;margin: 20px 0;}.progress {width: 0;height: 20px;background-color: #76c7c0;border-radius: 25px;}.donation-amounts button {margin: 5px;padding: 10px 20px;border: none;border-radius: 5px;background-color: #76c7c0;color: #fff;cursor: pointer;}</style></head><body><div class="container"><h1>কোরআন মুদ্রন প্রকল্প</h1><p>আমাদের লক্ষ্য: ১০,০০০ টাকা</p><p>সময় সীমা: ১০ দিন</p><div class="progress-bar"><div class="progress" id="progress"></div></div><div class="donation-amounts"><button onclick="donate(100)">১০০ টাকা</button><button onclick="donate(500)">৫০০ টাকা</button><button onclick="donate(1000)">১০০০ টাকা</button></div><p>মোট সংগ্রহ: <span id="total">০</span> টাকা</p></div><script>let total = 0;const target = 10000;const progressElement = document.getElementById('progress');const totalElement = document.getElementById('total');function donate(amount) {total += amount;totalElement.textContent = total;const progressPercentage = (total / target) * 100;progressElement.style.width = progressPercentage + '%';}</script>
 </body>
 </html>
