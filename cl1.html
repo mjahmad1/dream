@@ -29,6 +29,25 @@
 <div id="powerbi-report"></div>
 </section>
 </main>
+
+<Page ...
+    xmlns:animations="using:CommunityToolkit.WinUI.Animations">
+
+<Border x:Name="Element" animations:Connected.Key="item"/>
+
+<TextBlock animations:Connected.AnchorElement="{x:Bind Element}" Text="Hello World"/>
+
+<GridView animations:Connected.ListItemElementName="ItemThumbnail"
+          animations:Connected.ListItemKey="listItem">
+    <GridView.ItemTemplate>
+        <DataTemplate>
+            <Image x:Name="ItemThumbnail" Height="200" Width="200"/>
+        </DataTemplate>
+    </GridView.ItemTemplate>
+</GridView>
+</Page>
+
+  
 <footer>
 <p>© 2024 Cloud Funding Site</p>
 </footer>
