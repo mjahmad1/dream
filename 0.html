@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crest-Wave</title>
 <link rel="stylesheet" href="css/cld/styles.css">
   <style>
@@ -33,7 +35,34 @@ padding: 20px;
 background-color: #f0f0f0;
 border: 1px solid #ccc;
 }
- 
+ .container-2 {
+display: flex;
+justify-content: center; /* Horizontally center the columns */
+align-items: center; /* Vertically center the columns */
+height: 100vh; /* Full viewport height */
+}
+.column-2 {
+flex: 1;
+margin: 10px;
+padding: 20px;
+background-color: #f0f0f0;
+border: 1px solid #ccc;
+max-width: 300px; /* Optional: Limit the width of each column */
+}
+ .container-3 {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+justify-content: center; /* Horizontally center the columns */
+align-items: center; /* Vertically center the columns */
+height: 100vh; /* Full viewport height */
+}
+.column-3 {
+padding: 20px;
+background-color: #f0f0f0;
+border: 1px solid #ccc;
+max-width: 300px; /* Optional: Limit the width of each column */
+}   
 </style>
 </head>
 <header>
@@ -130,6 +159,16 @@ border: 1px solid #ccc;
 </div>
 </section>
 </main>
+  <div class="container-2">
+<div class="column-2">Column 1</div>
+<div class="column-2">Column 2</div>
+<div class="column-2">Column 3</div>
+</div>
+  <div class="container-3">
+<div class="column-3">Column 1</div>
+<div class="column-3">Column 2</div>
+<div class="column-3">Column 3</div>
+</div>
 </body>
 <footer>
 <p>© 2024 Crest-Wave</p>
