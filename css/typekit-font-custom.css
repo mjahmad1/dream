@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "apertura";
+  src: url("/webfonts/aperura-400.woff2") format("woff2"),
+  url("/webfonts/aperura-400.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "apertura";
+  src: url("/webfonts/aperura-400i.woff2") format("woff2"),
+  url("/webfonts/aperura-400i.woff") format("woff");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "apertura";
+  src: url("/webfonts/aperura-500.woff2") format("woff2"),
+  url("/webfonts/aperura-500.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "apertura";
+  src: url("/webfonts/aperura-500i.woff2") format("woff2"),
+  url("/webfonts/aperura-500i.woff") format("woff");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "apertura";
+  src: url("/webfonts/aperura-700.woff2") format("woff2"),
+  url("/webfonts/aperura-700.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "apertura";
+  src: url("/webfonts/aperura-700i.woff2") format("woff2"),
+  url("/webfonts/aperura-700i.woff") format("woff");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "gelica";
+  src: url("/webfonts/gelica-300i.woff2") format("woff2"),
+  url("/webfonts/gelica-300i.woff") format("woff");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "gelica";
+  src: url("/webfonts/gelica-300.woff2") format("woff2"),
+  url("/webfonts/gelica-300.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "gelica";
+  src: url("/webfonts/gelica-500i.woff2") format("woff2"),
+  url("/webfonts/gelica-500i.woff") format("woff");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "gelica";
+  src: url("/webfonts/gelica-500.woff2") format("woff2"),
+  url("/webfonts/gelica-500.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "gelica";
+  src: url("/webfonts/gelica-400i.woff2") format("woff2"),
+  url("/webfonts/gelica-400i.woff") format("woff");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "gelica";
+  src: url("/webfonts/gelica-400.woff2") format("woff2"),
+  url("/webfonts/gelica-400.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.tk-apertura {
+  font-family: "apertura", sans-serif;
+}
+
+.tk-gelica {
+  font-family: "gelica", sans-serif;
+}
