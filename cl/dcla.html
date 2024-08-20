@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ساعدوانا  لكلام الرحمن</title>
+
+<style>
+/* Donation Section Styles */
+.donation-section {
+background-color: #f7f7f7; /* Light grey background */
+padding: 40px; /* Padding around the donation section */
+text-align: center; /* Center align the content */
+}
+
+.donation-options {
+margin: 20px auto; /* Center the options */
+display: flex; /* Use flexbox for layout */
+justify-content: center; /* Center the items horizontally */
+gap: 20px; /* Space between the items */
+}
+
+.donation-button {
+padding: 10px 20px; /* Padding inside the button */
+font-size: 1em; /* Font size for the button text */
+cursor: pointer; /* Cursor style when hovering over the button */
+border: none; /* No border for the button */
+background-color: #008CBA; /* Blue background for the button */
+color: white; /* White text for the button */
+}
+ .donation-button-1 {
+padding: 10px 20px; /* Padding inside the button */
+font-size: 2em; /* Font size for the button text */
+cursor: pointer; /* Cursor style when hovering over the button */
+border: none; /* No border for the button */
+background-color: #000000; /* Blue background for the button */
+color: white; /* White text for the button */
+}   
+.custom-amount-input {
+padding: 10px 20px; /* Padding inside the button */
+font-size: 1em; /* Font size for the button text */
+text-align: center; /* Center align the content */
+cursor: pointer; /* Cursor style when hovering over the button */
+border: none; /* No border for the button */
+background-color: #008CBA; /* Blue background for the button */
+color: white; /* White text for the button */
+}
+
+
+// Modify your existing donateNow click event handler
+document.getElementById('donateNow').addEventListener('click', function() {
+// Get the selected amount from the selected donation button or the custom amount input
+var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
+
+// Check if the selected amount is not empty or null
+if (selectedAmount && selectedAmount.trim() !== '') {
+console.log('Selected donation amount: ' + selectedAmount + ' Tk');
+
+// Redirect to Stripe checkout page with the selected amount
+stripe.redirectToCheckout({
+lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
+mode: 'payment',
+successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
+cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
+}).then(function (result) {
+if (result.error) {
+// If `redirectToCheckout` fails due to a browser or network
+// error, display the localized error message to your customer.
+alert(result.error.message);
+}
+});
+} else {
+// If no amount is selected, alert the user and do not proceed to checkout
+alert('Please select an amount to donate.');
+}
+});
+
+/* Responsive styles... */
+</style>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="author" content="Untree.co">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="" />
+	    <meta name="keywords" content="" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+	    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+	    <link rel="stylesheet" href="fonts/icomoon/style.css">
+	    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="css/tiny-slider.css">
+	    <link rel="stylesheet" href="css/aos.css">
+	    <link rel="stylesheet" href="css/flatpickr.min.css">
+	    <link rel="stylesheet" href="css/glightbox.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>QURANER FARIWALA</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/ino/slick.css" rel="stylesheet">
+        <link href="css/ino/slick-theme.css" rel="stylesheet">
+        <link href="css/ino/styles.css" rel="stylesheet">
+        <link href="css/ino/owl.carousel.min.css" rel="stylesheet">
+        <link href="css/ino/style.css" rel="stylesheet">
+        <link href="css/ino/slick.css" rel="stylesheet">
+        <link href="css/ino/in/slick-theme.css" rel="stylesheet">
+        <link href="css/ino/in/styles.css" rel="stylesheet">
+        <link href="css/ino/in/owl.carousel.min.css" rel="stylesheet">
+        <link href="css/ino/in/style.css" rel="stylesheet">
+
+       <link href="css/dream/style.css" rel="stylesheet">
+       <link href="css/dream/owl.carousel.min.css" rel="stylesheet">
+       <link href="css/dream/animate.min.css" rel="stylesheet">
+       <link href="css/dream/lightbox.min.css" rel="stylesheet">
+       <link href="css/dream/owl.carousel.min.css" rel="stylesheet">
+       <link href="css/dream/bootstrap.min.css" rel="stylesheet">
+       <link href="css/dream/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+            <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+                <h1 class="fw-bold text-primary m-0"> القرآن<span class="text-black">رحلة</span></h1>
+            </a>
+        </nav>
+        <div class="hero overlay" style="background-image: url('images/p/mjqf.jpg')">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center mx-auto">
+                        <h1 class="heading text-white mb-2" data-aos="fade-up">Urgent Appeal for Support
+</h1>
+                        <p data-aos="fade-up" class=" mb-5 text-white lead text-white-50"> 🤲 <b>In the current situation of Bangladesh, the largest Quran Printing Institution is facing challenges in maintaining its regular operations due to financial crises. We urgently seek your support to continue our mission. Any contribution, even as small as one taka, can make a significant difference.</b> 🤲</p>
+                        <p data-aos="fade-up"  data-aos-delay="100">
+                            <a href="#" class="btn btn-primary me-4">Donate Now</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+	    <div class="hero overlay" style="background-image: url('images/p/partici.jpg')"></div>
+
+
+                    <div class="col-lg-9">
+                        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" style="height: 410px;">
+                                    <img class="img-fluid" src="images/l/1.png" alt="Image">
+                                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                        <div class="p-3" style="max-width: 700px;">
+                                            <a href="" class="btn btn-light py-2 px-3">Donate now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" style="height: 410px;">
+                                    <img class="img-fluid" src="images/l/2.png" alt="Image">
+                                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                        <div class="p-3" style="max-width: 700px;">
+                                            <a href="" class="btn btn-light py-2 px-3">Support Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+       
+
+
+	<div class="section bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3><a href="#">Support the Quran Printing Institution</a></h3>
+                            <img src="images/p/24.png" alt="Image" class="img-fluid">
+							<p>Funds raised will be used for the overall operations of the Quran Printing Institution.</p>
+							<div class="progress mb-2">
+								<div class="progress-bar" role="progressbar" style="width: 12%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">12%</div>
+							</div>
+							<div class="d-flex mb-4 justify-content-between amount">
+								<div>$509.00</div>
+								<div>$20,000.00</div>
+							</div>
+							<div>
+								<a href="#" class="btn btn-primary">Donate Now</a>
+							</div>
+						</div>
+					</div>
+				</div>		
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3><a href="#">Join the Quran Printing and Distribution Project</a></h3>
+                            <img src="images/p/12.png" alt="Image" class="img-fluid">
+							<p>Funds raised will be exclusively used for printing Qurans. The printed Qurans will be distributed free of charge.</p>
+							<div class="progress mb-2">
+								<div class="progress-bar" role="progressbar" style="width: 07%;" aria-valuenow="07" aria-valuemin="0" aria-valuemax="100">07%</div>
+							</div>
+							<div class="d-flex mb-4 justify-content-between amount">
+								<div>$3,150.00</div>
+								<div>$45,000.00</div>
+							</div>
+							<div>
+								<a href="#" class="btn btn-primary">Donate Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3><a href="#"> Donate Qurans for Hifz Students</a></h3>
+                            <img src="images/p/26.png" alt="Image" class="img-fluid">
+							<p>Support the distribution of free Qurans to students in the Quran memorization department.</p>
+							<div class="progress mb-2">
+								<div class="progress-bar" role="progressbar" style="width: 04%;" aria-valuenow="04" aria-valuemin="0" aria-valuemax="100">04%</div>
+							</div>
+							<div class="d-flex mb-4 justify-content-between amount">
+								<div>$1,809.00</div>
+								<div>$45,000.00</div>
+							</div>
+							<div>
+								<a href="#" class="btn btn-primary">Donate Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3>Donate Qurans for Rohingya Muslim Children in Cox's Bazar</h3>
+                            <img src="images/p/7.png" alt="Image" class="img-fluid">
+							<div>
+								<a href="#" class="btn btn-primary">Donate Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3>Invest in the Quran Printing & Supplier Institution </h3>
+                            <img src="images/p/19.png" alt="Image" class="img-fluid">
+							<div>
+								<a href="#" class="btn btn-primary">Invest Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3>Participate in the partnership of Quraner Fariwala</h3>
+							<div>
+                                <img src="images/p/5.png" alt="Image" class="img-fluid">
+								<a href="#" class="btn btn-primary">Become A Partner</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>		
+	</div>
+	<div class="section sec-instagram pb-0">
+		<div class="container mb-5">
+			<div class="row align-items-center">
+				<div class="col-lg-3" data-aos="fade-up">
+					<h2 class="heading">Help us set up a state-of-the-art printing press dedicated solely to the Quran Printing Institution.</h2>
+				</div>
+				<div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+					<p>
+					Your support is invaluable to us. Let’s spread the light of the Quran together and illuminate our society.<a href="#">Learn More</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="instagram-slider-wrap" data-aos="fade-up" data-aos-delay="200">
+			<div class="instagram-slider" id="instagram-slider">
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf1.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf2.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf3.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf4.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf5.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf6.jpg" alt="Image" class="img-fluid">
+                    </a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf7.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+    <!-- Contact Start -->
+    <div class="container-xxl pb-5" id="contact">
+        <div class="container py-5">
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">Let's Work Together</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary py-3 px-5" href="">Say Hello</a>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="mb-2">My office:</p>
+                    <p class="mb-3"><b>27, Purana Paltan, Paltan, Dhaka-1000, Bangladesh</b></p>
+                    <hr class="w-100">
+                    <p class="mb-2">Call me(whatsapp):</p>
+                    <p class="mb-3"><b>+880 1788856628</b></p>
+                    <hr class="w-100">
+                    <p class="mb-2">Mail me:</p>
+                    <p class="mb-3"><b>info@mjahmad.com</b></p>
+                    <hr class="w-100">
+                    <p class="mb-2">Follow me:</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-primary me-2" href="https://www.twitter.com/QuranerFariwala"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://www.facebook.com/mdjaforahmad10.11.1989/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://www.github.com/mjahmad1"><i class="fab fa-github"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/jafor-ahmad/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <p class="mb-3"><b>Contact for any query:</b></p>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Map Start -->
+    <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container-xxl pt-5 px-0">
+            <div class="bg-dark">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8687.360762020717!2d90.41855203869247!3d23.726500277610686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1722384834764!5m2!1sen!2sbd" width="100%" height="450 px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- Map End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; 2024<a class="border-bottom text-secondary" href="#">QURANER FARIWALA</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+
+	<script src="js/flatpickr.min.js"></script>
+	<script src="js/glightbox.min.js"></script>
+
+
+	<script src="js/aos.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/counter.js"></script>
+	<script src="js/custom.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="js/ino/easing.min.js"></script>
+        <script src="js/ino/slick.min.js"></script>
+
+        
+        <!-- Template Javascript -->
+        <script src="js/ino/script.js"></script>
+
+      <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dream/wow.min.js"></script>
+    <script src="js/dream/easing.min.js"></script>
+    <script src="js/dream/waypoints.min.js"></script>
+    <script src="js/dream/typed.min.js"></script>
+    <script src="js/dream/counterup.min.js"></script>
+    <script src="js/dream/owl.carousel.min.js"></script>
+    <script src="js/dream/isotope.pkgd.min.js"></script>
+    <script src="js/dream/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/dream/main.js"></script>
+
+        <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dream/easing.min.js"></script>
+    <script src="js/dream/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="js/dream/jqBootstrapValidation.min.js"></script>
+    <script src="js/dream/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/dream/main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Reem+Kufi+Ink&family=Reem+Kufi+Fun&display=swap');
+body {
+margin: 0;
+padding: 0;
+font-family: 'Reem Kufi Ink', serif; /* Default font for the body */
+background-color: white;
+color: black;
+direction: rtl; /* Right-to-left layout */
+}
+.header {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+.header h1 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+.header h5 {
+font-family: 'Reem Kufi Fun', sans-serif; /* Specific font for the title */
+margin: 0;
+font-size: 2.5em;
+}
+.header p {
+font-family: 'Reem Kufi Ink', serif; /* Specific font for the subtitle */
+margin: 0;
+font-size: 1.5em;
+white-space: nowrap; /* Ensures the subtitle is on one line */
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.welcome-section {
+width: 100%;
+height: auto;
+text-align: center;
+}
+.welcome-section img {
+max-width: 100%;
+height: auto;
+}
+.profile-section {
+padding: 20px 30px; /* Padding around the text */
+}
+.profile-section p {
+margin: 20px 0; /* Margin between paragraphs */
+font-family: 'Reem Kufi Ink', sans-serif; /* Specific font for the profile section */
+position: relative; /* Added for emoji alignment */
+padding-right: 40px; /* Added space for emoji */
+}
+/* Emoji styles */
+.emoji {
+position: absolute; /* Changed to absolute */
+right: 10px; /* Aligns emoji to the right */
+top: 0; /* Aligns emoji to the top of the paragraph */
+width: 24px; /* Sets the emoji image width */
+height: auto; /* Maintains the aspect ratio of the emoji image */
+}
+/* New Section Styles */
+.new-section {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-1 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-2 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-2 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+.new-section-2 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-2 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-2 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-2 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-2 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-2 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+.new-section-3 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-3 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-3 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-3 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+    }
+.new-section-3 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-3 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-3 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-3 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+.new-section-4 {
+background-color: black; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-4 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-4 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-4 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-4 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-4 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-4 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-4 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.5em;
+}
+.new-section-5 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Fun', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-5 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-5 h1 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-5 h2 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-5 h3 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-5 h4 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-5 h5 {
+font-family: 'Reem Kufi Fun', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-5 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+.new-section-6 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-6 {
+background-color: white;
+color: black;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-6 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-6 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-6 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-6 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-6 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-6 p {
+font-family: 'Amiri', serif;
+margin: 15px;
+font-size: 1.3em;
+}
+.new-section-7 {
+background-color: white; /* White background */
+color: black; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-7 {
+background-color: white;
+color: black;
+text-align: center;
+padding: 20px;
+}
+.new-section-7 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-7 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-7 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-7 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-7 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-7 p {
+font-family: 'Amiri', serif;
+margin: 25px;
+font-size: 1.3em;
+}
+.new-section-8 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-8 {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+.new-section-8 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-8 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-8 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-8 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-8 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.4em;
+}
+.new-section-8 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+.new-section-9 {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: right; /* Centered text */
+font-family: 'Reem Kufi Ink', sans-serif; /* 'Reem Kufi Fun' font */
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-9 {
+background-color: black;
+color: white;
+text-align: right;
+padding: 20px;
+}
+
+.new-section-9 h1 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.5em;
+}
+.new-section-9 h2 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-9 h3 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-9 h4 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-9 h5 {
+font-family: 'Reem Kufi Ink', sans-serif;
+margin: 0;
+font-size: 1.4em;
+}
+.new-section-9 p {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.2em;
+}
+.new-section-d {
+background-color: black; /* White background */
+color: white; /* Black text */
+text-align: center; /* Centered text */
+font-family: 'Amiri', serif; 
+padding: 20px; /* Padding around the text */
+margin-top: 20px; /* Space above the new section */
+}
+.new-section-d {
+background-color: black;
+color: white;
+text-align: center;
+padding: 20px;
+}
+.new-section-d h1 {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-d h2 {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 2.2em;
+}
+.new-section-d h3 {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 2.0em;
+}
+.new-section-d h4 {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.8em;
+}
+.new-section-d h5 {
+font-family: 'Amiri', serif;
+margin: 0;
+font-size: 1.6em;
+}
+.new-section-d p {
+font-family: 'Amiri', serif;
+margin: 25px;
+font-size: 1.3em;
+}	
+/* Decorative Column Styles */
+.decorative-column {
+border: 2px solid black; /* Black border for the column */
+padding: 10px; /* Padding inside the column */
+margin: 20px 30px; /* Reduced margin from sides to increase width */
+text-align: center; /* Centered text in the column */
+font-family: 'Reem Kufi Fun', sans-serif; /* Reem Kufi Fun font */
+font-size: 28px; /* Increased font size */
+}
+.decorative-column-1 {
+border: 2px solid black; /* Black border for the column */
+padding: 20px; /* Padding inside the column */
+text-align: center; /* Centered text in the column */
+font-family: 'Reem Kufi Fun', sans-serif; /* Reem Kufi Fun font */
+font-size: 28px; /* Increased font size */
+}    
+/* Additional styles for the new column */
+.column {
+background-color: black; /* Black background for the column */
+color: white; /* White text for contrast */
+margin: 0 auto; /* Center the column */
+width: 80%; /* Width of the column */
+padding: 20px; /* Padding inside the column */
+font-family: 'Reem Kufi Ink', sans-serif; /* Using the header font for consistency */
+}
+/* Center the text inside the column */
+.column p {
+color: white; /* White text for contrast */
+text-align: center; /* Center the text */
+font-size: 2.5em; /* Larger font size for the title */
+font-weight: bold; /* Bold font weight for the title */
+}
+@media (max-width: 768px) {
+.header h1 {
+font-size: 2em;
+}
+.header p {
+font-size: 1.2em;
+}
+}
+</style>
+    <style>
+        .new-section-2 a {
+            text-decoration: none;
+        }
+        .new-section-3 a {
+            text-decoration: none;
+        }
+        .new-section-4 a {
+            text-decoration: none;
+        }
+        .new-section-5 a {
+            text-decoration: none;
+        }
+        .new-section-6 a {
+            text-decoration: none;
+        }
+	.donation-section a {
+		text-decoration: none;
+	}
+     .decorative-column-1 a {
+         text-decoration: none;
+     }
+     .header a {
+         text-decoration: none;
+     }
+        </style>
+
+</head>
+<body>
+<div class="header">
+	<h1>رحلة القرآن</h1>
+	<p>لخدمة كلام الرحمن</p>
+</div>
+    <div class="new-section-5">
+    <h3>أكبر مؤسسة <br>لطباعة القرآن في بنغلاديش </h3>
+      <p><b> تواجه أزمة اقتصادية عميقة بسبب الوضع الاقتصادي الحالي في البلاد.</b></p>
+        <div class="new-section-d">
+               <h5> طلب مساعدة عاجلة لمؤسسة طباعة القرآن</h5>
+        </div>
+    </div>
+<!-- Donation Section -->
+<div class="donation-section">
+    <h2>يا عباد الرحمن'</h2>
+   <h2> ساعدوانا  لكلام الرحمن</h2>
+<div class="donation-options">
+<button class="donation-button" data-amount="10">10 $</button>
+<button class="donation-button" data-amount="25">25 $</button>
+<button class="donation-button" data-amount="50">50 $</button>
+</div>
+    <div class="donation-options">
+<button class="donation-button" data-amount="100">100 $</button>
+<button class="donation-button" data-amount="500">500 $</button>
+</div>
+<button id="donateNow" class="donation-button">Amount</button>
+    <button id="donateNow" class="donation-button"><a href="https://donate.stripe.com/eVaaIhgTW4Ok0zC001">Donate Now</a></button>
+</div>
+                        <div class="new-section-7">
+                        <h5>فضلا'</h5>
+                    </div>
+    <div class="new-section-5">
+                        <h2>تبرّع الآن عاجلة </h2>
+    </div>
+
+    <div class="new-section-5">
+        <p>  نتيجة لهذه الأزمة، توقفت الأنشطة العادية للمؤسسة لعدة أيام، مما يثير قلقنا الشديد.
+في هذا الوضع، نطلب منكم مساعدة عاجلة حتى تتمكن مؤسسة طباعة القرآن من استئناف أنشطتها العادية. مساعدتكم مهمة للغاية بالنسبة لنا وسنكون ممتنين للغاية.
+نعتقد أن تعاطفكم ودعمكم سيساعدنا في هذا الوقت الصعب وسيمكن المؤسسة من استئناف أنشطتها مرة أخرى.</p>
+            </div>
+
+
+	
+</head>
+<body>
+    <div class="new-section-5">
+       <h3> تبرع مبلغ ما تريد!</h3>
+       <h4> ولو كان نصف درهم.</h4>
+            </div>
+    <div class="decorative-column">
+    <div class="donation-section">
+            <div class="header">
+            <p><a href="https://donate.stripe.com/eVaaIhgTW4Ok0zC001">ساعد الآن</a></p>
+            </div>
+    </div>
+    </div>
+
+
+<html>
+    <footer>
+        <body>
+            <div class="new-section-2">
+    <h2>أقسام الموقع</h2>
+                <p><a href="q22.html">الباحث القرآني</a></p>
+<p><a href="q12.html">أحاديث نبوية</a></p>
+<p><a href="q13.html">تفسير القرآن الكريم</a></p>
+<p><a href="q14.html">ترجمة معاني القرآن</a></p>
+<h2>فهارس القرآن</h2>
+<p><a href="q15.html">فهرس السور</a></p>
+<p><a href="q16.html">فهرس الأجزاء</a></p>
+<p><a href="q17.html">فهرس الصفحات</a></p>
+<h2>روابط تهمكم</h2>
+<p><a href="q18.html">مصاحف عثمانية</a></p>
+<p><a href="q19.html">أفضل كتب التفسير</a></p>
+<p><a href="q20.html">كتب الحديث الستة</a></p>
+<p><a href="q21.html">أفضل كتب التاريخ</a></p>
+</div>
+</body>
+    </footer>
+</html>
+
+
+
+
+<html>
+    <head>
+        <body>
+            <div class="header">
+                <h1>رحلة القرآن</h1>
+                <p>لخدمة كلام الرحمن</p>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+</body>
+</html>
+ <html>
+      <head>
+          <body>
+              <div class="new-section-6">
+                  <h1>نبذة عن موقعنا</h1>
+                   <p>رحلة القرآن، هي مؤسسة تُضيء الطريق نحو النور. هذا الموقع مُخصص للقرآن الكريم، حيث كل آية فيه تُعتبر لؤلؤة من لآلئ محيط المعرفة</p>
+    <p>الهدف منه هو جعل رسائل القرآن سهلة ومُتاحة للطلاب غير الناطقين بالعربية، ليتمكنوا من فهم تلاوته، ومعانيه، وتفسيره بعمق</p>
+    <p>يُعد هذا الموقع مؤسسة فريدة لتلاوة القرآن والبحث فيه، حيث يتم الكشف عن المعاني والعلوم المُتأصلة في كل حرف من حروف القرآن</p>
+    <p>يُمثل هذا الموقع جهدًا نبيلًا لنقل الرسائل الصحيحة للقرآن بهدف رفاهية البشرية في جميع أنحاء العالم</p>
+    <p><strong>يتم إدارة الموقع عبر منصة محمد جعفر أحمد، وهو مطور ويب في شركة مايكروسوفت</strong></p>
+    <p>لقد تم إنشاء هذا الموقع خالصًا لمرضاة الخالق وللسلام الروحي، وليس بهدف الربح الشخصي</p>
+    <p>يحمل الموقع رسالة السكينة الروحية، ويُستخدم حصريًا لخدمة الإنسانية</p>
+    <p><strong>يُقدم الموقع رسالة واضحة ضد أولئك الذين يستخدمون هذا النص المقدس لأغراض تجارية أو يُحرفون رسائله</strong></p>
+    <p><strong>من خلال هذا الموقع، يواصل محمد جعفر أحمد وفريقه جهودهم المُخلصة لنشر الكلمات الأصيلة للقرآن في كل ركن من أركان العالم</strong></p>
+              </div>
+          </body>
+      </head>
+ </html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-7">
+                  <h2>إن شاء الله</h2>
+                  <h3>والله هو الموفق وهو المعين</h3>
+                  <h4>وهو على كل شيء قدير</h4>
+              </div>
+        </body>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-2">
+                <h4>وهذا العرض لمحبي الشعر</h4>
+        </body>
+    </head>
+</html>
+<html>
+    <head>
+        <body>
+            <div class="new-section-2">
+                <p> مشعل النور في درب الزمان،</p>
+                <p>موقعٌ للحكمة، للآيات صدى الأكوان،</p>
+                <p>كل آيةٍ فيه، لؤلؤةٌ من بحر الإيمان،</p>
+                <p>يهدي للطلاب، لغير العرب، معاني القرآن،</p>
+                <p>ليفهموا الأسرار، ويعيشوا القرآن بكل أمان.</p>
+            </div>
+        </body>
+        <body>
+            <div class="new-section-2">
+                <p>موقعٌ للتلاوة، للبحث، لكشف الألحان.</p>
+                <p>جهدٌ نبيلٌ، ينشر الخير لكل إنسان،</p>
+                <p><strong>يُدار بحكمة، بقيادة جعفر، العنوان.</strong></p>
+                <p><strong>لله وحده، للروح سلام، ليس للأموال مكان.</strong></p>
+            </div>
+        </body>
+        <body>
+            <div class="new-section-2">
+                <p>مهمة السكينة، للإنسانية خدمةٌ وإحسان،</p>
+                <p>ضد التجارة بالقدسية، رسالةٌ وبيان.</p>
+                <p><strong>يستمر جعفر وفريقه، بنشر القرآن،</strong></p>
+                <p><strong>لكل أركان الأرض، بلا حدودٍ أو أوان.</strong></p>
+                <p><strong>بفضل أستاذه "ممتاز الكريم (بابا حضور)"</strong>، الذي كان له الفضل في توجيهه وإرشاده، أصبح "جعفر" اليوم مديرًا لمؤسسة طباعة القرآن،</p>
+               <p> ويهدي هذا العمل لأستاذه الكريم.</p>
+                <p>في كل حرفٍ، في كل كلمةٍ، نورٌ وبيان،</p>
+                <p>يُضيء دروب الحياة، ويُزيل كل ظلام.</p>
+                <p>بجهدٍ وإخلاص، يسعى "جعفر" وفريقه،</p>
+                <p>لنشر رسالة الحق، في كل مكانٍ وزمان</p>
+            </div>
+        </body>
+    </head>
+</html>
+
+
+<!-- Decorative Column -->
+<html>
+    <body>
+        <div class="decorative-column">
+                  <p>إن شاء الله</p>
+        </div>
+    </body>
+</html>
+
+
+
+<footer>
+        <body>
+            <div class="new-section-7">
+                <p>©2024</p>
+                <p>رحلة القرآن ، جميع الحقوق محفوظة</p>
+            </div>
+        </body>
+    </footer>
+</html>
+
+
+
+<body>
+<div class="donation-section">
+    <h2>القرآن الكريم</h2>
+</div>
+	            <div class="new-section-7">
+    <p>هو كلام الله الذي أودع فيه شريعته وحقائق دينه.</p>
+    <p>أُنزل للناس هاديًا وسراجًا منيرًا</p>
+    <p>هو كلمة الله التامة</p>
+    <p>وإرادته الكاملة للبشرية في كل زمان ومكان</p>
+    <p><b>وهو حرز من الشيطان ورجحان في الميزان</b></p>
+		    </div>
+	            <div class="header">
+    <h5>فلنستمع إليه ونستفيد من هديه ونوره</h5>
+		    </div>
+</body>
+</html>
+
+
+
+
+    
