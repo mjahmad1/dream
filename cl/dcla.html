@@ -47,457 +47,6 @@ color: white; /* White text for the button */
 }
 
 
-// Modify your existing donateNow click event handler
-document.getElementById('donateNow').addEventListener('click', function() {
-// Get the selected amount from the selected donation button or the custom amount input
-var selectedAmount = document.querySelector('.donation-button.selected')?.getAttribute('data-amount') || document.getElementById('customAmount').value;
-
-// Check if the selected amount is not empty or null
-if (selectedAmount && selectedAmount.trim() !== '') {
-console.log('Selected donation amount: ' + selectedAmount + ' Tk');
-
-// Redirect to Stripe checkout page with the selected amount
-stripe.redirectToCheckout({
-lineItems: [{ price: 'price_ID', quantity: 1 }], // Replace 'price_ID' with your actual price ID
-mode: 'payment',
-successUrl: window.location.protocol + '//' + window.location.host + '/success.html', // Replace with your success URL
-cancelUrl: window.location.protocol + '//' + window.location.host + '/cancel.html', // Replace with your cancel URL
-}).then(function (result) {
-if (result.error) {
-// If `redirectToCheckout` fails due to a browser or network
-// error, display the localized error message to your customer.
-alert(result.error.message);
-}
-});
-} else {
-// If no amount is selected, alert the user and do not proceed to checkout
-alert('Please select an amount to donate.');
-}
-});
-
-/* Responsive styles... */
-</style>
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="author" content="Untree.co">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta name="description" content="" />
-	    <meta name="keywords" content="" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-	    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
-	    <link rel="stylesheet" href="fonts/icomoon/style.css">
-	    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-        <link rel="stylesheet" href="css/tiny-slider.css">
-	    <link rel="stylesheet" href="css/aos.css">
-	    <link rel="stylesheet" href="css/flatpickr.min.css">
-	    <link rel="stylesheet" href="css/glightbox.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <title>QURANER FARIWALA</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/ino/slick.css" rel="stylesheet">
-        <link href="css/ino/slick-theme.css" rel="stylesheet">
-        <link href="css/ino/styles.css" rel="stylesheet">
-        <link href="css/ino/owl.carousel.min.css" rel="stylesheet">
-        <link href="css/ino/style.css" rel="stylesheet">
-        <link href="css/ino/slick.css" rel="stylesheet">
-        <link href="css/ino/in/slick-theme.css" rel="stylesheet">
-        <link href="css/ino/in/styles.css" rel="stylesheet">
-        <link href="css/ino/in/owl.carousel.min.css" rel="stylesheet">
-        <link href="css/ino/in/style.css" rel="stylesheet">
-
-       <link href="css/dream/style.css" rel="stylesheet">
-       <link href="css/dream/owl.carousel.min.css" rel="stylesheet">
-       <link href="css/dream/animate.min.css" rel="stylesheet">
-       <link href="css/dream/lightbox.min.css" rel="stylesheet">
-       <link href="css/dream/owl.carousel.min.css" rel="stylesheet">
-       <link href="css/dream/bootstrap.min.css" rel="stylesheet">
-       <link href="css/dream/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="header">
-	<h1>رحلة القرآن</h1>
-	<p>لخدمة كلام الرحمن</p>
-</div>
-        <div class="hero overlay" style="background-image: url('images/p/mjqf.jpg')">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 text-center mx-auto">
-                        <h1 class="heading text-white mb-2" data-aos="fade-up">نداء عاجل للدعم</h1>
-                        <p data-aos="fade-up" class=" mb-5 text-white lead text-white-50"> 🤲 <b>
-في الوضع الحالي في بنغلاديش، تواجه أكبر مؤسسة لطباعة القرآن الكريم تحديات في الحفاظ على عملياتها العادية بسبب الأزمات المالية. نحن بحاجة ماسة إلى دعمكم لمواصلة مهمتنا. أي مساهمة، حتى لو كانت صغيرة مثل تاكا واحدة، يمكن أن تحدث فرقًا كبيرًا.</b> 🤲</p>
-                        <p data-aos="fade-up"  data-aos-delay="100">
-                            <a href="#" class="btn btn-primary me-4">تبرع</a> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-	    <div class="hero overlay" style="background-image: url('images/p/partici.jpg')"></div>
-
-
-                    <div class="col-lg-9">
-                        <div id="header-carousel" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" style="height: 410px;">
-                                    <img class="img-fluid" src="images/l/1.png" alt="Image">
-                                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                        <div class="p-3" style="max-width: 700px;">
-                                            <a href="" class="btn btn-light py-2 px-3">Donate now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" style="height: 410px;">
-                                    <img class="img-fluid" src="images/l/2.png" alt="Image">
-                                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                        <div class="p-3" style="max-width: 700px;">
-                                            <a href="" class="btn btn-light py-2 px-3">Support Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-       
-
-
-	<div class="section bg-light">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="causes-item bg-white">
-						<div class="px-4 pb-5 pt-3">
-							<h3><a href="#">ادعم مؤسسة طباعة القرآن الكريم</a></h3>
-                            <img src="images/p/24.png" alt="Image" class="img-fluid">
-							<p>سيتم استخدام الأموال التي تم جمعها لتشغيل جميع أنشطة مؤسسة طباعة القرآن الكريم. يرجى ملاحظة أن أموال "الزكاة أو الصدقة أو النذر" غير مقبولة لهذا الغرض.</p>
-							<div class="progress mb-2">
-								<div class="progress-bar" role="progressbar" style="width: 12%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">12%</div>
-							</div>
-							<div class="d-flex mb-4 justify-content-between amount">
-								<div>$509.00</div>
-								<div>$20,000.00</div>
-							</div>
-							<div>
-								<a href="#" class="btn btn-primary">Donate Now</a>
-							</div>
-						</div>
-					</div>
-				</div>		
-				<div class="col-lg-4 col-md-6">
-					<div class="causes-item bg-white">
-						<div class="px-4 pb-5 pt-3">
-							<h3><a href="#">انضم إلى مشروع طباعة وتوزيع القرآن الكريم</a></h3>
-                            <img src="images/p/12.png" alt="Image" class="img-fluid">
-							<p>سيتم استخدام الأموال التي تم جمعها حصريًا لطباعة المصاحف. سيتم توزيع المصاحف المطبوعة مجانًا. إذا كانت مساهمتك زكاة أو صدقة أو نذر، يرجى تحديد ذلك حتى يمك استخدام هذه الأموال وفقًا لذلك وتوزيعها على المستحقين.</p>
-							<div class="progress mb-2">
-								<div class="progress-bar" role="progressbar" style="width: 07%;" aria-valuenow="07" aria-valuemin="0" aria-valuemax="100">07%</div>
-							</div>
-							<div class="d-flex mb-4 justify-content-between amount">
-								<div>$3,150.00</div>
-								<div>$45,000.00</div>
-							</div>
-							<div>
-								<a href="#" class="btn btn-primary">Donate Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="causes-item bg-white">
-						<div class="px-4 pb-5 pt-3">
-							<h3><a href="#">تبرع بالمصاحف لطلاب الحفظ</a></h3>
-                            <img src="images/p/26.png" alt="Image" class="img-fluid">
-							<p>ادعم توزيع المصاحف المجانية على الطلاب في قسم حفظ القرآن</p>
-							<div class="progress mb-2">
-								<div class="progress-bar" role="progressbar" style="width: 04%;" aria-valuenow="04" aria-valuemin="0" aria-valuemax="100">04%</div>
-							</div>
-							<div class="d-flex mb-4 justify-content-between amount">
-								<div>$1,809.00</div>
-								<div>$45,000.00</div>
-							</div>
-							<div>
-								<a href="#" class="btn btn-primary">Donate Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6">
-					<div class="causes-item bg-white">
-						<div class="px-4 pb-5 pt-3">
-							<h3>تبرع بالمصاحف لأطفال الروهينجا المسلمين في كوكس بازار</h3>
-                            <img src="images/p/7.png" alt="Image" class="img-fluid">
-							<div>
-								<a href="#" class="btn btn-primary">Donate Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6">
-					<div class="causes-item bg-white">
-						<div class="px-4 pb-5 pt-3">
-							<h3>"استثمر في مؤسسة طباعة القرآن الكريم لمدة 1/3/5 سنوات. </h3>
-                            <img src="images/p/19.png" alt="Image" class="img-fluid">
-							<div>
-								<a href="#" class="btn btn-primary">Invest Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6">
-					<div class="causes-item bg-white">
-						<div class="px-4 pb-5 pt-3">
-							<h3>"شارك في شراكة مؤسسة الطمأنينة الروحية، مؤسسة البحث والطباعة للكتاب العظيم القرآن الكريم."</h3>
-							<div>
-                                <img src="images/p/5.png" alt="Image" class="img-fluid">
-								<a href="#" class="btn btn-primary">Become A Partner</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>		
-		</div>		
-	</div>
-	<div class="section sec-instagram pb-0">
-		<div class="container mb-5">
-			<div class="row align-items-center">
-				<div class="col-lg-3" data-aos="fade-up">
-					<h2 class="heading">ادعم إنشاء مطبعة حديثة
-ساعدنا في إنشاء مطبعة متطورة مخصصة فقط لمؤسسة طباعة القرآن الكريم.</h2>
-				</div>
-				<div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-					<p>دعمكم لا يقدر بثمن بالنسبة لنا. دعونا ننشر نور القرآن معًا ونضيء مجتمعنا.<a href="#">Learn More</a></p>
-				</div>
-			</div>
-		</div>
-		<div class="instagram-slider-wrap" data-aos="fade-up" data-aos-delay="200">
-			<div class="instagram-slider" id="instagram-slider">
-				<div class="item">
-					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="images/qf1.jpg" alt="Image" class="img-fluid">		
-					</a>
-				</div>
-				<div class="item">
-					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="images/qf2.jpg" alt="Image" class="img-fluid">		
-					</a>
-				</div>
-				<div class="item">
-					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="images/qf3.jpg" alt="Image" class="img-fluid">		
-					</a>
-				</div>
-				<div class="item">
-					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="images/qf4.jpg" alt="Image" class="img-fluid">		
-					</a>
-				</div>
-				<div class="item">
-					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="images/qf5.jpg" alt="Image" class="img-fluid">		
-					</a>
-				</div>
-				<div class="item">
-					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="images/qf6.jpg" alt="Image" class="img-fluid">
-                    </a>
-				</div>
-				<div class="item">
-					<a class="instagram-item">
-						<span class="icon-instagram"></span>
-						<img src="images/qf7.jpg" alt="Image" class="img-fluid">		
-					</a>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-    <!-- Contact Start -->
-    <div class="container-xxl pb-5" id="contact">
-        <div class="container py-5">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Let's Work Together</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Say Hello</a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="mb-2">My office:</p>
-                    <p class="mb-3"><b>27, Purana Paltan, Paltan, Dhaka-1000, Bangladesh</b></p>
-                    <hr class="w-100">
-                    <p class="mb-2">Call me(whatsapp):</p>
-                    <p class="mb-3"><b>+880 1788856628</b></p>
-                    <hr class="w-100">
-                    <p class="mb-2">Mail me:</p>
-                    <p class="mb-3"><b>info@mjahmad.com</b></p>
-                    <hr class="w-100">
-                    <p class="mb-2">Follow me:</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-primary me-2" href="https://www.twitter.com/QuranerFariwala"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.facebook.com/mdjaforahmad10.11.1989/"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.github.com/mjahmad1"><i class="fab fa-github"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/jafor-ahmad/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="mb-3"><b>Contact for any query:</b></p>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Map Start -->
-    <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container-xxl pt-5 px-0">
-            <div class="bg-dark">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8687.360762020717!2d90.41855203869247!3d23.726500277610686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1722384834764!5m2!1sen!2sbd" width="100%" height="450 px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </div>
-    <!-- Map End -->
-
-
-    <!-- Copyright Start -->
-    <div class="container-fluid bg-dark text-white py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; 2024<a class="border-bottom text-secondary" href="#">QURANER FARIWALA</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </body>
-</html>
-
-
-
-
-
-
-
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/tiny-slider.js"></script>
-
-	<script src="js/flatpickr.min.js"></script>
-	<script src="js/glightbox.min.js"></script>
-
-
-	<script src="js/aos.js"></script>
-	<script src="js/navbar.js"></script>
-	<script src="js/counter.js"></script>
-	<script src="js/custom.js"></script>
-
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="js/ino/easing.min.js"></script>
-        <script src="js/ino/slick.min.js"></script>
-
-        
-        <!-- Template Javascript -->
-        <script src="js/ino/script.js"></script>
-
-      <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/dream/wow.min.js"></script>
-    <script src="js/dream/easing.min.js"></script>
-    <script src="js/dream/waypoints.min.js"></script>
-    <script src="js/dream/typed.min.js"></script>
-    <script src="js/dream/counterup.min.js"></script>
-    <script src="js/dream/owl.carousel.min.js"></script>
-    <script src="js/dream/isotope.pkgd.min.js"></script>
-    <script src="js/dream/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/dream/main.js"></script>
-
-        <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="js/dream/easing.min.js"></script>
-    <script src="js/dream/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="js/dream/jqBootstrapValidation.min.js"></script>
-    <script src="js/dream/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/dream/main.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Reem+Kufi+Ink&family=Reem+Kufi+Fun&display=swap');
@@ -1046,48 +595,68 @@ font-size: 1.2em;
      }
         </style>
 
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+	    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+	    <link rel="stylesheet" href="fonts/icomoon/style.css">
+	    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="css/tiny-slider.css">
+	    <link rel="stylesheet" href="css/aos.css">
+	    <link rel="stylesheet" href="css/flatpickr.min.css">
+	    <link rel="stylesheet" href="css/glightbox.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>QURANER FARIWALA</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/ino/slick.css" rel="stylesheet">
+        <link href="css/ino/slick-theme.css" rel="stylesheet">
+        <link href="css/ino/styles.css" rel="stylesheet">
+        <link href="css/ino/owl.carousel.min.css" rel="stylesheet">
+        <link href="css/ino/style.css" rel="stylesheet">
+        <link href="css/ino/slick.css" rel="stylesheet">
+        <link href="css/ino/in/slick-theme.css" rel="stylesheet">
+        <link href="css/ino/in/styles.css" rel="stylesheet">
+        <link href="css/ino/in/owl.carousel.min.css" rel="stylesheet">
+        <link href="css/ino/in/style.css" rel="stylesheet">
+
+       <link href="css/dream/style.css" rel="stylesheet">
+       <link href="css/dream/owl.carousel.min.css" rel="stylesheet">
+       <link href="css/dream/animate.min.css" rel="stylesheet">
+       <link href="css/dream/lightbox.min.css" rel="stylesheet">
+       <link href="css/dream/owl.carousel.min.css" rel="stylesheet">
+       <link href="css/dream/bootstrap.min.css" rel="stylesheet">
+       <link href="css/dream/style.css" rel="stylesheet">
+
 </head>
-<body>
-    <div class="new-section-5">
+
+  
+    <body>
+        <div class="header">
+		<h1>رحلة القرآن</h1>
+	        <p>لخدمة كلام الرحمن</p>
+	</div>
+        <div class="hero overlay" style="background-image: url('images/p/mjqf.jpg')">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center mx-auto">
+                        <h1 class="heading text-white mb-2" data-aos="fade-up">نداء عاجل للدعم</h1>
+                        <p data-aos="fade-up" class=" mb-5 text-white lead text-white-50"> 🤲 <b>
+في الوضع الحالي في بنغلاديش، تواجه أكبر مؤسسة لطباعة القرآن الكريم تحديات في الحفاظ على عملياتها العادية بسبب الأزمات المالية. نحن بحاجة ماسة إلى دعمكم لمواصلة مهمتنا. أي مساهمة، حتى لو كانت صغيرة مثل تاكا واحدة، يمكن أن تحدث فرقًا كبيرًا.</b> 🤲</p>
+                        <p data-aos="fade-up"  data-aos-delay="100">
+                            <a href="#" class="btn btn-primary me-4">تبرع</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+	        <div class="new-section-5">
     <h3>أكبر مؤسسة <br>لطباعة القرآن في بنغلاديش </h3>
       <p><b> تواجه أزمة اقتصادية عميقة بسبب الوضع الاقتصادي الحالي في البلاد.</b></p>
         <div class="new-section-d">
                <h5> طلب مساعدة عاجلة لمؤسسة طباعة القرآن</h5>
         </div>
     </div>
-<!-- Donation Section -->
-<div class="donation-section">
-    <h2>يا عباد الرحمن'</h2>
-   <h2> ساعدوانا  لكلام الرحمن</h2>
-<div class="donation-options">
-<button class="donation-button" data-amount="10">10 $</button>
-<button class="donation-button" data-amount="25">25 $</button>
-<button class="donation-button" data-amount="50">50 $</button>
-</div>
-    <div class="donation-options">
-<button class="donation-button" data-amount="100">100 $</button>
-<button class="donation-button" data-amount="500">500 $</button>
-</div>
-<button id="donateNow" class="donation-button">Amount</button>
-    <button id="donateNow" class="donation-button"><a href="https://donate.stripe.com/eVaaIhgTW4Ok0zC001">Donate Now</a></button>
-</div>
-                        <div class="new-section-7">
-                        <h5>فضلا'</h5>
-                    </div>
-    <div class="new-section-5">
-                        <h2>تبرّع الآن عاجلة </h2>
-    </div>
-
-    <div class="new-section-5">
-        <p>  نتيجة لهذه الأزمة، توقفت الأنشطة العادية للمؤسسة لعدة أيام، مما يثير قلقنا الشديد.
-في هذا الوضع، نطلب منكم مساعدة عاجلة حتى تتمكن مؤسسة طباعة القرآن من استئناف أنشطتها العادية. مساعدتكم مهمة للغاية بالنسبة لنا وسنكون ممتنين للغاية.
-نعتقد أن تعاطفكم ودعمكم سيساعدنا في هذا الوقت الصعب وسيمكن المؤسسة من استئناف أنشطتها مرة أخرى.</p>
-            </div>
-
-
-	
-</head>
-<body>
     <div class="new-section-5">
        <h3> تبرع مبلغ ما تريد!</h3>
        <h4> ولو كان نصف درهم.</h4>
@@ -1100,160 +669,361 @@ font-size: 1.2em;
     </div>
     </div>
 
-
-<html>
-    <footer>
-        <body>
-            <div class="new-section-2">
-    <h2>أقسام الموقع</h2>
-                <p><a href="q22.html">الباحث القرآني</a></p>
-<p><a href="q12.html">أحاديث نبوية</a></p>
-<p><a href="q13.html">تفسير القرآن الكريم</a></p>
-<p><a href="q14.html">ترجمة معاني القرآن</a></p>
-<h2>فهارس القرآن</h2>
-<p><a href="q15.html">فهرس السور</a></p>
-<p><a href="q16.html">فهرس الأجزاء</a></p>
-<p><a href="q17.html">فهرس الصفحات</a></p>
-<h2>روابط تهمكم</h2>
-<p><a href="q18.html">مصاحف عثمانية</a></p>
-<p><a href="q19.html">أفضل كتب التفسير</a></p>
-<p><a href="q20.html">كتب الحديث الستة</a></p>
-<p><a href="q21.html">أفضل كتب التاريخ</a></p>
-</div>
-</body>
-    </footer>
-</html>
+	    <div class="hero overlay" style="background-image: url('images/p/partici.jpg')"></div>
 
 
+                    <div class="col-lg-9">
+                        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" style="height: 410px;">
+                                    <img class="img-fluid" src="images/l/1.png" alt="Image">
+                                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                        <div class="p-3" style="max-width: 700px;">
+                                            <a href="" class="btn btn-light py-2 px-3">Donate now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" style="height: 410px;">
+                                    <img class="img-fluid" src="images/l/2.png" alt="Image">
+                                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                        <div class="p-3" style="max-width: 700px;">
+                                            <a href="" class="btn btn-light py-2 px-3">Support Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+       
 
 
-<html>
-    <head>
-        <body>
-            <div class="header">
-                <h1>رحلة القرآن</h1>
-                <p>لخدمة كلام الرحمن</p>
+	<div class="section bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3><a href="#">ادعم مؤسسة طباعة القرآن الكريم</a></h3>
+                            <img src="images/p/24.png" alt="Image" class="img-fluid">
+							<p>سيتم استخدام الأموال التي تم جمعها لتشغيل جميع أنشطة مؤسسة طباعة القرآن الكريم. يرجى ملاحظة أن أموال "الزكاة أو الصدقة أو النذر" غير مقبولة لهذا الغرض.</p>
+							<div class="progress mb-2">
+								<div class="progress-bar" role="progressbar" style="width: 12%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">12%</div>
+							</div>
+							<div class="d-flex mb-4 justify-content-between amount">
+								<div>$509.00</div>
+								<div>$20,000.00</div>
+							</div>
+							<div>
+								<a href="#" class="btn btn-primary">Donate Now</a>
+							</div>
+						</div>
+					</div>
+				</div>		
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3><a href="#">انضم إلى مشروع طباعة وتوزيع القرآن الكريم</a></h3>
+                            <img src="images/p/12.png" alt="Image" class="img-fluid">
+							<p>سيتم استخدام الأموال التي تم جمعها حصريًا لطباعة المصاحف. سيتم توزيع المصاحف المطبوعة مجانًا. إذا كانت مساهمتك زكاة أو صدقة أو نذر، يرجى تحديد ذلك حتى يمك استخدام هذه الأموال وفقًا لذلك وتوزيعها على المستحقين.</p>
+							<div class="progress mb-2">
+								<div class="progress-bar" role="progressbar" style="width: 07%;" aria-valuenow="07" aria-valuemin="0" aria-valuemax="100">07%</div>
+							</div>
+							<div class="d-flex mb-4 justify-content-between amount">
+								<div>$3,150.00</div>
+								<div>$45,000.00</div>
+							</div>
+							<div>
+								<a href="#" class="btn btn-primary">Donate Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3><a href="#">تبرع بالمصاحف لطلاب الحفظ</a></h3>
+                            <img src="images/p/26.png" alt="Image" class="img-fluid">
+							<p>ادعم توزيع المصاحف المجانية على الطلاب في قسم حفظ القرآن</p>
+							<div class="progress mb-2">
+								<div class="progress-bar" role="progressbar" style="width: 04%;" aria-valuenow="04" aria-valuemin="0" aria-valuemax="100">04%</div>
+							</div>
+							<div class="d-flex mb-4 justify-content-between amount">
+								<div>$1,809.00</div>
+								<div>$45,000.00</div>
+							</div>
+							<div>
+								<a href="#" class="btn btn-primary">Donate Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3>تبرع بالمصاحف لأطفال الروهينجا المسلمين في كوكس بازار</h3>
+                            <img src="images/p/7.png" alt="Image" class="img-fluid">
+							<div>
+								<a href="#" class="btn btn-primary">Donate Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3>"استثمر في مؤسسة طباعة القرآن الكريم لمدة 1/3/5 سنوات. </h3>
+                            <img src="images/p/19.png" alt="Image" class="img-fluid">
+							<div>
+								<a href="#" class="btn btn-primary">Invest Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="causes-item bg-white">
+						<div class="px-4 pb-5 pt-3">
+							<h3>"شارك في شراكة مؤسسة الطمأنينة الروحية، مؤسسة البحث والطباعة للكتاب العظيم القرآن الكريم."</h3>
+							<div>
+                                <img src="images/p/5.png" alt="Image" class="img-fluid">
+								<a href="#" class="btn btn-primary">Become A Partner</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>		
+	</div>
+	<div class="section sec-instagram pb-0">
+		<div class="container mb-5">
+			<div class="row align-items-center">
+				<div class="col-lg-3" data-aos="fade-up">
+					<h2 class="heading">ادعم إنشاء مطبعة حديثة
+ساعدنا في إنشاء مطبعة متطورة مخصصة فقط لمؤسسة طباعة القرآن الكريم.</h2>
+				</div>
+				<div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+					<p>دعمكم لا يقدر بثمن بالنسبة لنا. دعونا ننشر نور القرآن معًا ونضيء مجتمعنا.<a href="#">Learn More</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="instagram-slider-wrap" data-aos="fade-up" data-aos-delay="200">
+			<div class="instagram-slider" id="instagram-slider">
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf1.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf2.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf3.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf4.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf5.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf6.jpg" alt="Image" class="img-fluid">
+                    </a>
+				</div>
+				<div class="item">
+					<a class="instagram-item">
+						<span class="icon-instagram"></span>
+						<img src="images/qf7.jpg" alt="Image" class="img-fluid">		
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <!-- Contact Start -->
+    <div class="container-xxl pb-5" id="contact">
+        <div class="container py-5">
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">Let's Work Together</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary py-3 px-5" href="">Say Hello</a>
+                </div>
             </div>
-        </body>
-    </head>
-</html>
-
-
-</body>
-</html>
- <html>
-      <head>
-          <body>
-              <div class="new-section-6">
-                  <h1>نبذة عن موقعنا</h1>
-                   <p>رحلة القرآن، هي مؤسسة تُضيء الطريق نحو النور. هذا الموقع مُخصص للقرآن الكريم، حيث كل آية فيه تُعتبر لؤلؤة من لآلئ محيط المعرفة</p>
-    <p>الهدف منه هو جعل رسائل القرآن سهلة ومُتاحة للطلاب غير الناطقين بالعربية، ليتمكنوا من فهم تلاوته، ومعانيه، وتفسيره بعمق</p>
-    <p>يُعد هذا الموقع مؤسسة فريدة لتلاوة القرآن والبحث فيه، حيث يتم الكشف عن المعاني والعلوم المُتأصلة في كل حرف من حروف القرآن</p>
-    <p>يُمثل هذا الموقع جهدًا نبيلًا لنقل الرسائل الصحيحة للقرآن بهدف رفاهية البشرية في جميع أنحاء العالم</p>
-    <p><strong>يتم إدارة الموقع عبر منصة محمد جعفر أحمد، وهو مطور ويب في شركة مايكروسوفت</strong></p>
-    <p>لقد تم إنشاء هذا الموقع خالصًا لمرضاة الخالق وللسلام الروحي، وليس بهدف الربح الشخصي</p>
-    <p>يحمل الموقع رسالة السكينة الروحية، ويُستخدم حصريًا لخدمة الإنسانية</p>
-    <p><strong>يُقدم الموقع رسالة واضحة ضد أولئك الذين يستخدمون هذا النص المقدس لأغراض تجارية أو يُحرفون رسائله</strong></p>
-    <p><strong>من خلال هذا الموقع، يواصل محمد جعفر أحمد وفريقه جهودهم المُخلصة لنشر الكلمات الأصيلة للقرآن في كل ركن من أركان العالم</strong></p>
-              </div>
-          </body>
-      </head>
- </html>
-<html>
-    <head>
-        <body>
-            <div class="new-section-7">
-                  <h2>إن شاء الله</h2>
-                  <h3>والله هو الموفق وهو المعين</h3>
-                  <h4>وهو على كل شيء قدير</h4>
-              </div>
-        </body>
-    </head>
-</html>
-<html>
-    <head>
-        <body>
-            <div class="new-section-2">
-                <h4>وهذا العرض لمحبي الشعر</h4>
-        </body>
-    </head>
-</html>
-<html>
-    <head>
-        <body>
-            <div class="new-section-2">
-                <p> مشعل النور في درب الزمان،</p>
-                <p>موقعٌ للحكمة، للآيات صدى الأكوان،</p>
-                <p>كل آيةٍ فيه، لؤلؤةٌ من بحر الإيمان،</p>
-                <p>يهدي للطلاب، لغير العرب، معاني القرآن،</p>
-                <p>ليفهموا الأسرار، ويعيشوا القرآن بكل أمان.</p>
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="mb-2">My office:</p>
+                    <p class="mb-3"><b>27, Purana Paltan, Paltan, Dhaka-1000, Bangladesh</b></p>
+                    <hr class="w-100">
+                    <p class="mb-2">Call me(whatsapp):</p>
+                    <p class="mb-3"><b>+880 1788856628</b></p>
+                    <hr class="w-100">
+                    <p class="mb-2">Mail me:</p>
+                    <p class="mb-3"><b>info@mjahmad.com</b></p>
+                    <hr class="w-100">
+                    <p class="mb-2">Follow me:</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-primary me-2" href="https://www.twitter.com/QuranerFariwala"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://www.facebook.com/mdjaforahmad10.11.1989/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://www.github.com/mjahmad1"><i class="fab fa-github"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/jafor-ahmad/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <p class="mb-3"><b>Contact for any query:</b></p>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </body>
-        <body>
-            <div class="new-section-2">
-                <p>موقعٌ للتلاوة، للبحث، لكشف الألحان.</p>
-                <p>جهدٌ نبيلٌ، ينشر الخير لكل إنسان،</p>
-                <p><strong>يُدار بحكمة، بقيادة جعفر، العنوان.</strong></p>
-                <p><strong>لله وحده، للروح سلام، ليس للأموال مكان.</strong></p>
-            </div>
-        </body>
-        <body>
-            <div class="new-section-2">
-                <p>مهمة السكينة، للإنسانية خدمةٌ وإحسان،</p>
-                <p>ضد التجارة بالقدسية، رسالةٌ وبيان.</p>
-                <p><strong>يستمر جعفر وفريقه، بنشر القرآن،</strong></p>
-                <p><strong>لكل أركان الأرض، بلا حدودٍ أو أوان.</strong></p>
-                <p><strong>بفضل أستاذه "ممتاز الكريم (بابا حضور)"</strong>، الذي كان له الفضل في توجيهه وإرشاده، أصبح "جعفر" اليوم مديرًا لمؤسسة طباعة القرآن،</p>
-               <p> ويهدي هذا العمل لأستاذه الكريم.</p>
-                <p>في كل حرفٍ، في كل كلمةٍ، نورٌ وبيان،</p>
-                <p>يُضيء دروب الحياة، ويُزيل كل ظلام.</p>
-                <p>بجهدٍ وإخلاص، يسعى "جعفر" وفريقه،</p>
-                <p>لنشر رسالة الحق، في كل مكانٍ وزمان</p>
-            </div>
-        </body>
-    </head>
-</html>
-
-
-<!-- Decorative Column -->
-<html>
-    <body>
-        <div class="decorative-column">
-                  <p>إن شاء الله</p>
         </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Map Start -->
+    <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container-xxl pt-5 px-0">
+            <div class="bg-dark">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8687.360762020717!2d90.41855203869247!3d23.726500277610686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1722384834764!5m2!1sen!2sbd" width="100%" height="450 px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- Map End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; 2024<a class="border-bottom text-secondary" href="#">QURANER FARIWALA</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </body>
 </html>
 
 
 
-<footer>
-        <body>
-            <div class="new-section-7">
-                <p>©2024</p>
-                <p>رحلة القرآن ، جميع الحقوق محفوظة</p>
-            </div>
-        </body>
-    </footer>
-</html>
 
 
 
-<body>
-<div class="donation-section">
-    <h2>القرآن الكريم</h2>
-</div>
-	            <div class="new-section-7">
-    <p>هو كلام الله الذي أودع فيه شريعته وحقائق دينه.</p>
-    <p>أُنزل للناس هاديًا وسراجًا منيرًا</p>
-    <p>هو كلمة الله التامة</p>
-    <p>وإرادته الكاملة للبشرية في كل زمان ومكان</p>
-    <p><b>وهو حرز من الشيطان ورجحان في الميزان</b></p>
-		    </div>
-	            <div class="header">
-    <h5>فلنستمع إليه ونستفيد من هديه ونوره</h5>
-		    </div>
-</body>
-</html>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+
+	<script src="js/flatpickr.min.js"></script>
+	<script src="js/glightbox.min.js"></script>
+
+
+	<script src="js/aos.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/counter.js"></script>
+	<script src="js/custom.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="js/ino/easing.min.js"></script>
+        <script src="js/ino/slick.min.js"></script>
+
+        
+        <!-- Template Javascript -->
+        <script src="js/ino/script.js"></script>
+
+      <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dream/wow.min.js"></script>
+    <script src="js/dream/easing.min.js"></script>
+    <script src="js/dream/waypoints.min.js"></script>
+    <script src="js/dream/typed.min.js"></script>
+    <script src="js/dream/counterup.min.js"></script>
+    <script src="js/dream/owl.carousel.min.js"></script>
+    <script src="js/dream/isotope.pkgd.min.js"></script>
+    <script src="js/dream/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/dream/main.js"></script>
+
+        <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dream/easing.min.js"></script>
+    <script src="js/dream/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="js/dream/jqBootstrapValidation.min.js"></script>
+    <script src="js/dream/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/dream/main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
