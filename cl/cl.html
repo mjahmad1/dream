@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>কোরআন মুদ্রন প্রকল্প ফান্ড কালেকশন</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+.container {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+.progress-bar {
+width: 100%;
+background-color: #e0e0e0;
+border-radius: 25px;
+margin: 20px 0;
+}
+.progress {
+width: 0;
+height: 20px;
+background-color: #76c7c0;
+border-radius: 25px;
+}
+.donation-amounts button {
+margin: 5px;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+background-color: #76c7c0;
+color: #fff;
+cursor: pointer;
+}
+.donate-button {
+margin-top: 20px;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+background-color: #ff6347;
+color: #fff;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>কোরআন মুদ্রন প্রকল্প</h1>
+<p>আমাদের লক্ষ্য: ১০,০০০ টাকা</p>
+<p>সময় সীমা: ১০ দিন</p>
+<div class="progress-bar">
+<div class="progress" id="progress"></div>
+</div>
+<div class="donation-amounts">
+<button onclick="donate(100)">১০০ টাকা</button>
+<button onclick="donate(500)">৫০০ টাকা</button>
+<button onclick="donate(1000)">১০০০ টাকা</button>
+</div>
+<p>মোট সংগ্রহ: <span id="total">০</span> টাকা</p>
+<button class="donate-button" onclick="donateNow()">দান করুন</button>
+</div>
+
+<script>
+let total = 0;
+const target = 10000;
+const progressElement = document.getElementById('progress');
+const totalElement = document.getElementById('total');
+
+function donate(amount) {
+total += amount;
+totalElement.textContent = total;
+const progressPercentage = (total / target) * 100;
+progressElement.style.width = progressPercentage + '%';
+}
+
+function donateNow() {
+const stripeLink = `https://donate.stripe.com/eVaaIhgTW4Ok0zC001?amount=${total}`;
+window.location.href = stripeLink;
+}
+</script>
+</body>
+</html>
