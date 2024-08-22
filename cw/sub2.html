@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #subtotal {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Payment Page</h1>
+    <button class="button" onclick="updateSubtotal(100)">100 টাকা</button>
+    <button class="button" onclick="updateSubtotal(200)">200 টাকা</button>
+    <button class="button" onclick="updateSubtotal(300)">300 টাকা</button>
+    <button class="button" onclick="customAmount()">কাস্টম এমাউন্ট</button>
+    <br>
+    <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
+    <br>
+    <button class="button" onclick="goToCheckout()">চেকআউট</button>
+
+    <script>
+        let subtotal = 0;
+
+        function updateSubtotal(amount) {
+            subtotal = amount;
+            document.getElementById('subtotal').innerText = `সাবটোটাল: ${subtotal} টাকা`;
+            localStorage.setItem('subtotal', subtotal);
+        }
+
+        function customAmount() {
+            const amount = prompt("কাস্টম এমাউন্ট লিখুন:");
+            if (amount !== null && !isNaN(amount)) {
+                updateSubtotal(parseInt(amount));
+            }
+        }
+
+        function goToCheckout() {
+            window.location.href = 'checkout.html';
+        }
+    </script>
+</body>
+</html>
