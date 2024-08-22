@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Page</title>
+    <style>
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #subtotal {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ধন্যবাদ!</h1>
+    <p>সাবমিট করার জন্য ধন্যবাদ আপনাকে।</p>
+    <div id="subtotal-section">
+        <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
+    </div>
+    <button class="button" onclick="makePayment()">এখনি পেমেন্ট করুন</button>
+    <button class="button" onclick="payLater()">আমি পরবর্তীতে পেমেন্ট করতে চাই</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedSubtotal = localStorage.getItem('subtotal');
+            if (savedSubtotal) {
+                document.getElementById('subtotal').innerText = `সাবটোটাল: ${savedSubtotal} টাকা`;
+            }
+        });
+
+        function makePayment() {
+            alert('পেমেন্ট পেইজে রিডাইরেক্ট করা হচ্ছে...');
+            window.location.href = 'payment.html';
+        }
+
+        function payLater() {
+            alert('আপনি পরবর্তীতে পেমেন্ট করতে পারবেন।');
+            // এখানে পরবর্তীতে পেমেন্ট করার জন্য কোড যোগ করুন
+        }
+    </script>
+</body>
+</html>

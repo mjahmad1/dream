@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Selection Page</title>
+    <style>
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #subtotal {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, option {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <h1>পেমেন্ট সিস্টেম নির্বাচন করুন</h1>
+    <div id="subtotal-section">
+        <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
+    </div>
+    <div class="form-group">
+        <label for="payment-method">পেমেন্ট পদ্ধতি নির্বাচন করুন:</label>
+        <select id="payment-method" onchange="showPaymentOptions()">
+            <option value="">-- নির্বাচন করুন --</option>
+            <option value="card">কার্ড পেমেন্ট</option>
+            <option value="bank">ব্যাংক ট্রান্সফার</option>
+            <option value="mobile">মোবাইল ব্যাংকিং</option>
+        </select>
+    </div>
+    <div id="payment-options" class="form-group" style="display: none;">
+        <!-- পেমেন্ট অপশন এখানে প্রদর্শিত হবে -->
+    </div>
+    <div id="card-element" class="form-group" style="display: none;">
+        <!-- Stripe Element will be inserted here -->
+    </div>
+    <button class="button" id="pay-button" style="display: none;" onclick="handlePayment()">পেমেন্ট করুন</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedSubtotal = localStorage.getItem('subtotal');
+            if (savedSubtotal) {
+                document.getElementById('subtotal').innerText = `সাবটোটাল: ${savedSubtotal} টাকা`;
+            }
+        });
+
+        function showPaymentOptions() {
+            const paymentMethod = document.getElementById('payment-method').value;
+            const paymentOptions = document.getElementById('payment-options');
+            const cardElement = document.getElementById('card-element');
+            const payButton = document.getElementById('pay-button');
+            paymentOptions.style.display = 'block';
+
+            let optionsHtml = '';
+            if (paymentMethod === 'card') {
+                optionsHtml = `
+                    <label>কার্ড পেমেন্ট:</label>
+                    <ul>
+                        <li>ভিসা</li>
+                        <li>মাস্টারকার্ড</li>
+                        <li>আমেরিকান এক্সপ্রেস</li>
+                    </ul>
+                `;
+                cardElement.style.display = 'block';
+                payButton.style.display = 'block';
+                initializeStripe();
+            } else if (paymentMethod === 'bank') {
+                optionsHtml = `
+                    <label>ব্যাংক ট্রান্সফার:</label>
+                    <ul>
+                        <li>ডাচ্-বাংলা ব্যাংক</li>
+                        <li>ব্র্যাক ব্যাংক</li>
+                        <li>ইসলামী ব্যাংক</li>
+                    </ul>
+                `;
+                cardElement.style.display = 'none';
+                payButton.style.display = 'none';
+            } else if (paymentMethod === 'mobile') {
+                optionsHtml = `
+                    <label>মোবাইল ব্যাংকিং:</label>
+                    <ul>
+                        <li>বিকাশ</li>
+                        <li>নগদ</li>
+                        <li>রকেট</li>
+                    </ul>
+                `;
+                cardElement.style.display = 'none';
+                payButton.style.display = 'none';
+            }
+
+            paymentOptions.innerHTML = optionsHtml;
+        }
+
+        let stripe, elements, card;
+
+        function initializeStripe() {
+            stripe = Stripe('pk_live_51PZzciCyC8OWGlHKxmnWEFHf35h9eqQdLfXkQy4coHfiKFfs4Q0znWh7qHi7N9TKNWnlnttZ8kAgtKK0ygmBp5Nn00DvLhJnlx');
+            elements = stripe.elements();
+            card = elements.create('card');
+            card.mount('#card-element');
+        }
+
+        function handlePayment() {
+            const savedSubtotal = localStorage.getItem('subtotal');
+            stripe.createPaymentMethod({
+                type: 'card',
+                card: card,
+                billing_details: {
+                    name: 'Customer Name',
+                },
+            }).then(function(result) {
+                if (result.error) {
+                    alert(result.error.message);
+                } else {
+                    alert(`পেমেন্ট সফল হয়েছে! সাবটোটাল: ${savedSubtotal} টাকা`);
+                    // এখানে পেমেন্ট প্রসেসিং কোড যোগ করুন
+                }
+            });
+        }
+    </script>
+</body>
+</html>

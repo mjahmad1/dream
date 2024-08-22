@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <style>
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #subtotal {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkout Page</h1>
+    <div id="subtotal-section">
+        <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
+    </div>
+    <form id="billing-form">
+        <div class="form-group">
+            <label for="name">নাম:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">ইমেইল:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="address">ঠিকানা:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <div class="form-group">
+            <label for="city">শহর:</label>
+            <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+            <label for="zip">জিপ কোড:</label>
+            <input type="text" id="zip" name="zip" required>
+        </div>
+        <button type="submit" class="button">সাবমিট</button>
+    </form>
+
+    <script>
+        let subtotal = 0;
+
+        function updateSubtotal(amount) {
+            subtotal = amount;
+            document.getElementById('subtotal').innerText = `সাবটোটাল: ${subtotal} টাকা`;
+        }
+
+        function customAmount() {
+            const amount = prompt("কাস্টম এমাউন্ট লিখুন:");
+            if (amount !== null && !isNaN(amount)) {
+                updateSubtotal(parseInt(amount));
+            }
+        }
+
+        // Example: Setting subtotal from previous page
+        updateSubtotal(100); // আপনি এখানে পূর্বের পেইজ থেকে সাবটোটাল সেট করতে পারেন
+
+        document.getElementById('billing-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert(`সাবমিট করা হয়েছে! সাবটোটাল: ${subtotal} টাকা`);
+        });
+    </script>
+</body>
+</html>
