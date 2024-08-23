@@ -139,60 +139,27 @@
                     const paymentMethod = document.getElementById('payment-method').value;
                     const paymentOptions = document.getElementById('payment-options');
                     paymentOptions.style.display = 'block';
-
-                    let optionsHtml = '';
-                    if (paymentMethod === 'card') {
-                        optionsHtml = `
-                                <label><a href="https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt100/CuCUGp?fbclid=IwY2xjawE0XUZleHRuA2FlbQIxMQABHTTmRMjigL2e6CfNPMW9e9C4ehuMgXruLlq9Nd-11w2p6OTVhTMtStUU3w_aem_2M3q-ktLgzCptG3_xcCBPg">কার্ড পেমেন্ট:</label>
-                                <ul>
-                                    <li>ভিসা</li>
-                                    <li>মাস্টারকার্ড</li>
-                                    <li>আমেরিকান এক্সপ্রেস</li>
-                                </ul>
-                            `;
-                    } else if (paymentMethod === 'bank') {
-                        optionsHtml = `
-                                <label>ব্যাংক ট্রান্সফার:</label>
-                                <ul>
-                                    <li>ডাচ্-বাংলা ব্যাংক</li>
-                                    <li>ব্র্যাক ব্যাংক</li>
-                                    <li>ইসলামী ব্যাংক</li>
-                                </ul>
-                            `;
-                    } else if (paymentMethod === 'mobile') {
-                        optionsHtml = `
-                                <label>মোবাইল ব্যাংকিং:</label>
-                                <ul>
-                                    <li><a href="https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt100/CuCUGp?fbclid=IwY2xjawE0XUZleHRuA2FlbQIxMQABHTTmRMjigL2e6CfNPMW9e9C4ehuMgXruLlq9Nd-11w2p6OTVhTMtStUU3w_aem_2M3q-ktLgzCptG3_xcCBPg">বিকাশ</a></li>
-                                    <li>নগদ</li>
-                                    <li>রকেট</li>
-                                </ul>
-                            `;
-                    }
-
-                    paymentOptions.innerHTML = optionsHtml;
                 }
-                        function goToPayment(method) {
-            let paymentGatewayUrl = '';
-
-            if (subtotal === 10) {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
-            } else if (subtotal === 100) {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlin';
-            } else if (subtotal === 500) {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentli';
-            } else if (subtotal === 1000) {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentl';
-            } else {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/payment';
-            }
-            window.location.href = paymentGatewayUrl;
-        }
-
-        function showPaymentOptions() {
-            document.getElementById('paymentOptions').style.display = 'block';
-        }
-
+                
+                function goToPayment(method) {
+                    let paymentGatewayUrl = '';
+                    if (subtotal === 100) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    }
+                    else if (subtotal === 500) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    } 
+                    else if (subtotal === 1000) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    } 
+                    else if (subtotal === 5000) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    } 
+                    else {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    }
+                    window.location.href = paymentGatewayUrl;
+                }
             </script>
 </body>
 </html>
