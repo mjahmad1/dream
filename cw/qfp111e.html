@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <title>QURANER FARIWALA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center-1 {
+            background-color: floralwhite;
+            color: black;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #subtotal {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, option {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .center {
+            background-color: antiquewhite;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .center h1 {
+            font-family: 'Galada', cursive;
+            margin-bottom: 10px;
+        }
+
+        .center h2 {
+            font-family: 'Galada', cursive;
+        }
+
+        .center p {
+            font-family: 'Galada', cursive;
+        }
+
+        .header {
+            background-color: floralwhite;
+            color: black;
+            padding: 15px;
+            text-align: center;
+        }
+        .header h5 {
+            font-family: 'Galada', cursive;
+        }
+
+        .header p {
+            font-family: 'Galada', cursive;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h2>QURANER FARIWALA</h2>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h5>Your Support</h5>
+            <div id="subtotal-section">
+                <button class="button" id="subtotal">Subtotal: 0 Tk.</button>
+            </div>
+            <div class="header"></div>
+                <p><b>Payment method</b></p>
+            <div class="header">
+                <button class="button" onclick="window.location.href='https://pay.bkash.mjahmd'">Bkash</button>
+                <button class="button" onclick="window.location.href='https://pay.visa-card.mjahmd'">DEBIT/CREDIT CARD</button>
+                <button class="button" onclick="window.location.href='https://pay.Bank-transfer.mjahmd'">Bank Transfer</button>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+<p>If you encounter any payment-related issues, please contact us at the following email: 
+<a href="mailto:mjahmad2024@outlook.com">mjahmad2024@outlook.com</a>
+    </div>
+    <div class="center">
+        <p>©২০২৪ <b><a href="https://mjahmad1.github.io/dream/hq30.html">QURANER FARIWALA</a></b></p>
+        <p>Powered by <strong><a href="https://mjahmad1.github.io/dream/mja/pr.html">MJ-AHMAD</a></strong></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedSubtotal = localStorage.getItem('subtotal');
+            if (savedSubtotal) {
+                document.getElementById('subtotal').innerText = `subtotal: ${savedSubtotal} Tk`;
+            }
+        });
+    </script>
+</body>
+</html>
