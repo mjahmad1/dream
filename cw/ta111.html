@@ -57,35 +57,36 @@
     </style>
 </head>
 <body>
-    <div class="center">
-        <h1>কোরআনের ফেরিওয়ালা</h1>
-        <p>মহাগ্রন্থ আল-কোরআন গবেষণা, মুদ্রণ ও সরবরাহকারী প্রতিষ্ঠান</p>
-    </div>
-    <div class="container">
-        <div class="header">
-            <h1>Payment Page</h1>
-            <button class="button" onclick="updateSubtotal(10)">10 টাকা</button>
-            <button class="button" onclick="updateSubtotal(100)">100 টাকা</button>
-            <button class="button" onclick="updateSubtotal(500)">500 টাকা</button>
-            <button class="button" onclick="updateSubtotal(1000)">1000 টাকা</button>
-            <button class="button" onclick="customAmount()">কাস্টম এমাউন্ট</button>
-            <br>
-            <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
-            <br>
-            <button class="button" onclick="showPaymentOptions()">পেমেন্ট অপশন</button>
-            <div id="paymentOptions" style="display: none;">
-                <button class="button" onclick="goToPayment('bkash')">Bkash</button>
-                <button class="button" onclick="goToPayment('card')">DEBIT/CREDIT CARD</button>
-                <button class="button" onclick="goToPayment('bank')">Bank Transfer</button>
-                <button class="button" onclick="goToPayment('crypto')">Cryptocurrency</button>
-            </div>
-        </div>
-    </div>
-    <div class="center">
-        <p>©২০২৪ কোরআনের ফেরিওয়ালা, সর্বস্বত্ব সংরক্ষিত,</p>
-        <p>সৃজনশীলতায় <STRONG><A HREF="hbh1.html">এম-জে আহমদ</A></STRONG> </p>
-    </div>
-
+    </head>
+  <body>
+      <div class="center">
+          <h1>কোরআনের ফেরিওয়ালা</h1>
+          <p>মহাগ্রন্থ আল-কোরআন গবেষণা, মুদ্রণ ও সরবরাহকারী প্রতিষ্ঠান</p>
+      </div>
+      <div class="container">
+          <div class="header">
+              <h1>Payment Page</h1>
+              <button class="button" onclick="updateSubtotal(10)">10 টাকা</button>
+              <button class="button" onclick="updateSubtotal(100)">100 টাকা</button>
+              <button class="button" onclick="updateSubtotal(500)">500 টাকা</button>
+              <button class="button" onclick="updateSubtotal(1000)">1000 টাকা</button>
+              <button class="button" onclick="customAmount()">কাস্টম এমাউন্ট</button>
+              <br>
+              <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
+              <br>
+              <button class="button" onclick="showPaymentOptions()">পেমেন্ট অপশন</button>
+              <div id="paymentOptions" style="display: none;">
+                  <button class="button" onclick="goToPayment('bkash')">Bkash</button>
+                  <button class="button" onclick="goToPayment('card')">DEBIT/CREDIT CARD</button>
+                  <button class="button" onclick="goToPayment('bank')">Bank Transfer</button>
+                  <button class="button" onclick="goToPayment('crypto')">Cryptocurrency</button>
+              </div>
+          </div>
+      </div>
+      <div class="center">
+          <p>©২০২৪ কোরআনের ফেরিওয়ালা, সর্বস্বত্ব সংরক্ষিত,</p>
+          <p>সৃজনশীলতায় <STRONG><A HREF="hbh1.html">এম-জে আহমদ</A></STRONG> </p>
+      </div> 
     <script>
         let subtotal = 0;
 
