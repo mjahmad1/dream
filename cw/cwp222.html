@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <title>QURANER FARIWALA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center-1 {
+            background-color: floralwhite;
+            color: black;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #subtotal {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, option {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+           .center {
+            background-color: antiquewhite;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+            .center h1 {
+                font-family: 'Galada', cursive;
+                margin-bottom: 10px;
+            }
+
+            .center h2 {
+                font-family: 'Galada', cursive;
+            }
+
+            .center p {
+                font-family: 'Galada', cursive;
+            }
+
+        .header {
+            background-color: floralwhite;
+            color: black;
+            padding: 15px;
+            text-align: center;
+        }
+                    .header h5 {
+                font-family: 'Galada', cursive;
+            }
+
+            .header p {
+                font-family: 'Galada', cursive;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h2>কোরআনের ফেরিওয়ালা</h2>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h5>আপনি অনুদান দিচ্ছেন</h5>
+            <div id="subtotal-section">
+                <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
+            </div>
+            <div class="header">
+                <p><b>কোরআনের ফেরিওয়ালা</b> বিশ্বের যে কোন প্রান্ত থেকে অনুদান গ্রহণ করার সকল অত্যাধুনিক প্রযুক্তি ব্যবহারে বৈধ সক্ষমতা সংরক্ষণ করে </p>
+            </div>
+                <p><b>পেমেন্ট পদ্ধতি নির্বাচন করুন</b></p>
+            <div class="header">
+                <button class="button" onclick="goToPayment('bkash')">Bkash</button>
+                <button class="button" onclick="goToPayment('card')">DEBIT/CREDIT CARD</button>
+                <button class="button" onclick="goToPayment('bank')">Bank Transfer</button>
+                <button class="button" onclick="goToPayment('crypto')">Cryptocurrency</button>
+            </div>
+        </div>
+    </div>
+<div class="header">
+<p>পেমেন্ট জনিত যে কোন ধরনের সমস্যার সম্মুখীন হলে নিচের <b>এই ইমেইল-এ</b>যোগাযোগ করুন</p>
+mjahmad2024@outlook.com
+</div>
+ <div class="center">
+        <p>©২০২৪ <b><a href="https://mjahmad1.github.io/dream/hq30.html">কোরআনের ফেরিওয়ালা</a></b>, সর্বস্বত্ব সংরক্ষিত,</p>
+        <p>সৃজনশীলতায় <STRONG><A HREF="https://mjahmad1.github.io/dream/mja/pr.html">এম-জে আহমদ</A></STRONG> </p>
+</div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const savedSubtotal = localStorage.getItem('subtotal');
+                    if (savedSubtotal) {
+                        document.getElementById('subtotal').innerText = `সাবটোটাল: ${savedSubtotal} টাকা`;
+                    }
+                });
+
+                function showPaymentOptions() {
+                    const paymentMethod = document.getElementById('payment-method').value;
+                    const paymentOptions = document.getElementById('payment-options');
+                    paymentOptions.style.display = 'block';
+                }
+                
+                function goToPayment(method) {
+                    let paymentGatewayUrl = '';
+                    if (subtotal === 100) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    }
+                    else if (subtotal === 500) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    } 
+                    else if (subtotal === 1000) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    } 
+                    else if (subtotal === 5000) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    } 
+                    else {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    }
+                    window.location.href = paymentGatewayUrl;
+                }
+            </script>
+</body>
+</html>
