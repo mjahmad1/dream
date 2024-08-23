@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <title>QURANER FARIWALA - Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center {
+            background-color: antiquewhite;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .center h1 {
+            font-family: 'Galada', cursive;
+            margin-bottom: 10px;
+        }
+
+        .center p {
+            font-family: 'Galada', cursive;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>ধন্যবাদ</h1>
+        <p id="summary"></p>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const subtotal = params.get('subtotal');
+        const donationNumber = params.get('donationNumber');
+
+        document.getElementById('summary').innerText = `সাবটোটাল: ${subtotal} টাকা\nঅনুদান নং: ${donationNumber}`;
+    </script>
+</body>
+</html>
