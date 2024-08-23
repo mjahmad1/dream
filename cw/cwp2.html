@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
-    <title>QURANER FARIWALA</title>
+    <title>CrestWave</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,31 +30,12 @@
             padding: 20px;
         }
 
-            .center h1 {
-                font-family: 'Galada', cursive;
-                margin-bottom: 10px;
-            }
-
-            .center h2 {
-                font-family: 'Galada', cursive;
-            }
-
-            .center p {
-                font-family: 'Galada', cursive;
-            }
-
         .header {
             background-color: floralwhite;
             color: black;
             padding: 15px;
             text-align: center;
         }
-        .header h2 {
-                font-family: 'Galada', cursive;
-            }
-
-            .header p {
-                font-family: 'Galada', cursive;
         .container {
             padding: 20px;
         }
@@ -64,27 +44,28 @@
 <body>
     <div class="center">
         <h1>Crest-Wave</h1>
-        <p>On the Path to Prosperity through the Power of Technology</p>
+        <p>Envisioning a Brilliant Generation through the Harmony of Knowledge and Faith</p>
     </div>
+    <img src="https://mjahmad1.github.io/dream/cw/img/f1.png" style="width:100%">
     <div class="container">
         <div class="header">
-            <p>অনুগ্রহ নয়,<br><b>বরং সহযোগি হোন </b></p>
-            <button class="button" onclick="updateSubtotal(100)">100 টাকা</button>
-            <button class="button" onclick="updateSubtotal(500)">500 টাকা</button>
-            <button class="button" onclick="updateSubtotal(1000)">1000 টাকা</button>
-            <button class="button" onclick="updateSubtotal(5000)">5000 টাকা</button>
-            <button class="button" onclick="customAmount()">অন্যান্য পরিমাণ</button>
+            <p><b>Don't just ask for favors,<br> be cooperative.</b></p>
+            <button class="button" onclick="updateSubtotal(100)">100 BDT</button>
+            <button class="button" onclick="updateSubtotal(500)">500 BDT</button>
+            <button class="button" onclick="updateSubtotal(1000)">1000 BDT</button>
+            <button class="button" onclick="updateSubtotal(5000)">5000 BDT</button>
+            <button class="button" onclick="customAmount()">Custom Amount</button>
             <br>
-            <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
+            <button class="button" id="subtotal">Subtotal: 0 BDT</button>
             <br>
-<p>পেমেন্ট সম্পন্ন করতে <b>সহযোগী হোন</b> বাটনে ক্লিক করুন </p>
+<p>Click on <b>Support Now</b> button for Complete your payment</p>
 <br>
-            <button class="button" onclick="goToCheckout()">সহযোগী হোন</button>
+            <button class="button" onclick="goToCheckout()">Support Now</button>
         </div>
         </div>
     <div class="center">
-        <p>©২০২৪ <b><a href="https://mjahmad1.github.io/dream/hq30.html">Crest-Wave</a></b>, সর্বস্বত্ব সংরক্ষিত,</p>
-        <p>সৃজনশীলতায় <STRONG><A HREF="https://mjahmad1.github.io/dream/mja/pr.html">MJ-AHMAD</A></STRONG> </p>
+        <p>©২০২৪ <b><a href="https://mjahmad1.github.io/dream/hq30.html">Crest-Wave</a></b></p>
+        <p>Designed by <STRONG><A HREF="https://mjahmad1.github.io/dream/mja/pr.html">MJ-AHMAD</A></STRONG> </p>
     </div>
 
     <script>
@@ -92,7 +73,7 @@
 
         function updateSubtotal(amount) {
             subtotal = amount;
-            document.getElementById('subtotal').innerText = `সাবটোটাল: ${subtotal} টাকা`;
+            document.getElementById('subtotal').innerText = `Subtotal: ${subtotal} BDT`;
             localStorage.setItem('subtotal', subtotal);
         }
 
@@ -104,7 +85,7 @@
         }
 
         function goToCheckout() {
-            window.location.href = 'cwp22.html';
+            window.location.href = 'cwp11e.html';
         }
     </script>
 </body>
