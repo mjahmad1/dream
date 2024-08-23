@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <title>QURANER FARIWALA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        #subtotal {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .center {
+            background-color: antiquewhite;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+            .center h1 {
+                font-family: 'Galada', cursive;
+                margin-bottom: 10px;
+            }
+
+            .center h2 {
+                font-family: 'Galada', cursive;
+            }
+
+            .center p {
+                font-family: 'Galada', cursive;
+            }
+
+        .header {
+            background-color: floralwhite;
+            color: black;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>কোরআনের ফেরিওয়ালা</h1>
+        <p>মহাগ্রন্থ আল-কোরআন গবেষণা, মুদ্রণ ও সরবরাহকারী প্রতিষ্ঠান</p>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Payment Page</h1>
+            <button class="button" onclick="updateSubtotal(10)">10 টাকা</button>
+            <button class="button" onclick="updateSubtotal(100)">100 টাকা</button>
+            <button class="button" onclick="updateSubtotal(500)">500 টাকা</button>
+            <button class="button" onclick="updateSubtotal(5000)">1000 টাকা</button>
+            <button class="button" onclick="customAmount()">কাস্টম এমাউন্ট</button>
+            <br>
+            <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
+            <br>
+            <button class="button" onclick="goToCheckout()">দান করুন</button>
+        </div>
+        </div>
+    <div class="center">
+        <p>©২০২৪ কোরআনের ফেরিওয়ালা, সর্বস্বত্ব সংরক্ষিত,</p>
+        <p>সৃজনশীলতায় <STRONG><A HREF="hbh1.html">এম-জে আহমদ</A></STRONG> </p>
+    </div>
+
+    <script>
+        let subtotal = 0;
+
+        function updateSubtotal(amount) {
+            subtotal = amount;
+            document.getElementById('subtotal').innerText = `সাবটোটাল: ${subtotal} টাকা`;
+            localStorage.setItem('subtotal', subtotal);
+        }
+
+        function customAmount() {
+            const amount = prompt("কাস্টম এমাউন্ট লিখুন:");
+            if (amount !== null && !isNaN(amount)) {
+                updateSubtotal(parseInt(amount));
+            }
+        }
+
+        function goToCheckout() {
+            // Example URL for payment gateway
+            const paymentGatewayUrl = `https://www.paymentgateway.com/pay?amount=${subtotal}`;
+            window.location.href = paymentGatewayUrl;
+        }
+    </script>
+</body>
+</html>
