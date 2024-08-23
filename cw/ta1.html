@@ -72,45 +72,17 @@
             <br>
             <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
             <br>
-            <button class="button" onclick="goToCheckout()">দান করুন</button>
+            <button class="button" onclick="goToPayment('bkash')">Bkash</button>
+            <button class="button" onclick="goToPayment('card')">DEBIT/CREDIT CARD</button>
+            <button class="button" onclick="goToPayment('bank')">Bank Transfer</button>
+            <button class="button" onclick="goToPayment('crypto')">Cryptocurrency</button>
         </div>
-        </div>
+    </div>
     <div class="center">
         <p>©২০২৪ কোরআনের ফেরিওয়ালা, সর্বস্বত্ব সংরক্ষিত,</p>
         <p>সৃজনশীলতায় <STRONG><A HREF="hbh1.html">এম-জে আহমদ</A></STRONG> </p>
     </div>
 
-    <script>
-        let subtotal = 0;
-
-        function updateSubtotal(amount) {
-            subtotal = amount;
-            document.getElementById('subtotal').innerText = `সাবটোটাল: ${subtotal} টাকা`;
-            localStorage.setItem('subtotal', subtotal);
-        }
-
-        function customAmount() {
-            const amount = prompt("কাস্টম এমাউন্ট লিখুন:");
-            if (amount !== null && !isNaN(amount)) {
-                updateSubtotal(parseInt(amount));
-            }
-        }
-
-        function goToCheckout() {
-            let paymentGatewayUrl = '';
-            if (subtotal === 10) {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
-            } else if (subtotal === 100) {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlin';
-            } else if (subtotal === 500) {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentli';
-            } else if (subtotal === 1000) {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentl';
-            } else {
-                paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/payment';
-            }
-            window.location.href = paymentGatewayUrl;
-        }
-    </script>
+    <script src="payment.js"></script>
 </body>
 </html>
