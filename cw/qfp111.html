@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
     <title>QURANER FARIWALA</title>
     <style>
         body {
@@ -45,25 +45,25 @@
             padding: 8px;
             box-sizing: border-box;
         }
-           .center {
+        .center {
             background-color: antiquewhite;
             color: black;
             text-align: center;
             padding: 20px;
         }
 
-            .center h1 {
-                font-family: 'Galada', cursive;
-                margin-bottom: 10px;
-            }
+        .center h1 {
+            font-family: 'Galada', cursive;
+            margin-bottom: 10px;
+        }
 
-            .center h2 {
-                font-family: 'Galada', cursive;
-            }
+        .center h2 {
+            font-family: 'Galada', cursive;
+        }
 
-            .center p {
-                font-family: 'Galada', cursive;
-            }
+        .center p {
+            font-family: 'Galada', cursive;
+        }
 
         .header {
             background-color: floralwhite;
@@ -71,13 +71,13 @@
             padding: 15px;
             text-align: center;
         }
-                    .header h5 {
-                font-family: 'Galada', cursive;
-            }
+        .header h5 {
+            font-family: 'Galada', cursive;
+        }
 
-            .header p {
-                font-family: 'Galada', cursive;
-            }
+        .header p {
+            font-family: 'Galada', cursive;
+        }
 
     </style>
 </head>
@@ -91,58 +91,30 @@
             <div id="subtotal-section">
                 <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
             </div>
-            <div class="header">
-            </div>
+            <div class="header"></div>
                 <p><b>পেমেন্ট পদ্ধতি নির্বাচন করুন</b></p>
             <div class="header">
-                <button class="button" onclick="goToPayment('bkash')">Bkash</button>
-                <button class="button" onclick="goToPayment('card')">DEBIT/CREDIT CARD</button>
-                <button class="button" onclick="goToPayment('bank')">Bank Transfer</button>
+                <button class="button" onclick="window.location.href='https://pay.bkash.mjahmd'">Bkash</button>
+                <button class="button" onclick="window.location.href='https://pay.visa-card.mjahmd'">DEBIT/CREDIT CARD</button>
+                <button class="button" onclick="window.location.href='https://pay.Bank-transfer.mjahmd'">Bank Transfer</button>
             </div>
         </div>
     </div>
-<div class="header">
-<p>পেমেন্ট জনিত যে কোন ধরনের সমস্যার সম্মুখীন হলে নিচের <b>এই ইমেইল-এ</b>যোগাযোগ করুন</p>
-mjahmad2024@outlook.com
-</div>
- <div class="center">
-        <p>©২০২৪ <b><a href="https://mjahmad1.github.io/dream/hq30.html">কোরআনের ফেরিওয়ালা</a></b>, সর্বস্বত্ব সংরক্ষিত,</p>
-        <p>সৃজনশীলতায় <STRONG><A HREF="https://mjahmad1.github.io/dream/mja/pr.html">এম-জে আহমদ</A></STRONG> </p>
-</div>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const savedSubtotal = localStorage.getItem('subtotal');
-                    if (savedSubtotal) {
-                        document.getElementById('subtotal').innerText = `সাবটোটাল: ${savedSubtotal} টাকা`;
-                    }
-                });
-
-                function showPaymentOptions() {
-                    const paymentMethod = document.getElementById('payment-method').value;
-                    const paymentOptions = document.getElementById('payment-options');
-                    paymentOptions.style.display = 'block';
-                }
-                
-                function goToPayment(method) {
-                    let paymentGatewayUrl = '';
-                    if (subtotal === 100) {
-                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt100/f4tpFC';
-                    }
-                    else if (subtotal === 500) {
-                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt500/QzCQWb';
-                    } 
-                    else if (subtotal === 1000) {
-                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt1000/m07JAi';
-                    } 
-                    else if (subtotal === 5000) {
-                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt5000/luZ6iA';
-                    } 
-                    else {
-                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
-                    }
-
-                    window.location.href = paymentGatewayUrl;
-                }
-            </script>
+    <div class="header">
+        <p>পেমেন্ট জনিত যে কোন ধরনের সমস্যার সম্মুখীন হলে নিচের <b>এই ইমেইল-এ</b> যোগাযোগ করুন</p>
+        <p>mjahmad2024@outlook.com</p>
+    </div>
+    <div class="center">
+        <p>©২০২৪ <b><a href="https://mjahmad1.github.io/dream/hq30.html">কোরআনের ফেরিওয়ালা</a></b>, সর্বস্বত্ব সংরক্ষিত</p>
+        <p>সৃজনশীলতায় <strong><a href="https://mjahmad1.github.io/dream/mja/pr.html">এম-জে আহমদ</a></strong></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedSubtotal = localStorage.getItem('subtotal');
+            if (savedSubtotal) {
+                document.getElementById('subtotal').innerText = `সাবটোটাল: ${savedSubtotal} টাকা`;
+            }
+        });
+    </script>
 </body>
 </html>
