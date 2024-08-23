@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+    <title>QURANER FARIWALA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center {
+            background-color: antiquewhite;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+            .center h1 {
+                font-family: 'Galada', cursive;
+                margin-bottom: 10px;
+            }
+
+            .center h2 {
+                font-family: 'Galada', cursive;
+            }
+
+            .center p {
+                font-family: 'Galada', cursive;
+            }
+
+        .header {
+            background-color: floralwhite;
+            color: black;
+            padding: 15px;
+            text-align: center;
+        }
+                    .header h3 {
+                font-family: 'Galada', cursive;
+                margin-bottom: 10px;
+            }
+
+            .header h5 {
+                font-family: 'Galada', cursive;
+            }
+
+            .header p {
+                font-family: 'Galada', cursive;
+            }
+
+
+        .container {
+            padding: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        #subtotal {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+               .center-1 {
+           background-color: whitesmoke;
+           color: black;
+           text-align: center;
+           padding: 20px;
+       }
+
+           .center-1 h3 {
+               font-family: 'Galada', cursive;
+               margin-bottom: 10px;
+           }
+
+           .center-1 p {
+               font-family: 'Galada', cursive;
+           }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h2>Quraner Fariwala</h2>
+    </div>
+    <div class="container">
+        <div class="center-1">
+    <h3>❤️Best Wishes For You❤️</h3>
+            <p>May the merciful Creator bless you,</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+ <p>The Messenger of Allah (SAW) said:<br>Show mercy to those on earth, and the One above the heavens will show mercy to you.<br> إرحموا من في الأرض، يرحمكم من في السماء </p>
+            <h5>You are donating</h5>
+            <div id="subtotal-section">
+                <button class="button" id="subtotal">Subtotal: 0 Taka</button>
+            </div>
+<p>Click the <b>(Pay Now)</b> button below to donate</p>
+            <button class="button" onclick="makePayment()">Pay Now</button>
+        </div>
+    </div>
+    <div class="center">
+        <p>©2024 <b><a href="https://mjahmad1.github.io/dream/hq30.html">Quraner Fariwala</a></b>, All rights reserved,</p>
+        <p>Creative by <STRONG><A HREF="https://mjahmad1.github.io/dream/mja/pr.html">M-J Ahmad</A></STRONG> </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedSubtotal = localStorage.getItem('subtotal');
+            if (savedSubtotal) {
+                document.getElementById('subtotal').innerText = `Subtotal: ${savedSubtotal} Taka`;
+            }
+        });
+
+        function makePayment() {
+            alert('Redirecting to payment page...');
+            window.location.href = 'qfp111e.html';
+        }
+
+        function payLater() {
+            alert('You can pay later.');
+            // Add code here to handle pay later functionality
+        }
+    </script>
+</body>
+</html>
