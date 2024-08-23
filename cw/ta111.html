@@ -173,6 +173,43 @@
         function showPaymentOptions() {
             document.getElementById('paymentOptions').style.display = 'block';
         }
+</script>
+<script>
+let subtotal = 0;
+
+function updateSubtotal(amount) {
+    subtotal = amount;
+    document.getElementById('subtotal').innerText = `সাবটোটাল: ${subtotal} টাকা`;
+    localStorage.setItem('subtotal', subtotal);
+}
+
+function customAmount() {
+    const amount = prompt("কাস্টম এমাউন্ট লিখুন:");
+    if (amount !== null && !isNaN(amount)) {
+        updateSubtotal(parseInt(amount));
+    }
+}
+
+function goToPayment(method) {
+    let paymentGatewayUrl = '';
+
+    if (subtotal === 10) {
+        paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+    } else if (subtotal === 100) {
+        paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlin';
+    } else if (subtotal === 500) {
+        paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentli';
+    } else if (subtotal === 1000) {
+        paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentl';
+    } else {
+        paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/payment';
+    }
+    window.location.href = paymentGatewayUrl;
+}
+
+function showPaymentOptions() {
+    document.getElementById('paymentOptions').style.display = 'block';
+}
     </script>
 </body>
 </html>
