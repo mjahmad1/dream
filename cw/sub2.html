@@ -2,78 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page</title>
-    <style>
-        .button {
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 16px;
-        }
-        #subtotal {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-    </style>
+    <title>bKash PGW Demo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Payment Page</h1>
-    <button class="button" onclick="updateSubtotal(100)">100 টাকা</button>
-    <button class="button" onclick="updateSubtotal(200)">200 টাকা</button>
-    <button class="button" onclick="updateSubtotal(300)">300 টাকা</button>
-    <button class="button" onclick="customAmount()">কাস্টম এমাউন্ট</button>
-    <br>
-    <button class="button" id="subtotal">সাবটোটাল: 0 টাকা</button>
-    <br>
-    <button class="button" onclick="goToCheckout()">চেকআউট</button>
+<button id="bKash_button" class="btn btn-danger" disabled="disabled">Pay With bKash</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://scripts.sandbox.bka.sh/versions/1.2.0-beta/checkout/bKash-checkout-sandbox.js"></script>
+<script type="text/javascript">
+  let paymentID;
 
-    <script>
-        let subtotal = 0;
+  let username = "Your username";
+  let password = "Your password";
+  let app_key = "Your app key";
+  let app_secret = "Your app secret";
 
-        function updateSubtotal(amount) {
-            subtotal = amount;
-            document.getElementById('subtotal').innerText = `সাবটোটাল: ${subtotal} টাকা`;
-            localStorage.setItem('subtotal', subtotal);
-        }
+  let grantTokenUrl = 'https://checkout.sandbox.bka.sh/v1.2.0-beta/checkout/token/grant';
+  let createCheckoutUrl = 'https://checkout.sandbox.bka.sh/v1.2.0-beta/checkout/payment/create';
+  let executeCheckoutUrl = 'https://checkout.sandbox.bka.sh/v1.2.0-beta/checkout/payment/execute';
 
-        function customAmount() {
-            const amount = prompt("কাস্টম এমাউন্ট লিখুন:");
-            if (amount !== null && !isNaN(amount)) {
-                updateSubtotal(parseInt(amount));
-            }
-        }
+  $(document).ready(function () {
+    getAuthToken();
+  });
 
-        function goToCheckout() {
-            window.location.href = 'checkout.html';
-        }
-    </script>
-    <script>
-        let paymentID;
+  function getAuthToken() {
+    let body = {
+      "app_key": app_key,
+      "app_secret": app_secret
+    };
 
-let createCheckoutUrl = 'https://merchantserver.sandbox.bka.sh/api/checkout/v1.2.0-beta/payment/create';
-let executeCheckoutUrl = 'https://merchantserver.sandbox.bka.sh/api/checkout/v1.2.0-beta/payment/execute';
+    $.ajax({
+      url: grantTokenUrl,
+      headers: {
+        "username": username,
+        "password": password,
+        "Content-Type": "application/json"
+      },
+      type: 'POST',
+      data: JSON.stringify(body),
+      success: function (result) {
 
-$(document).ready(function () {
-    initBkash();
-});
+        let headers = {
+          "Content-Type": "application/json",
+          "Authorization": result.id_token, // Contains access token
+          "X-APP-Key": app_key
+        };
 
-function initBkash() {
+        let request = {
+          "amount": "85.50",
+          "intent": "sale",
+          "currency": "BDT",
+          "merchantInvoiceNumber": "123456"
+        };
+
+        initBkash(headers, request);
+      },
+      error: function (error) {
+        console.log(error);
+      }
+    });
+  }
+
+  function initBkash(headers, request) {
     bKash.init({
-      paymentMode: 'checkout', // Performs a single checkout.
-      paymentRequest: {"amount": '85.50', "intent": 'sale'},
+      paymentMode: 'checkout',
+      paymentRequest: request,
 
       createRequest: function (request) {
         $.ajax({
           url: createCheckoutUrl,
+          headers: headers,
           type: 'POST',
           contentType: 'application/json',
           data: JSON.stringify(request),
           success: function (data) {
-              
+
             if (data && data.paymentID != null) {
               paymentID = data.paymentID;
               bKash.create().onSuccess(data);
-            } 
+            }
             else {
               bKash.create().onError(); // Run clean up code
               alert(data.errorMessage + " Tag should be 2 digit, Length should be 2 digit, Value should be number of character mention in Length, ex. MI041234 , supported tags are MI, MW, RF");
@@ -88,10 +96,10 @@ function initBkash() {
       },
       executeRequestOnAuthorization: function () {
         $.ajax({
-          url: executeCheckoutUrl,
+          url: executeCheckoutUrl + '/' + paymentID,
+          headers: headers,
           type: 'POST',
           contentType: 'application/json',
-          data: JSON.stringify({"paymentID": paymentID}),
           success: function (data) {
 
             if (data && data.paymentID != null) {
@@ -118,7 +126,6 @@ function initBkash() {
 
     $('#bKash_button').removeAttr('disabled');
 
-}
-    </script>
-</body>
+  }
+</script>
 </html>
