@@ -87,6 +87,13 @@
     </div>
 
     <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                    const savedSubtotal = localStorage.getItem('subtotal');
+                    if (savedSubtotal) {
+                        document.getElementById('subtotal').innerText = `সাবটোটাল: ${savedSubtotal} টাকা`;
+                    }
+                });
+
         let subtotal = 0;
 
         function updateSubtotal(amount) {
