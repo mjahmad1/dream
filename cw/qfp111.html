@@ -97,7 +97,7 @@
                 <p><b>পেমেন্ট পদ্ধতি নির্বাচন করুন</b></p>
             <div class="header">
                 <button class="button" onclick="goToPayment('bkash')">Bkash</button>
-                <button class="button" onclick="goToPayment('card')">DEBIT/CREDIT CARD</button>
+                <button class="button" onclick="goToPayment1('card')">DEBIT/CREDIT CARD</button>
                 <button class="button" onclick="goToPayment('bank')">Bank Transfer</button>
                 <button class="button" onclick="goToPayment('crypto')">Cryptocurrency</button>
             </div>
@@ -128,20 +128,38 @@ mjahmad2024@outlook.com
                 function goToPayment(method) {
                     let paymentGatewayUrl = '';
                     if (subtotal === 100) {
-                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt100/f4tpFC';
                     }
                     else if (subtotal === 500) {
-                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt500/QzCQWb';
                     } 
                     else if (subtotal === 1000) {
-                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt1000/m07JAi';
                     } 
                     else if (subtotal === 5000) {
-                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt5000/luZ6iA';
                     } 
                     else {
                     paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
                     }
+                                    function goToPayment1(method) {
+                    let paymentGatewayUrl = '';
+                    if (subtotal === 100) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt100/f4tpFC';
+                    }
+                    else if (subtotal === 500) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt500/QzCQWb';
+                    } 
+                    else if (subtotal === 1000) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt1000/m07JAi';
+                    } 
+                    else if (subtotal === 5000) {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/pay/bdt5000/luZ6iA';
+                    } 
+                    else {
+                    paymentGatewayUrl = 'https://shop.bkash.com/quraner-fariwalarm50980/paymentlink';
+                    }
+
                     window.location.href = paymentGatewayUrl;
                 }
             </script>
