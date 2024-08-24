@@ -1,118 +1,83 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أهلا وسهلا بك في موقعي</title>
+<title>HopeWave Volunteer Registration</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Reem+Kufi+Ink&display=swap');
-
-body {
-margin: 0;
-padding: 0;
-font-family: 'Amiri', serif;
-}
-
-.header {
-background-color: black;
-color: white;
-text-align: center;
-padding: 20px;
-}
-
-.header h1 {
-font-family: 'Reem Kufi Ink', sans-serif;
-margin: 0;
-font-size: 2.5em;
-}
-
-.header p {
-font-family: 'Amiri', serif;
-margin: 0;
-font-size: 1.5em;
-}
-
-.welcome-section {
-width: 100%;
-height: auto;
-text-align: center;
-}
-
-.welcome-section img {
-max-width: 100%;
-height: auto;
-}
-
-@media (max-width: 768px) {
-.header h1 {
-font-size: 2em;
-}
-
-.header p {
-font-size: 1.2em;
-}
-}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 50%;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .form-group button {
+        width: 100%;
+        padding: 10px;
+        background: #007BFF;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .form-group button:hover {
+        background: #0056b3;
+    }
 </style>
 </head>
 <body>
-<div class="header">
-<h1>أهلا وسهلا بك في موقعي</h1>
-<p>متطلعا إلى جيل لامع يجمع بين المعرفة والإيمان</p>
-</div>
-<div class="welcome-section">
-<img src="mjsteker.jpg" alt="Welcome Image">
-</div>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أهلا وسهلا بك في موقعي</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap');
-
-body {
-margin: 0;
-padding: 0;
-font-family: 'Reem Kufi Ink', sans-serif;
-background-color: white;
-color: black;
-direction: rtl; /* Right-to-left layout */
-}
-
-.profile-section {
-padding: 20px 30px; /* Padding around the text */
-}
-
-.profile-section p {
-margin: 20px 0; /* Margin between paragraphs */
-}
-
-/* Emoji styles */
-.emoji {
-margin-right: 10px;
-}
-</style>
-</head>
-<body>
-<div class="header">
-<h1>أهلا وسهلا بك في موقعي</h1>
-<p>متطلعا إلى جيل لامع يجمع بين المعرفة والإيمان</p>
-</div>
-<div class="welcome-section">
-<img src="mjsteker.jpg" alt="Welcome Image">
-</div>
-<!-- New Profile Section -->
-<div class="profile-section">
-<p><span class="emoji"></span>طالب متحمس ومروج للتقدم التكنولوجي والتعليم في بنغلاديش،</p>
-<p><span class="emoji"></span>لدي خبرة عميقة في ترميز حلول الحوسبة السحابية،</p>
-<p><span class="emoji"></span>أعمل على تحسين مهاراتي و بناء قوة عاملة ماهرة,</p>
-<p><span class="emoji">️</span>كمطور في منتدى مطوري شركة بلاد المتحدة "لندن"، يعكس دوري مهاراتي المهنية والتزامي بالابتكار,</p>
-<p><span class="emoji"></span>أمارس باستمرار الابتكار وتعزيز المهارات من خلال تكنولوجيا الذكاء الاصطناعي وتعلم الآلة وتحليل البيانات،</p>
+<div class="container">
+    <h2>HopeWave Volunteer Registration</h2>
+    <form action="submit_form.php" method="post">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="skills">Skills and Experience:</label>
+            <textarea id="skills" name="skills" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Register</button>
+        </div>
+    </form>
 </div>
 </body>
 </html>
